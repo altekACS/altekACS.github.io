@@ -19,9 +19,11 @@ photo.</p>
 <button id="takePhotoButton" disabled>Take Photo</button>
 <canvas></canvas>
 
-{% include output_helper.html %}
+<!-- {% include output_helper.html %}
 
-{% include js_snippet.html filename='photo-resolution.js' %}
+{% include js_snippet.html filename='photo-resolution.js' %} -->
+
+<script> src=photo-resolution.js</script>
 
 <script>
   document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
