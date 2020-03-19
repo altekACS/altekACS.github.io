@@ -1,0 +1,118 @@
+<h3>grab-frame-take-photo</h3>
+
+<p>The ImageCapture Web API allows web developers to capture images from camera
+in the form of a Blob with <code>takePhoto()</code> or as a ImageBitmap with
+<code>grabFrame()</code>.</p>
+
+<div id='results'>
+  <div>
+    <video autoplay></video>
+    <button id='getUserMediaButton'>Get User Media</button>
+  </div>
+  <div>
+    <canvas id='grabFrameCanvas'></canvas>
+    <button id='grabFrameButton'>Grab Frame</button>
+  </div>
+  <div>
+    <canvas id='takePhotoCanvas'></canvas>
+    <button id='takePhotoButton'>Take Photo</button>
+  </div>
+</div>
+
+
+<script>
+  
+var imageCapture;
+
+function onGetUserMediaButtonClick() {
+  navigator.mediaDevices.getUserMedia({video: true})
+  .then(mediaStream => {
+    document.querySelector('video').srcObject = mediaStream;
+
+    const track = mediaStream.getVideoTracks()[0];
+    imageCapture = new ImageCapture(track);
+  })
+  .catch(error => ChromeSamples.log(error));
+}
+
+function onGrabFrameButtonClick() {
+  imageCapture.grabFrame()
+  .then(imageBitmap => {
+    const canvas = document.querySelector('#grabFrameCanvas');
+    drawCanvas(canvas, imageBitmap);
+  })
+  .catch(error => ChromeSamples.log(error));
+}
+
+function onTakePhotoButtonClick() {
+  imageCapture.takePhoto()
+  .then(blob => createImageBitmap(blob))
+  .then(imageBitmap => {
+    const canvas = document.querySelector('#takePhotoCanvas');
+    drawCanvas(canvas, imageBitmap);
+  })
+  .catch(error => ChromeSamples.log(error));
+}
+
+/* Utils */
+
+function drawCanvas(canvas, img) {
+  canvas.width = getComputedStyle(canvas).width.split('px')[0];
+  canvas.height = getComputedStyle(canvas).height.split('px')[0];
+  let ratio  = Math.min(canvas.width / img.width, canvas.height / img.height);
+  let x = (canvas.width - img.width * ratio) / 2;
+  let y = (canvas.height - img.height * ratio) / 2;
+  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+  canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
+      x, y, img.width * ratio, img.height * ratio);
+}
+
+document.querySelector('video').addEventListener('play', function() {
+  document.querySelector('#grabFrameButton').disabled = false;
+  document.querySelector('#takePhotoButton').disabled = false;
+});
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    let devices = await navigator.usb.getDevices();
+    devices.forEach(device => {
+      // Add |device| to the UI.
+    });
+  });
+
+  navigator.usb.addEventListener('connect', event => {
+    // Add |event.device| to the UI.
+  });
+
+  navigator.usb.addEventListener('disconnect', event => {
+    // Remove |event.device| from the UI.
+  });
+
+  let button = document.querySelector('getUserMediaButton');
+    button.addEventListener('click', async () => {
+      let device;
+      try {
+        device = await navigator.usb.requestDevice({ filters: [{
+            vendorId: 0x1908,
+            productId: 0x3210,
+            // classCode: 0xFF, // vendor-specific
+            protocolCode: 0x01
+        }]});
+      } catch (err) {
+        // No device was selected.
+      }
+    
+      if (device !== undefined) {
+        // Add |device| to the UI.
+      }
+    });
+
+</script>
+
+<script>
+//   document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
+  document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
+  document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
+</script>
+
+
