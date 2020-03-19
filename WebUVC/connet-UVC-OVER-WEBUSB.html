@@ -88,8 +88,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Remove |event.device| from the UI.
   });
 
-  let button = document.querySelector('getUserMediaButton');
-    button.addEventListener('click', async () => {
+
+</script>
+
+<script>
+    document.querySelector('getUserMediaButton').addEventListener('click', async () => {
       let device;
       try {
         device = await navigator.usb.requestDevice({ filters: [{
@@ -106,10 +109,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Add |device| to the UI.
       }
     });
-
-</script>
-
-<script>
+    
 //   document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
   document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
   document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
