@@ -52,40 +52,40 @@ button1.addEventListener('click', async () => {
   try {
         g_usbDevice = await navigator.usb.requestDevice(opts)
        .then(selDevice => {
-        console.log("Product name: " + selDevice.productName);
+            console.log("Product name: " + selDevice.productName);
+
+            await selDevice.open();
+            if (selDevice.configuration === null)
+              await selDevice.selectConfiguration(1);
+            await selDevice.claimInterface(1);
+
+            await selDevice.controlTransferOut({
+              requestType: 'vendor',
+              recipient: 'interface',
+              request: 0x01,  // vendor-specific request: enable channels
+              value: 0x0013,  // 0b00010011 (channels 1, 2 and 5)
+              index: 0x0001   // Interface 1 is the recipient
+            });
+
+
+            while (true) {
+              let result = await data.transferIn(1, 6);
+
+              if (result.data && result.data.byteLength === 6) {
+                console.log('Channel 1: ' + result.data.getUint16(0));
+                console.log('Channel 2: ' + result.data.getUint16(2));
+                console.log('Channel 5: ' + result.data.getUint16(4));
+              }
+
+              if (result.status === 'stall') {
+                console.warn('Endpoint stalled. Clearing.');
+                await selDevice.clearHalt(1);
+              }
+            }
         })
         .catch(e => {
           console.log("There is no device. " + e);
         });
-
-        await g_usbDevice.open();
-        if (g_usbDevice.configuration === null)
-          await g_usbDevice.selectConfiguration(1);
-        await g_usbDevice.claimInterface(1);
-
-        await g_usbDevice.controlTransferOut({
-          requestType: 'vendor',
-          recipient: 'interface',
-          request: 0x01,  // vendor-specific request: enable channels
-          value: 0x0013,  // 0b00010011 (channels 1, 2 and 5)
-          index: 0x0001   // Interface 1 is the recipient
-        });
-
-
-        while (true) {
-          let result = await data.transferIn(1, 6);
-
-          if (result.data && result.data.byteLength === 6) {
-            console.log('Channel 1: ' + result.data.getUint16(0));
-            console.log('Channel 2: ' + result.data.getUint16(2));
-            console.log('Channel 5: ' + result.data.getUint16(4));
-          }
-
-          if (result.status === 'stall') {
-            console.warn('Endpoint stalled. Clearing.');
-            await g_usbDevice.clearHalt(1);
-          }
-        }
 
   } catch (err) {
     alert('Error: ' + err.message);
