@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   let button = document.querySelector('#getUserMediaButton');
 button.addEventListener('click', async () => {
   let device;
-  let usbDeviceProperties = { name: "Bixolon", vendorId: 1908, productId: 3120 };
+  let usbDeviceProperties = { name: "USB2.0 PC CAMERA", vendorId: 1908, productId: 3120 };
   try {
     device = await navigator.usb.requestDevice({ filters: usbDeviceProperties });
   } catch (error) {
