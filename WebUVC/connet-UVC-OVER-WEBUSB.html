@@ -116,13 +116,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 button.addEventListener('click', async () => {
   let device;
 
+  const opts = {
+  filters: [{
+    classCode: 16, // 0x10
+    subclassCode: 2, // 0x02
+    protocolCode: 0x00,
+  }]
+  }
+
   try {
-       device = await navigator.usb.requestDevice({ filters: [{
-            vendorId: 0x1908,
-            productId: 0x3210,
-            // classCode: 0xFF, // vendor-specific
-            //protocolCode: 0x01
-       }]});
+       device = await navigator.usb.requestDevice(opts);
   } catch (err) {
     alert('Error: ' + err.message);
   }
