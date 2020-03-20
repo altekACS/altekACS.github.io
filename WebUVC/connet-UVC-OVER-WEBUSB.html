@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
 
-let g_device;
+let g_usbDevice;
 
 //==============   Connet to WebCam button  =================
 let button1 = document.querySelector('#getUserMediaButton');
@@ -49,10 +49,11 @@ button1.addEventListener('click', async () => {
   ]
   }
 
+  let device;
   try {
        device = await navigator.usb.requestDevice(opts)
-       .then(usbDevice => {
-        console.log("Product name: " + usbDevice.productName);
+       .then(g_usbDevice => {
+        console.log("Product name: " + g_usbDevice.productName);
         })
         .catch(e => {
           console.log("There is no device. " + e);
@@ -66,12 +67,12 @@ button1.addEventListener('click', async () => {
 let button2 = document.querySelector('#grabFrameButton');
 button2.addEventListener('click', async () => {
 
-  await g_device.open();
-  if (g_device.configuration === null)
-    await g_device.selectConfiguration(1);
-  await g_device.claimInterface(1);
+  await g_usbDevice.open();
+  if (g_usbDevice.configuration === null)
+    await g_usbDevice.selectConfiguration(1);
+  await g_usbDevice.claimInterface(1);
 
-  await device.controlTransferOut({
+  await g_usbDevice.controlTransferOut({
     requestType: 'vendor',
     recipient: 'interface',
     request: 0x01,  // vendor-specific request: enable channels
@@ -91,7 +92,7 @@ button2.addEventListener('click', async () => {
 
     if (result.status === 'stall') {
       console.warn('Endpoint stalled. Clearing.');
-      await device.clearHalt(1);
+      await g_usbDevice.clearHalt(1);
     }
   }
 
