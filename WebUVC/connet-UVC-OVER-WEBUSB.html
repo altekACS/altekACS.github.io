@@ -138,9 +138,9 @@ button.addEventListener('click', async () => {
 </script>
 
 <script>    
-let button = document.querySelector('#grabFrameButton');
-button.addEventListener('click', async () => {
-  let device;
+let button2 = document.querySelector('#grabFrameButton');
+button2.addEventListener('click', async () => {
+  let device2;
 
   const opts = {
   filters: [{
@@ -151,7 +151,7 @@ button.addEventListener('click', async () => {
   }
 
   try {
-       device = await navigator.usb.requestDevice();
+      device2 = await navigator.usb.requestDevice();
   } catch (err) {
     alert('Error: ' + err.message);
   }
