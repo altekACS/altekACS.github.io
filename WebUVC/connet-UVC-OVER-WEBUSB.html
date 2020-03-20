@@ -115,12 +115,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   let button = document.querySelector('#getUserMediaButton');
 button.addEventListener('click', async () => {
   let device;
-  let usbDeviceProperties = { name: "USB2.0 PC CAMERA", vendorId: 1908, productId: 3120 };
+
   try {
-    device = await navigator.usb.requestDevice({ filters: usbDeviceProperties });
-  } catch (error) {
+       device = await navigator.usb.requestDevice({ filters: [{
+            vendorId: 0x1908,
+            productId: 0x3210,
+            // classCode: 0xFF, // vendor-specific
+            protocolCode: 0x01
+       }]});
+  } catch (err) {
     alert('Error: ' + error.message);
   }
+    
+  // let usbDeviceProperties = { name: "USB2.0 PC CAMERA", vendorId: 1908, productId: 3120 };
+  // try {
+  //   device = await navigator.usb.requestDevice({ filters: usbDeviceProperties });
+  // } catch (error) {
+  //   alert('Error: ' + error.message);
+  // }
 });
 
   document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
