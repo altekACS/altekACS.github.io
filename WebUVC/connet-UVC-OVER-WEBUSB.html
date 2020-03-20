@@ -7,16 +7,16 @@ in the form of a Blob with <code>takePhoto()</code> or as a ImageBitmap with
 <div id='results'>
   <div>
     <video autoplay></video>
-    <button id='getUserMediaButton'>Get User Media</button>
+    <button id='getUserMediaButton'>Get User Media With Filter</button>
   </div>
   <div>
     <canvas id='grabFrameCanvas'></canvas>
-    <button id='grabFrameButton'>Grab Frame</button>
+    <button id='grabFrameButton'>Grab User Media Without Filter</button>
   </div>
-  <div>
+  <!-- <div>
     <canvas id='takePhotoCanvas'></canvas>
     <button id='takePhotoButton'>Take Photo</button>
-  </div>
+  </div> -->
 </div>
 
 
@@ -110,9 +110,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 <script>    
   // document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
-
-
-  let button = document.querySelector('#getUserMediaButton');
+let button = document.querySelector('#getUserMediaButton');
 button.addEventListener('click', async () => {
   let device;
 
@@ -137,9 +135,32 @@ button.addEventListener('click', async () => {
   //   alert('Error: ' + error.message);
   // }
 });
+</script>
 
-  document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
-  document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
+<script>    
+let button = document.querySelector('#grabFrameButton');
+button.addEventListener('click', async () => {
+  let device;
+
+  const opts = {
+  filters: [{
+    classCode: 16, // 0x10
+    subclassCode: 2, // 0x02
+    protocolCode: 0x00,
+  }]
+  }
+
+  try {
+       device = await navigator.usb.requestDevice();
+  } catch (err) {
+    alert('Error: ' + err.message);
+  }
+});
+</script>
+
+<script>    
+  // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
+  // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
 </script>
 
 
