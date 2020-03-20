@@ -49,11 +49,10 @@ button1.addEventListener('click', async () => {
   ]
   }
 
-  let device;
   try {
-       device = await navigator.usb.requestDevice(opts)
-       .then(g_usbDevice => {
-        console.log("Product name: " + g_usbDevice.productName);
+        g_usbDevice = await navigator.usb.requestDevice(opts)
+       .then(selDevice => {
+        console.log("Product name: " + selDevice.productName);
         })
         .catch(e => {
           console.log("There is no device. " + e);
