@@ -1,17 +1,13 @@
-<h3>grab-frame-take-photo</h3>
-
-<p>The ImageCapture Web API allows web developers to capture images from camera
-in the form of a Blob with <code>takePhoto()</code> or as a ImageBitmap with
-<code>grabFrame()</code>.</p>
+<h3>Simple WebUSB Example</h3>
 
 <div id='results'>
   <div>
     <video autoplay></video>
-    <button id='getUserMediaButton'>Get User Media With Filter</button>
+    <button id='getUserMediaButton'>Connet to WebCam</button>
   </div>
   <div>
-    <canvas id='grabFrameCanvas'></canvas>
-    <button id='grabFrameButton'>Grab User Media Without Filter</button>
+    <!-- <canvas id='grabFrameCanvas'></canvas> -->
+    <button id='grabFrameButton'>Send test Commnad</button>
   </div>
   <!-- <div>
     <canvas id='takePhotoCanvas'></canvas>
@@ -21,75 +17,6 @@ in the form of a Blob with <code>takePhoto()</code> or as a ImageBitmap with
 
 
 <script>
-  
-var imageCapture;
-
-// function onGetUserMediaButtonClick() {
-
-//   let device;
-//       try {
-//         device = await navigator.usb.requestDevice({ filters: [{
-//             vendorId: 0x1908,
-//             productId: 0x3210,
-//             // classCode: 0xFF, // vendor-specific
-//             protocolCode: 0x01
-//         }]});
-//       } catch (err) {
-//         // No device was selected.
-//       }
-    
-//       if (device !== undefined) {
-//         // Add |device| to the UI.
-//       }
-
-//   // navigator.mediaDevices.getUserMedia({video: true})
-//   // .then(mediaStream => {
-//   //   document.querySelector('video').srcObject = mediaStream;
-
-//   //   const track = mediaStream.getVideoTracks()[0];
-//   //   imageCapture = new ImageCapture(track);
-//   // })
-//   // .catch(error => ChromeSamples.log(error));
-// }
-
-function onGrabFrameButtonClick() {
-  imageCapture.grabFrame()
-  .then(imageBitmap => {
-    const canvas = document.querySelector('#grabFrameCanvas');
-    drawCanvas(canvas, imageBitmap);
-  })
-  .catch(error => ChromeSamples.log(error));
-}
-
-function onTakePhotoButtonClick() {
-  imageCapture.takePhoto()
-  .then(blob => createImageBitmap(blob))
-  .then(imageBitmap => {
-    const canvas = document.querySelector('#takePhotoCanvas');
-    drawCanvas(canvas, imageBitmap);
-  })
-  .catch(error => ChromeSamples.log(error));
-}
-
-/* Utils */
-
-function drawCanvas(canvas, img) {
-  canvas.width = getComputedStyle(canvas).width.split('px')[0];
-  canvas.height = getComputedStyle(canvas).height.split('px')[0];
-  let ratio  = Math.min(canvas.width / img.width, canvas.height / img.height);
-  let x = (canvas.width - img.width * ratio) / 2;
-  let y = (canvas.height - img.height * ratio) / 2;
-  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-  canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
-      x, y, img.width * ratio, img.height * ratio);
-}
-
-document.querySelector('video').addEventListener('play', function() {
-  document.querySelector('#grabFrameButton').disabled = false;
-  document.querySelector('#takePhotoButton').disabled = false;
-});
-
-
 document.addEventListener('DOMContentLoaded', async () => {
     let devices = await navigator.usb.getDevices();
     devices.forEach(device => {
@@ -104,24 +31,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   navigator.usb.addEventListener('disconnect', event => {
     // Remove |event.device| from the UI.
   });
-
-
 </script>
 
-<script>    
-  // document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
-let button = document.querySelector('#getUserMediaButton');
-button.addEventListener('click', async () => {
-  let device;
+<script>  // Connet to WebCam button
+let button1 = document.querySelector('#getUserMediaButton');
+button1.addEventListener('click', async () => {
 
   const opts = {
-  filters: [{
-    classCode: 16, // 0x10
-    subclassCode: 2, // 0x02
-    protocolCode: 0x00,
-  }]
+  filters: [
+    // {
+    // classCode: 16, // 0x10
+    // subclassCode: 2, // 0x02
+    // protocolCode: 0x00,
+    // }
+  ]
   }
 
+  let device;
   try {
        device = await navigator.usb.requestDevice(opts)
        .then(usbDevice => {
@@ -132,26 +58,15 @@ button.addEventListener('click', async () => {
         });
   } catch (err) {
     alert('Error: ' + err.message);
-  }
-    
-  // let usbDeviceProperties = { name: "USB2.0 PC CAMERA", vendorId: 1908, productId: 3120 };
-  // try {
-  //   device = await navigator.usb.requestDevice({ filters: usbDeviceProperties });
-  // } catch (error) {
-  //   alert('Error: ' + error.message);
-  // }
+  }    
 });
 </script>
 
-<script>    
+<script>    // Send test Commnad
 let button2 = document.querySelector('#grabFrameButton');
 button2.addEventListener('click', async () => {
+
   let device2;
-
-  const opts = {
-  filters: []
-  }
-
   try {
       device2 = await navigator.usb.requestDevice(opts)
       .then(usbDevice => {
@@ -164,11 +79,6 @@ button2.addEventListener('click', async () => {
     alert('Error: ' + err.message);
   }
 });
-</script>
-
-<script>    
-  // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
-  // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
 </script>
 
 
