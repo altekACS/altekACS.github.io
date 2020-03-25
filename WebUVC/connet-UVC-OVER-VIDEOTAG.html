@@ -3,9 +3,11 @@
 <div id='results'>
   <div>
     <video autoplay></video>
-    <div>
-    </div>
-    <button id='getUserMediaButton'>Get User Media</button>
+    <div></div>
+    <button id='getUserMediaButton'>Start Camera</button>
+    <button id='releaseMediaButton'>Stop Camera</button>
+    <input type="range">Adjust Zoom</input>
+    <div id="log"></div>
   </div>
   <!-- <div>
     <canvas id='grabFrameCanvas'></canvas>
@@ -21,25 +23,77 @@
 <script>
   
 var imageCapture;
+let videoElement = document.querySelector("video");
+let logElement = document.querySelector("log");
+// function onGetUserMediaButtonClick() {
+//   navigator.mediaDevices.getUserMedia({video: true, audio: true})
+//   .then(mediaStream => {
+//     document.querySelector('video').srcObject = mediaStream;
+
+//     const track = mediaStream.getVideoTracks()[0];
+//     imageCapture = new ImageCapture(track);
+//   })
+//   .catch(error => ChromeSamples.log(error));
+// }
+
 function onGetUserMediaButtonClick() {
-  navigator.mediaDevices.getUserMedia({video: true, audio: true})
-  .then(mediaStream => {
-    document.querySelector('video').srcObject = mediaStream;
+  navigator.mediaDevices.getUserMedia({
+    video: true,
+    audio: true
+  }).then(function(stream) {
+    let audioTracks = stream.getAudioTracks();
+    let videoTracks = stream.getVideoTracks();
+    
+    videoElement.srcObject = stream;
+    if (audioTracks.length) {
+        audioTrack = audioTracks[0];
+    }
+    if (videoTracks.length) {
+        videoTrack = videoTracks[0];
+        imageCapture = new ImageCapture(videoTrack);
+    }
+  }).then(function() {
+    new Promise(function(resolve) {
+      videoElement.onloadedmetadata = resolve;
+    });
+  }).then(function() {
 
-    const track = mediaStream.getVideoTracks()[0];
-    imageCapture = new ImageCapture(track);
-  })
-  .catch(error => ChromeSamples.log(error));
+  }).catch(handleError);
 }
 
-function onGrabFrameButtonClick() {
-  imageCapture.grabFrame()
-  .then(imageBitmap => {
-    const canvas = document.querySelector('#grabFrameCanvas');
-    drawCanvas(canvas, imageBitmap);
-  })
-  .catch(error => ChromeSamples.log(error));
+function onReleaseMediaButtonClick(){
+
+  document.getElementById("releaseMediaButton").addEventListener("click", function() {
+  if (videoTrack) {
+    videoTrack.stop();
+  }
+  if (audioTrack) {
+    audioTrack.stop();
+  }
+
+  videoTrack = audioTrack = null;
+  document.querySelector('video').srcObject = null;
+  });
 }
+
+function log(msg) {
+  logElement.innerHTML += (msg + "<br>");
+}
+
+function handleError(reason) {
+  log("Error <code>" + reason.name +
+      "</code> in constraint <code>" + reason.constraint +
+      "</code>: " + reason.message);
+}
+
+// function onGrabFrameButtonClick() {
+//   imageCapture.grabFrame()
+//   .then(imageBitmap => {
+//     const canvas = document.querySelector('#grabFrameCanvas');
+//     drawCanvas(canvas, imageBitmap);
+//   })
+//   .catch(error => ChromeSamples.log(error));
+// }
 
 function onTakePhotoButtonClick() {
   imageCapture.takePhoto()
@@ -64,18 +118,19 @@ function drawCanvas(canvas, img) {
       x, y, img.width * ratio, img.height * ratio);
 }
 
-document.querySelector('video').addEventListener('play', function() {
-  document.querySelector('#grabFrameButton').disabled = false;
-  document.querySelector('#takePhotoButton').disabled = false;
-});
+// document.querySelector('video').addEventListener('play', function() {
+//   document.querySelector('#grabFrameButton').disabled = false;
+//   document.querySelector('#takePhotoButton').disabled = false;
+// });
 
 
 </script>
 
 <script>
   document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
-  document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
-  document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
+  document.querySelector('#releaseMediaButton').addEventListener('click', onReleaseMediaButtonClick);
+  // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
+  // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
 </script>
 
 

@@ -7,3 +7,7 @@ video {
 input {
   width: 100%;
 }
+
+#logTag{
+  padding-top: 10px;
+}
