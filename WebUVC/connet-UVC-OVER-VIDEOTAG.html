@@ -3,25 +3,26 @@
 <div id='results'>
   <div>
     <video autoplay></video>
+    <div>
+    </div>
     <button id='getUserMediaButton'>Get User Media</button>
   </div>
-  <div>
+  <!-- <div>
     <canvas id='grabFrameCanvas'></canvas>
     <button id='grabFrameButton'>Grab Frame</button>
   </div>
   <div>
     <canvas id='takePhotoCanvas'></canvas>
     <button id='takePhotoButton'>Take Photo</button>
-  </div>
+  </div> -->
 </div>
 
 
 <script>
   
 var imageCapture;
-
 function onGetUserMediaButtonClick() {
-  navigator.mediaDevices.getUserMedia({video: true})
+  navigator.mediaDevices.getUserMedia({video: true, audio: true})
   .then(mediaStream => {
     document.querySelector('video').srcObject = mediaStream;
 
