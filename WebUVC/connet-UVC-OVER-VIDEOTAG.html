@@ -18,6 +18,7 @@
           <option value="invert">Invert</option>
           <option value="sepia">Sepia</option>
       </select>
+      <button id='applyFilterButton'>Apply Filter</button>
     </div>
 
     <div id="log"></div>
@@ -92,10 +93,10 @@ function onReleaseMediaButtonClick(){
   });
 }
 
-
-filterSelect.onchange = function() {
+function onApplyFilterButtonClick(){
+  //videoElement.className = filters[filterIndex++ % filters.length];
   videoElement.className = filterSelect.value;
-};
+}
 
 function log(msg) {
   document.getElementById("log").innerHTML += (msg + "<br>");
@@ -160,6 +161,8 @@ navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handl
 <script>
   document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
   document.querySelector('#releaseMediaButton').addEventListener('click', onReleaseMediaButtonClick);
+  document.querySelector('#applyFilterButton').addEventListener('click', onApplyFilterButtonClick);
+
   // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
   // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
 </script>
