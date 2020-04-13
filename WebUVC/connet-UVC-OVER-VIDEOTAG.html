@@ -1,5 +1,6 @@
 <h3>VideoTag - Example</h3>
 
+
 <div id='results'>
   <div>
     <video autoplay></video>
@@ -7,6 +8,16 @@
     <button id='getUserMediaButton'>Start Camera</button>
     <button id='releaseMediaButton'>Stop Camera</button>
     <input type="range">Adjust Zoom</input>
+
+    <label for="filter">Filter: </label>
+    <select id="filter">
+        <option value="none">None</option>
+        <option value="blur">Blur</option>
+        <option value="grayscale">Grayscale</option>
+        <option value="invert">Invert</option>
+        <option value="sepia">Sepia</option>
+    </select>
+
     <div id="log"></div>
   </div>
   <!-- <div>
