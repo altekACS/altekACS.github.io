@@ -1,313 +1,334 @@
 <html lang="en">
-  <body>
-    <div id='results' style="text-align:center;">
-      <h3>Altek WebCam - HTML5 video element</h3>  
-        <!-- <div id='results'> -->
-        <div>
-          <label for="videoSource">Video source: </label><select id="videoSource"></select>
-          <button id='getUserMediaButton'>Start Camera</button>
-          <button id='releaseMediaButton'>Stop Camera</button>   
-          <div>
-            <video autoplay playsinline controls></video>
-            <div><input type="range" min="640" max = "640" step = "1" id = 'InZoom' disabled>ZoomInOut</input></div>
-            <div><input type="range" min="640" max = "640" step = "1" id = 'InReso' disabled>Resolution</input></div>
-            
-            <div id="filter_section">    
-              <label for="filter">Filter: </label>
-              <select id="filter">
-                  <option value="none">None</option>
-                  <option value="blur">Blur</option>
-                  <option value="grayscale">Grayscale</option>
-                  <option value="brightness">brightness</option>
-                  <option value="contrast">contrast</option>
-                  <option value="hue-rotate">hue-rotate</option>
-                  <option value="hue-rotate2">hue-rotate2</option>
-                  <option value="hue-rotate3">hue-rotate3</option>
-                  <option value="saturate">hue-rotate2</option>
-                  <option value="invert">Invert</option>
-                  <option value="sepia">Sepia</option>
-              </select>
-              <button id='applyFilterButton'>Apply Filter</button>
-          </div>
-      
-          <div id="log"></div>
-        </div>
-        <!-- <div>
-          <canvas id='grabFrameCanvas'></canvas>
-          <button id='grabFrameButton'>Grab Frame</button>
-        </div>
-        <div>
-          <canvas id='takePhotoCanvas'></canvas>
-          <button id='takePhotoButton'>Take Photo</button>
-        </div> -->
-    </div>
-  
-    <style>
-        .blur {
-          -webkit-filter: blur(3px);
-          -moz-filter: blur(3px);
-          -o-filter: blur(3px);
-          -ms-filter: blur(3px);
-          filter: blur(3px);
-        }
-        .brightness {
-          -webkit-filter: brightness(5);
-          -moz-filter: brightness(5);
-          -o-filter: brightness(5);
-          -ms-filter: brightness(5);
-          filter: brightness(5);
-        }
-        .contrast {
-          -webkit-filter: contrast(8);
-          -moz-filter: contrast(8);
-          -o-filter: contrast(8);
-          -ms-filter: contrast(8);
-          filter: contrast(8);
-        }
-        .hue-rotate {
-          -webkit-filter: hue-rotate(90deg);
-          -moz-filter: hue-rotate(90deg);
-          -o-filter: hue-rotate(90deg);
-          -ms-filter: hue-rotate(90deg);
-          filter: hue-rotate(90deg);
-        }
-        .hue-rotate2 {
-          -webkit-filter: hue-rotate(180deg);
-          -moz-filter: hue-rotate(180deg);
-          -o-filter: hue-rotate(180deg);
-          -ms-filter: hue-rotate(180deg);
-          filter: hue-rotate(180deg);
-        }
-        .hue-rotate3 {
-          -webkit-filter: hue-rotate(270deg);
-          -moz-filter: hue-rotate(270deg);
-          -o-filter: hue-rotate(270deg);
-          -ms-filter: hue-rotate(270deg);
-          filter: hue-rotate(270deg);
-        }
-        .saturate {
-          -webkit-filter: saturate(10);
-          -moz-filter: saturate(10);
-          -o-filter: saturate(10);
-          -ms-filter: saturate(10);
-          filter: saturate(10);
-        }
-        .grayscale {
-          -webkit-filter: grayscale(1);
-          -moz-filter: grayscale(1);
-          -o-filter: grayscale(1);
-          -ms-filter: grayscale(1);
-          filter: grayscale(1);
-        }
-        .sepia {
-          -webkit-filter: sepia(1);
-          -moz-filter: sepia(1);
-          -o-filter: sepia(1);
-          -ms-filter: sepia(1);
-          filter: sepia(1);
-        }
-        .invert {
-          -webkit-filter: invert(1);
-          -moz-filter: invert(1);
-          -o-filter: invert(1);
-          -ms-filter: invert(1);
-          filter: invert(1);
-        }
-    </style>
-      
-    <script>
-      // Variables
-      var imageCapture;
-      var mediaStream;
-      const videoElement = document.querySelector("video");
-      const videoSelect = document.querySelector('select#videoSource');
-      const filterSelect = document.querySelector('select#filter');
-      const logElement = document.querySelector("log");
-      const constraints = { audio: false, video: true };
-      const inputZoom = document.getElementById("InZoom")
-      const inputReso = document.getElementById("InReso")
-
-      // Auto load
-      navigator.mediaDevices.enumerateDevices()
-        .then(gotDevices)
-        .catch(error => {
-          console.log('enumerateDevices() error: ', error);
-        })
-        .then(getStream);
-      
-      // From the list of media devices available, set up the camera source <select>,
-      // then get a video stream from the default camera source.
-      function gotDevices(deviceInfos) {
-        console.log('got gotDevices() deviceInfos: ');  
-        for (var i = 0; i !== deviceInfos.length; ++i) {
-          var deviceInfo = deviceInfos[i];
-          console.log('Found media input or output device: ', deviceInfo);
-          var option = document.createElement('option');
-          option.value = deviceInfo.deviceId;
-          if (deviceInfo.kind === 'videoinput') {
-            option.text = deviceInfo.label || 'Camera ' + (videoSelect.length + 1);
-            videoSelect.appendChild(option);
-          }
-        }
-      }
-
-      // Get a video stream from the currently selected camera source.
-      function getStream() {
-        console.log('getUserMedia() getStream: ');  
-        // navigator.mediaDevices.getUserMedia(constraints)
-        //   .then(gotStream)
-        //   .catch(error => {
-        //     console.log('getUserMedia error: ', error);
-        //   });
-      }
-      // Display the stream from the currently selected camera source, and then
-      // create an ImageCapture object, using the video from the stream.
-      function gotStream(stream) {
-        console.log('getUserMedia() got stream: ', stream);
-        // let videoTrack = stream.getVideoTracks();
-        // var option = document.createElement('option');
-        // option.text = videoTrack.label 
-        // videoSelect.appendChild(option);
-        // video.srcObject = stream;
-        // video.classList.remove('hidden');
-        // imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
-        //getCapabilities();
-      }
-     
-      function onGetUserMediaButtonClick() {
-        navigator.mediaDevices.getUserMedia({
-          video: true,
-          audio: false
-        }).then(function(stream) {
-          let audioTracks = stream.getAudioTracks();
-          let videoTracks = stream.getVideoTracks();
-          
-          videoElement.srcObject = stream;
-          if (audioTracks.length) {
-              audioTrack = audioTracks[0];
-          }
-          if (videoTracks.length) {
-              videoTrack = videoTracks[0];
-              imageCapture = new ImageCapture(videoTrack);
-          }
-      
-          const capabilities = videoTrack.getCapabilities();
-          const settings = videoTrack.getSettings();
-      
-          // Check whether zoom is supported or not.
-          if (!('zoom' in capabilities)) {
-            log('Zoom is not supported by ' + videoTrack.label);
-            return;
-          }
-      
-          // Map zoom to a slider element.
-          inputZoom.min = capabilities.zoom.min;
-          inputZoom.max = capabilities.zoom.max;
-          inputZoom.step = capabilities.zoom.step;
-          inputZoom.value = settings.zoom;
-          inputZoom.oninput = function(event) {
-          videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
-          inputZoom.disabled = false
-      
-        }).then(photoCapabilities => {
-          const settings = imageCapture.track.getSettings();
-      
-          inputReso.min = photoCapabilities.imageWidth.min;
-          inputReso.max = photoCapabilities.imageWidth.max;
-          inputReso.step = photoCapabilities.imageWidth.step;
-          inputReso.disabled = false
+  <div id="container">
+    <body>
+      <div id='results' style="text-align:center;">
+        <h3>Altek WebCam - HTML5 video element</h3>  
+          <div>                 
+            <div class="select">
+              <label for="audioSource">Audio source: </label><select id="audioSource"></select>
+              <button id='getUserMediaButton'>Start Camera</button>
+            </div>     
+            <div class="select">
+              <label for="videoSource">Video source: </label><select id="videoSource"></select>
+              <button id='releaseMediaButton'>Stop  Camera</button>
+            </div>
+            <div>
+              <video autoplay playsinline controls></video>
+              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InZoom' disabled>ZoomInOut</input></div>
+              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InReso' disabled>Resolution</input></div>
+              
+              <div id="filter_section">    
+                <label for="filter">Filter: </label>
+                <select id="filter">
+                    <option value="none">None</option>
+                    <option value="blur">Blur</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="brightness">brightness</option>
+                    <option value="contrast">contrast</option>
+                    <option value="hue-rotate">hue-rotate</option>
+                    <option value="hue-rotate2">hue-rotate2</option>
+                    <option value="hue-rotate3">hue-rotate3</option>
+                    <option value="saturate">hue-rotate2</option>
+                    <option value="invert">Invert</option>
+                    <option value="sepia">Sepia</option>
+                </select>
+                <button id='applyFilterButton'>Apply Filter</button>
+            </div>
         
-      }).then(function() {
-          new Promise(function(resolve) {
-            videoElement.onloadedmetadata = resolve;
-          });
-        }).then(function() {
-      
-        }).catch(handleError);
-      }
-      
-      function onReleaseMediaButtonClick(){
-      
-        document.getElementById("releaseMediaButton").addEventListener("click", function() {
-        if (videoTrack) {
-          videoTrack.stop();
-        }
-        if (audioTrack) {
-          audioTrack.stop();
-        }
-      
-        videoTrack = audioTrack = null;
-        document.querySelector('video').srcObject = null;
-        });
-      }
-      
-      function onApplyFilterButtonClick(){
-        console.log('onApplyFiterButtonClick: ',filterSelect.value);
-        videoElement.className = filterSelect.value;
-      }
-      
-      function log(msg) {
-        document.getElementById("log").innerHTML += (msg + "<br>");
-      }
-      
-      function handleError(reason) {
-        log("Error <code>" + reason.name +
-            "</code> in constraint <code>" + reason.constraint +
-            "</code>: " + reason.message);
-      }
-      
-      function handleSuccess(stream) {
-        window.stream = stream; // make stream available to browser console
-        videoElement.srcObject = stream;
-      }
-      
-      function handleError(error) {
-        console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
-      }
-      
-      // function onGrabFrameButtonClick() {
-      //   imageCapture.grabFrame()
-      //   .then(imageBitmap => {
-      //     const canvas = document.querySelector('#grabFrameCanvas');
-      //     drawCanvas(canvas, imageBitmap);
-      //   })
-      //   .catch(error => ChromeSamples.log(error));
-      // }
-      
-      function onTakePhotoButtonClick() {
-        imageCapture.takePhoto()
-        .then(blob => createImageBitmap(blob))
-        .then(imageBitmap => {
-          const canvas = document.querySelector('#takePhotoCanvas');
-          drawCanvas(canvas, imageBitmap);
-        })
-        .catch(error => ChromeSamples.log(error));
-      }
-      
-      /* Utils */
-      
-      function drawCanvas(canvas, img) {
-        canvas.width = getComputedStyle(canvas).width.split('px')[0];
-        canvas.height = getComputedStyle(canvas).height.split('px')[0];
-        let ratio  = Math.min(canvas.width / img.width, canvas.height / img.height);
-        let x = (canvas.width - img.width * ratio) / 2;
-        let y = (canvas.height - img.height * ratio) / 2;
-        canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-        canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
-            x, y, img.width * ratio, img.height * ratio);
-      }
-      
-      </script>
-      
+            <div id="log"></div>
+          </div>
+          <!-- <div>
+            <canvas id='grabFrameCanvas'></canvas>
+            <button id='grabFrameButton'>Grab Frame</button>
+          </div>
+          <div>
+            <canvas id='takePhotoCanvas'></canvas>
+            <button id='takePhotoButton'>Take Photo</button>
+          </div> -->
+      </div>
+    
+      <style>
+          select {
+            width: 150px;
+          }
+          rangeBar {
+            width: 150px;
+            margin: 10px 0 0 0;
+          }
+          video {
+            margin: 10px 0 0 0;
+          }
+          .blur {
+            -webkit-filter: blur(3px);
+            -moz-filter: blur(3px);
+            -o-filter: blur(3px);
+            -ms-filter: blur(3px);
+            filter: blur(3px);
+          }
+          .brightness {
+            -webkit-filter: brightness(5);
+            -moz-filter: brightness(5);
+            -o-filter: brightness(5);
+            -ms-filter: brightness(5);
+            filter: brightness(5);
+          }
+          .contrast {
+            -webkit-filter: contrast(8);
+            -moz-filter: contrast(8);
+            -o-filter: contrast(8);
+            -ms-filter: contrast(8);
+            filter: contrast(8);
+          }
+          .hue-rotate {
+            -webkit-filter: hue-rotate(90deg);
+            -moz-filter: hue-rotate(90deg);
+            -o-filter: hue-rotate(90deg);
+            -ms-filter: hue-rotate(90deg);
+            filter: hue-rotate(90deg);
+          }
+          .hue-rotate2 {
+            -webkit-filter: hue-rotate(180deg);
+            -moz-filter: hue-rotate(180deg);
+            -o-filter: hue-rotate(180deg);
+            -ms-filter: hue-rotate(180deg);
+            filter: hue-rotate(180deg);
+          }
+          .hue-rotate3 {
+            -webkit-filter: hue-rotate(270deg);
+            -moz-filter: hue-rotate(270deg);
+            -o-filter: hue-rotate(270deg);
+            -ms-filter: hue-rotate(270deg);
+            filter: hue-rotate(270deg);
+          }
+          .saturate {
+            -webkit-filter: saturate(10);
+            -moz-filter: saturate(10);
+            -o-filter: saturate(10);
+            -ms-filter: saturate(10);
+            filter: saturate(10);
+          }
+          .grayscale {
+            -webkit-filter: grayscale(1);
+            -moz-filter: grayscale(1);
+            -o-filter: grayscale(1);
+            -ms-filter: grayscale(1);
+            filter: grayscale(1);
+          }
+          .sepia {
+            -webkit-filter: sepia(1);
+            -moz-filter: sepia(1);
+            -o-filter: sepia(1);
+            -ms-filter: sepia(1);
+            filter: sepia(1);
+          }
+          .invert {
+            -webkit-filter: invert(1);
+            -moz-filter: invert(1);
+            -o-filter: invert(1);
+            -ms-filter: invert(1);
+            filter: invert(1);
+          }
+      </style>
+        
       <script>
-        document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
-        document.querySelector('#releaseMediaButton').addEventListener('click', onReleaseMediaButtonClick);
-        document.querySelector('#applyFilterButton').addEventListener('click', onApplyFilterButtonClick);
-      
-        // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
-        // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
-      </script>
-  </body>
+        // Variables
+        var imageCapture;
+        var mediaStream;
+        const videoElement = document.querySelector("video");
+        const videoSelect = document.querySelector('select#videoSource');
+        const filterSelect = document.querySelector('select#filter');
+        const logElement = document.querySelector("log");
+        const inputZoom = document.getElementById("InZoom")
+        const inputReso = document.getElementById("InReso")
+        const constraints = { audio: false, video: true };
+  
+        // Auto load
+        navigator.mediaDevices.enumerateDevices()
+          .then(gotDevices)
+          .catch(error => {
+            console.log('enumerateDevices() error: ', error);
+          })
+          .then(getStream);
+        
+        // From the list of media devices available, set up the camera source <select>,
+        // then get a video stream from the default camera source.
+        function gotDevices(deviceInfos) {
+          console.log('got gotDevices() deviceInfos: ');  
+          for (var i = 0; i !== deviceInfos.length; ++i) {
+            var deviceInfo = deviceInfos[i];
+            console.log('Found media input or output device: ', deviceInfo);
+            var option = document.createElement('option');
+            option.value = deviceInfo.deviceId;
+            if (deviceInfo.kind === 'audioinput') {
+              option.text = deviceInfo.label || `Microphone ${audioSelect.length + 1}`;
+              audioSelect.appendChild(option);
+            }
+            else if (deviceInfo.kind === 'videoinput') {
+              option.text = deviceInfo.label || 'Camera ' + (videoSelect.length + 1);
+              videoSelect.appendChild(option);
+            }
+          }
+        }
+  
+        // Get a video stream from the currently selected camera source.
+        function getStream() {
+          console.log('getUserMedia() getStream: ');  
+          // navigator.mediaDevices.getUserMedia(constraints)
+          //   .then(gotStream)
+          //   .catch(error => {
+          //     console.log('getUserMedia error: ', error);
+          //   });
+        }
+        // Display the stream from the currently selected camera source, and then
+        // create an ImageCapture object, using the video from the stream.
+        function gotStream(stream) {
+          console.log('getUserMedia() got stream: ', stream);
+          // let videoTrack = stream.getVideoTracks();
+          // var option = document.createElement('option');
+          // option.text = videoTrack.label 
+          // videoSelect.appendChild(option);
+          // video.srcObject = stream;
+          // video.classList.remove('hidden');
+          // imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
+          //getCapabilities();
+        }
+       
+        function onGetUserMediaButtonClick() {
+          navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: false
+          }).then(function(stream) {
+            let audioTracks = stream.getAudioTracks();
+            let videoTracks = stream.getVideoTracks();
+            
+            videoElement.srcObject = stream;
+            if (audioTracks.length) {
+                audioTrack = audioTracks[0];
+            }
+            if (videoTracks.length) {
+                videoTrack = videoTracks[0];
+                imageCapture = new ImageCapture(videoTrack);
+            }
+        
+            const capabilities = videoTrack.getCapabilities();
+            const settings = videoTrack.getSettings();
+        
+            // Check whether zoom is supported or not.
+            if (!('zoom' in capabilities)) {
+              log('Zoom is not supported by ' + videoTrack.label);
+              return;
+            }
+        
+            // Map zoom to a slider element.
+            inputZoom.min = capabilities.zoom.min;
+            inputZoom.max = capabilities.zoom.max;
+            inputZoom.step = capabilities.zoom.step;
+            inputZoom.value = settings.zoom;
+            inputZoom.oninput = function(event) {
+            videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
+            inputZoom.disabled = false
+        
+          }).then(photoCapabilities => {
+            const settings = imageCapture.track.getSettings();
+        
+            inputReso.min = photoCapabilities.imageWidth.min;
+            inputReso.max = photoCapabilities.imageWidth.max;
+            inputReso.step = photoCapabilities.imageWidth.step;
+            inputReso.disabled = false
+          
+        }).then(function() {
+            new Promise(function(resolve) {
+              videoElement.onloadedmetadata = resolve;
+            });
+          }).then(function() {
+        
+          }).catch(handleError);
+        }
+        
+        function onReleaseMediaButtonClick(){
+        
+          document.getElementById("releaseMediaButton").addEventListener("click", function() {
+          if (videoTrack) {
+            videoTrack.stop();
+          }
+          if (audioTrack) {
+            audioTrack.stop();
+          }
+        
+          videoTrack = audioTrack = null;
+          document.querySelector('video').srcObject = null;
+          });
+        }
+        
+        function onApplyFilterButtonClick(){
+          console.log('onApplyFiterButtonClick: ',filterSelect.value);
+          videoElement.className = filterSelect.value;
+        }
+        
+        function log(msg) {
+          document.getElementById("log").innerHTML += (msg + "<br>");
+        }
+        
+        function handleError(reason) {
+          log("Error <code>" + reason.name +
+              "</code> in constraint <code>" + reason.constraint +
+              "</code>: " + reason.message);
+        }
+        
+        function handleSuccess(stream) {
+          window.stream = stream; // make stream available to browser console
+          videoElement.srcObject = stream;
+        }
+        
+        function handleError(error) {
+          console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
+        }
+        
+        // function onGrabFrameButtonClick() {
+        //   imageCapture.grabFrame()
+        //   .then(imageBitmap => {
+        //     const canvas = document.querySelector('#grabFrameCanvas');
+        //     drawCanvas(canvas, imageBitmap);
+        //   })
+        //   .catch(error => ChromeSamples.log(error));
+        // }
+        
+        function onTakePhotoButtonClick() {
+          imageCapture.takePhoto()
+          .then(blob => createImageBitmap(blob))
+          .then(imageBitmap => {
+            const canvas = document.querySelector('#takePhotoCanvas');
+            drawCanvas(canvas, imageBitmap);
+          })
+          .catch(error => ChromeSamples.log(error));
+        }
+        
+        /* Utils */
+        
+        function drawCanvas(canvas, img) {
+          canvas.width = getComputedStyle(canvas).width.split('px')[0];
+          canvas.height = getComputedStyle(canvas).height.split('px')[0];
+          let ratio  = Math.min(canvas.width / img.width, canvas.height / img.height);
+          let x = (canvas.width - img.width * ratio) / 2;
+          let y = (canvas.height - img.height * ratio) / 2;
+          canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+          canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
+              x, y, img.width * ratio, img.height * ratio);
+        }
+        
+        </script>
+        
+        <script>
+          document.querySelector('#getUserMediaButton').addEventListener('click', onGetUserMediaButtonClick);
+          document.querySelector('#releaseMediaButton').addEventListener('click', onReleaseMediaButtonClick);
+          document.querySelector('#applyFilterButton').addEventListener('click', onApplyFilterButtonClick);
+        
+          // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
+          // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
+        </script>
+    </body>
+  
+  </div>
 </html>
 
 
