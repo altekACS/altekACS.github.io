@@ -37,7 +37,7 @@
   
 var imageCapture;
 let videoElement = document.querySelector("video");
-let filterElement = document.querySelector('select#filter');
+let filterSelect = document.querySelector('select#filter');
 let logElement = document.querySelector("log");
 // function onGetUserMediaButtonClick() {
 //   navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -91,8 +91,8 @@ function onReleaseMediaButtonClick(){
 }
 
 
-filterElement.onchange = function() {
-  videoElement.className = filterElement.value;
+filterSelect.onchange = function() {
+  videoElement.className = filterSelect.value;
 };
 
 function log(msg) {
