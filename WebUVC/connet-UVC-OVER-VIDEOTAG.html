@@ -1,4 +1,42 @@
-<h3>VideoTag - Example</h3>
+<h3>Altek WebCam - HTML5 video element</h3>  
+<div id='results'>
+  <div>
+    <button id='getUserMediaButton'>Start Camera</button>
+    <button id='releaseMediaButton'>Stop Camera</button>   
+    <div>
+      <video autoplay></video>
+    </div>
+    <input type="range" disabled>Adjust Zoom</input> 
+    <div id="filter_section">
+      <label for="filter">Filter: </label>
+      <select id="filter">
+          <option value="none">None</option>
+          <option value="blur">Blur</option>
+          <option value="grayscale">Grayscale</option>
+          <option value="brightness">brightness</option>
+          <option value="contrast">contrast</option>
+          <option value="hue-rotate">hue-rotate</option>
+          <option value="hue-rotate2">hue-rotate2</option>
+          <option value="hue-rotate3">hue-rotate3</option>
+          <option value="saturate">hue-rotate2</option>
+          <option value="invert">Invert</option>
+          <option value="sepia">Sepia</option>
+      </select>
+      <button id='applyFilterButton'>Apply Filter</button>
+    </div>
+
+    <div id="log"></div>
+  </div>
+  <!-- <div>
+    <canvas id='grabFrameCanvas'></canvas>
+    <button id='grabFrameButton'>Grab Frame</button>
+  </div>
+  <div>
+    <canvas id='takePhotoCanvas'></canvas>
+    <button id='takePhotoButton'>Take Photo</button>
+  </div> -->
+</div>
+
 
 <style>
   .blur {
@@ -71,46 +109,7 @@
     -ms-filter: invert(1);
     filter: invert(1);
   }
-  </style>
-  
-<div id='results'>
-  <div>
-    <button id='getUserMediaButton'>Start Camera</button>
-    <button id='releaseMediaButton'>Stop Camera</button>   
-    <div>
-      <video autoplay></video>
-    </div>
-    <input type="range">Adjust Zoom</input> 
-    <div id="filter_section">
-      <label for="filter">Filter: </label>
-      <select id="filter">
-          <option value="none">None</option>
-          <option value="blur">Blur</option>
-          <option value="grayscale">Grayscale</option>
-          <option value="brightness">brightness</option>
-          <option value="contrast">contrast</option>
-          <option value="hue-rotate">hue-rotate</option>
-          <option value="hue-rotate2">hue-rotate2</option>
-          <option value="hue-rotate3">hue-rotate3</option>
-          <option value="saturate">hue-rotate2</option>
-          <option value="invert">Invert</option>
-          <option value="sepia">Sepia</option>
-      </select>
-      <button id='applyFilterButton'>Apply Filter</button>
-    </div>
-
-    <div id="log"></div>
-  </div>
-  <!-- <div>
-    <canvas id='grabFrameCanvas'></canvas>
-    <button id='grabFrameButton'>Grab Frame</button>
-  </div>
-  <div>
-    <canvas id='takePhotoCanvas'></canvas>
-    <button id='takePhotoButton'>Take Photo</button>
-  </div> -->
-</div>
-
+</style>
 
 <script>
   
@@ -119,22 +118,15 @@ const videoElement = document.querySelector("video");
 const filterSelect = document.querySelector('select#filter');
 const logElement = document.querySelector("log");
 const constraints = { audio: false, video: true };
-//navigator.mediaDevices.getUserMedia(constraints).then((stream) => {video.srcObject = stream});
+const inputZoom = document.querySelector('input[type="range"]');
 
-let filterIndex = 0;
-const filters = [
-  'grayscale',
-  'sepia',
-  'blur',
-  'brightness',
-  'contrast',
-  'hue-rotate',
-  'hue-rotate2',
-  'hue-rotate3',
-  'saturate',
-  'invert',
-  ''
-];
+// Check whether zoom is supported or not.
+// if (!('zoom' in capabilities)) {
+//   log('Zoom is not supported by ' + track.label);
+//   return;
+// //    return Promise.reject( {reason: 'Zoom is not supported by ' + track.label} );
+// }
+
 
 // function onGetUserMediaButtonClick() {
 //   navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -164,6 +156,25 @@ function onGetUserMediaButtonClick() {
         videoTrack = videoTracks[0];
         imageCapture = new ImageCapture(videoTrack);
     }
+
+    const capabilities = videoTrack.getCapabilities();
+    const settings = videoTrack.getSettings();
+
+    // Check whether zoom is supported or not.
+    if (!('zoom' in capabilities)) {
+      log('Zoom is not supported by ' + videoTrack.label);
+      return;
+    }
+
+    // Map zoom to a slider element.
+    inputZoom.min = capabilities.zoom.min;
+    inputZoom.max = capabilities.zoom.max;
+    inputZoom.step = capabilities.zoom.step;
+    inputZoom.value = settings.zoom;
+    inputZoom.oninput = function(event) {
+    videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
+    inputZoom.disabled = false
+
   }).then(function() {
     new Promise(function(resolve) {
       videoElement.onloadedmetadata = resolve;
@@ -189,14 +200,12 @@ function onReleaseMediaButtonClick(){
 }
 
 function onApplyFilterButtonClick(){
-  console.log('onApplyFiterButtonClick: ',filters[filterIndex++ % filters.length]);
-  //videoElement.className = filters[filterIndex++ % filters.length];
+  console.log('onApplyFiterButtonClick: ',filterSelect.value);
   videoElement.className = filterSelect.value;
 }
 
 function log(msg) {
   document.getElementById("log").innerHTML += (msg + "<br>");
-  //logElement.innerHTML += (msg + "<br>");
 }
 
 function handleError(reason) {
