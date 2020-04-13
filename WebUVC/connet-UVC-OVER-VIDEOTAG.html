@@ -96,7 +96,8 @@ filterSelect.onchange = function() {
 };
 
 function log(msg) {
-  logElement.innerHTML += (msg + "<br>");
+  document.getElementById("log").innerHTML += (msg + "<br>");
+  //logElement.innerHTML += (msg + "<br>");
 }
 
 function handleError(reason) {
