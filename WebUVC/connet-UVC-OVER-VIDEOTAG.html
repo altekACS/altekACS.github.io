@@ -3,18 +3,24 @@
 
 <div id='results'>
   <div>
-    <video autoplay></video>
-    <div></div>
     <button id='getUserMediaButton'>Start Camera</button>
-    <button id='releaseMediaButton'>Stop Camera</button>
-    <input type="range">Adjust Zoom</input>
-
+    <button id='releaseMediaButton'>Stop Camera</button>   
+    <div>
+      <video autoplay></video>
+    </div>
+    <input type="range">Adjust Zoom</input> 
     <div id="filter_section">
       <label for="filter">Filter: </label>
       <select id="filter">
           <option value="none">None</option>
           <option value="blur">Blur</option>
           <option value="grayscale">Grayscale</option>
+          <option value="brightness">brightness</option>
+          <option value="contrast">contrast</option>
+          <option value="hue-rotate">hue-rotate</option>
+          <option value="hue-rotate2">hue-rotate2</option>
+          <option value="hue-rotate3">hue-rotate3</option>
+          <option value="saturate">hue-rotate2</option>
           <option value="invert">Invert</option>
           <option value="sepia">Sepia</option>
       </select>
@@ -33,14 +39,96 @@
   </div> -->
 </div>
 
+<style>
+video, #cssfilters-video, #screenshot-img {
+  width: 400px;
+  height: 300px;
+}
+video, #cssfilters-stream {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid #ccc;
+}
+.blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+.brightness {
+  -webkit-filter: brightness(5);
+  -moz-filter: brightness(5);
+  -o-filter: brightness(5);
+  -ms-filter: brightness(5);
+  filter: brightness(5);
+}
+.contrast {
+  -webkit-filter: contrast(8);
+  -moz-filter: contrast(8);
+  -o-filter: contrast(8);
+  -ms-filter: contrast(8);
+  filter: contrast(8);
+}
+.hue-rotate {
+  -webkit-filter: hue-rotate(90deg);
+  -moz-filter: hue-rotate(90deg);
+  -o-filter: hue-rotate(90deg);
+  -ms-filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg);
+}
+.hue-rotate2 {
+  -webkit-filter: hue-rotate(180deg);
+  -moz-filter: hue-rotate(180deg);
+  -o-filter: hue-rotate(180deg);
+  -ms-filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
+}
+.hue-rotate3 {
+  -webkit-filter: hue-rotate(270deg);
+  -moz-filter: hue-rotate(270deg);
+  -o-filter: hue-rotate(270deg);
+  -ms-filter: hue-rotate(270deg);
+  filter: hue-rotate(270deg);
+}
+.saturate {
+  -webkit-filter: saturate(10);
+  -moz-filter: saturate(10);
+  -o-filter: saturate(10);
+  -ms-filter: saturate(10);
+  filter: saturate(10);
+}
+.grayscale {
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  -o-filter: grayscale(1);
+  -ms-filter: grayscale(1);
+  filter: grayscale(1);
+}
+.sepia {
+  -webkit-filter: sepia(1);
+  -moz-filter: sepia(1);
+  -o-filter: sepia(1);
+  -ms-filter: sepia(1);
+  filter: sepia(1);
+}
+.invert {
+  -webkit-filter: invert(1);
+  -moz-filter: invert(1);
+  -o-filter: invert(1);
+  -ms-filter: invert(1);
+  filter: invert(1);
+}
+</style>
+
 
 <script>
   
 var imageCapture;
-let videoElement = document.querySelector("video");
+const videoElement = document.querySelector("video");
 const filterSelect = document.querySelector('select#filter');
-let logElement = document.querySelector("log");
+const logElement = document.querySelector("log");
 const constraints = { audio: false, video: true };
+//navigator.mediaDevices.getUserMedia(constraints).then((stream) => {video.srcObject = stream});
 
 let filterIndex = 0;
 const filters = [
@@ -69,9 +157,10 @@ const filters = [
 // }
 
 function onGetUserMediaButtonClick() {
+
   navigator.mediaDevices.getUserMedia({
     video: true,
-    audio: true
+    audio: false
   }).then(function(stream) {
     let audioTracks = stream.getAudioTracks();
     let videoTracks = stream.getVideoTracks();
@@ -110,8 +199,8 @@ function onReleaseMediaButtonClick(){
 
 function onApplyFilterButtonClick(){
   console.log('onApplyFiterButtonClick: ',filters[filterIndex++ % filters.length]);
-  videoElement.className = filters[filterIndex++ % filters.length];
-  //videoElement.className = filterSelect.value;
+  //videoElement.className = filters[filterIndex++ % filters.length];
+  videoElement.className = filterSelect.value;
 }
 
 function log(msg) {
@@ -165,12 +254,6 @@ function drawCanvas(canvas, img) {
   canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height,
       x, y, img.width * ratio, img.height * ratio);
 }
-
-// document.querySelector('video').addEventListener('play', function() {
-//   document.querySelector('#grabFrameButton').disabled = false;
-//   document.querySelector('#takePhotoButton').disabled = false;
-// });
-//navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
 
 </script>
 
