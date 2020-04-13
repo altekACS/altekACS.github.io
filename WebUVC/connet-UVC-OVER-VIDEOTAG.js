@@ -8,6 +8,7 @@
 'use strict';
 
 var imageCapture;
+const videoInstance = window.video = document.querySelector('video');
 
 function onGetUserMediaButtonClick() {
   navigator.mediaDevices.getUserMedia({video: true})
@@ -38,6 +39,11 @@ function onTakePhotoButtonClick() {
   })
   .catch(error => ChromeSamples.log(error));
 }
+
+filterSelect.onchange = function() {
+  const filterSelect = document.querySelector('select#filter');
+  videoInstance.className = filterSelect.value;
+};
 
 /* Utils */
 

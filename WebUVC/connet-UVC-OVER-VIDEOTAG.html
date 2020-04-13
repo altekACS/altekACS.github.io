@@ -37,6 +37,7 @@
   
 var imageCapture;
 let videoElement = document.querySelector("video");
+let filterElement = document.querySelector('select#filter');
 let logElement = document.querySelector("log");
 // function onGetUserMediaButtonClick() {
 //   navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -88,6 +89,11 @@ function onReleaseMediaButtonClick(){
   document.querySelector('video').srcObject = null;
   });
 }
+
+
+filterElement.onchange = function() {
+  videoElement.className = filterElement.value;
+};
 
 function log(msg) {
   logElement.innerHTML += (msg + "<br>");
