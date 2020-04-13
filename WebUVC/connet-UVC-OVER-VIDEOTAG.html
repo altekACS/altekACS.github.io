@@ -42,6 +42,21 @@ const filterSelect = document.querySelector('select#filter');
 let logElement = document.querySelector("log");
 const constraints = { audio: false, video: true };
 
+let filterIndex = 0;
+const filters = [
+  'grayscale',
+  'sepia',
+  'blur',
+  'brightness',
+  'contrast',
+  'hue-rotate',
+  'hue-rotate2',
+  'hue-rotate3',
+  'saturate',
+  'invert',
+  ''
+];
+
 // function onGetUserMediaButtonClick() {
 //   navigator.mediaDevices.getUserMedia({video: true, audio: true})
 //   .then(mediaStream => {
@@ -94,9 +109,9 @@ function onReleaseMediaButtonClick(){
 }
 
 function onApplyFilterButtonClick(){
-  console.log('onApplyFiterButtonClick: ');
-  //videoElement.className = filters[filterIndex++ % filters.length];
-  videoElement.className = filterSelect.value;
+  console.log('onApplyFiterButtonClick: ',filters[filterIndex++ % filters.length]);
+  videoElement.className = filters[filterIndex++ % filters.length];
+  //videoElement.className = filterSelect.value;
 }
 
 function log(msg) {
@@ -155,7 +170,7 @@ function drawCanvas(canvas, img) {
 //   document.querySelector('#grabFrameButton').disabled = false;
 //   document.querySelector('#takePhotoButton').disabled = false;
 // });
-navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+//navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
 
 </script>
 
