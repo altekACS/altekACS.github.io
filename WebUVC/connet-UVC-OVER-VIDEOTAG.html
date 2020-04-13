@@ -37,8 +37,10 @@
   
 var imageCapture;
 let videoElement = document.querySelector("video");
-let filterSelect = document.querySelector('filter');
+const filterSelect = document.querySelector('select#filter');
 let logElement = document.querySelector("log");
+const constraints = { audio: false, video: true };
+
 // function onGetUserMediaButtonClick() {
 //   navigator.mediaDevices.getUserMedia({video: true, audio: true})
 //   .then(mediaStream => {
@@ -106,6 +108,15 @@ function handleError(reason) {
       "</code>: " + reason.message);
 }
 
+function handleSuccess(stream) {
+  window.stream = stream; // make stream available to browser console
+  videoElement.srcObject = stream;
+}
+
+function handleError(error) {
+  console.log('navigator.MediaDevices.getUserMedia error: ', error.message, error.name);
+}
+
 // function onGrabFrameButtonClick() {
 //   imageCapture.grabFrame()
 //   .then(imageBitmap => {
@@ -142,7 +153,7 @@ function drawCanvas(canvas, img) {
 //   document.querySelector('#grabFrameButton').disabled = false;
 //   document.querySelector('#takePhotoButton').disabled = false;
 // });
-
+navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
 
 </script>
 
@@ -152,5 +163,9 @@ function drawCanvas(canvas, img) {
   // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
   // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
 </script>
+
+
+
+
 
 
