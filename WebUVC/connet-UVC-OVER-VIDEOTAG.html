@@ -142,14 +142,16 @@
         const inputZoom = document.getElementById("InZoom")
         const inputReso = document.getElementById("InReso")
         const constraints = { audio: false, video: true };
-  
+        audioSelect.onchange = getStream;
+        videoSelect.onchange = getStream;
+
         // Auto load
         navigator.mediaDevices.enumerateDevices()
           .then(gotDevices)
           .catch(error => {
             console.log('enumerateDevices() error: ', error);
           })
-          .then(getStream);
+          .then(getStreamLog);
         
         // From the list of media devices available, set up the camera source <select>,
         // then get a video stream from the default camera source.
@@ -172,7 +174,7 @@
         }
   
         // Get a video stream from the currently selected camera source.
-        function getStream() {
+        function getStreamLog() {
           console.log('getUserMedia() getStream: ');  
           // navigator.mediaDevices.getUserMedia(constraints)
           //   .then(gotStream)
@@ -180,18 +182,37 @@
           //     console.log('getUserMedia error: ', error);
           //   });
         }
+
+        function getStream() {
+          console.log('getUserMedia() getStream: ');  
+
+          if (window.stream) {
+              window.stream.getTracks().forEach(track => {
+              track.stop();
+            });
+          }
+
+          const audioSource = audioSelect.value;
+          const videoSource = videoSelect.value;
+          const constraints = {
+              audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
+              video: {deviceId: videoSource ? {exact: videoSource} : undefined}
+          };
+          
+          // retrive audio and video source
+          return navigator.mediaDevices.getUserMedia(constraints).
+              then(gotStream).catch(handleError);
+        }
         // Display the stream from the currently selected camera source, and then
         // create an ImageCapture object, using the video from the stream.
         function gotStream(stream) {
           console.log('getUserMedia() got stream: ', stream);
-          // let videoTrack = stream.getVideoTracks();
-          // var option = document.createElement('option');
-          // option.text = videoTrack.label 
-          // videoSelect.appendChild(option);
-          // video.srcObject = stream;
-          // video.classList.remove('hidden');
-          // imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
-          //getCapabilities();
+          window.stream = stream; // make stream available to console
+          audioSelect.selectedIndex = [...audioSelect.options].
+            findIndex(option => option.text === stream.getAudioTracks()[0].label);
+          videoSelect.selectedIndex = [...videoSelect.options].
+            findIndex(option => option.text === stream.getVideoTracks()[0].label);
+          videoElement.srcObject = stream;
         }
        
         function onGetUserMediaButtonClick() {
