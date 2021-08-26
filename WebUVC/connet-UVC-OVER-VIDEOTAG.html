@@ -15,9 +15,10 @@
             <div>
               <video autoplay playsinline controls></video>
               <!-- <div class="rangeBar"><input type="range" id = 'InFocus' enable>ZoomInOut</input></div> -->
-              <div class="rangeBar"><input type="range" id = 'InZoom' enable>ZoomInOut</input></div>
-              <div class="rangeBar"><input type="range" id = 'InReso' enable>Resolution</input></div>
-              
+              <div class="rangeBar"><input type="range" id = 'InZoom' enable>ZoomAdjs</input></div>
+              <div class="rangeBar"><input type="range" id = 'InBright' enable>Brightness</input></div>
+              <div class="rangeBar"><input type="range" id = 'InReso' enable>Resolution</input></div>              
+
               <div id="filter_section">    
                 <label for="filter">Filter: </label>
                 <select id="filter">
@@ -141,8 +142,9 @@
         const filterSelect = document.querySelector('select#filter');
         const logElement = document.querySelector("log");
         const inputZoom = document.getElementById("InZoom")
-        const inputFocus = document.getElementById("InFocus")
+       // const inputFocus = document.getElementById("InFocus")
         const inputReso = document.getElementById("InReso")
+        const inputBright = document.getElementById("InBright")
         const constraints = { audio: false, video: true };
         audioSelect.onchange = getStream;
         videoSelect.onchange = getStream;
@@ -224,44 +226,58 @@
             video: { zoom: true }
           }).then(function(mediaStream) {
             
-            videoElement.srcObject = mediaStream;
-            const [audioTracks] = mediaStream.getAudioTracks();
-            const [videoTracks] = mediaStream.getVideoTracks();
+              videoElement.srcObject = mediaStream;
+              const [audioTracks] = mediaStream.getAudioTracks();
+              const [videoTracks] = mediaStream.getVideoTracks();
 
-            const capabilities = videoTracks.getCapabilities();
-            const settings = videoTracks.getSettings();
-            
-            if (audioTracks) {
-                audioTrack = audioTracks[0];
-            }
+              const capabilities = videoTracks.getCapabilities();
+              const settings = videoTracks.getSettings();
+              
+              if (audioTracks) {
+                  audioTrack = audioTracks[0];
+              }
 
-            if (videoTracks) {
-                videoTrack = mediaStream.getVideoTracks()[0];
-                imageCapture = new ImageCapture(videoTrack);
-                photoCapabilities = imageCapture.getPhotoCapabilities();
-            }        
-        
-            // Check whether zoom is supported or not.
-            if (!('zoom' in settings)) {
-              log('Zoom is not supported by ' + videoTracks.label);
-              return;
-            }
-        
-            // Map zoom to a slider element.
-            inputZoom.min = capabilities.zoom.min;
-            inputZoom.max = capabilities.zoom.max;
-            inputZoom.step = capabilities.zoom.step;
-            inputZoom.value = settings.zoom;
-            inputZoom.oninput = function(event) {
-            videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
+              if (videoTracks) {
+                  videoTrack = mediaStream.getVideoTracks()[0];
+                  imageCapture = new ImageCapture(videoTrack);
+                  photoCapabilities = imageCapture.getPhotoCapabilities();
+              }        
+          
+              // Check whether zoom is supported or not.
+              if (!('brightness' in settings)) {
+                log('Brightness is not supported by ' + videoTracks.label);
+                return;
+              }
+
+              inputBright.min = capabilities.brightness.min;
+              inputBright.max = capabilities.brightness.max;
+              inputBright.step = capabilities.brightness.step;
+              inputBright.value = settings.brightness;
+              inputBright.disabled = false  
+              inputBright.oninput = function(event) {
+              videoTrack.applyConstraints({advanced: [ {brightness: event.target.value} ]});}
+              inputBright.disabled = false;
+
+              if (!('zoom' in settings)) {
+                log('Zoom is not supported by ' + videoTracks.label);
+                return imageCapture.getPhotoCapabilities();
+              }
+          
+              // Map zoom to a slider element.
+              inputZoom.min = capabilities.zoom.min;
+              inputZoom.max = capabilities.zoom.max;
+              inputZoom.step = capabilities.zoom.step;
+              inputZoom.value = settings.zoom;
+              inputZoom.oninput = function(event) {
+              videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
               inputZoom.disabled = false    
-              return imageCapture.getPhotoCapabilities()  
+             
             }).then(photoCapabilities => {
-              const settings = imageCapture.track.getSettings();  
-              inputReso.min = photoCapabilities.imageWidth.min;
-              inputReso.max = photoCapabilities.imageWidth.max;
-              inputReso.step = photoCapabilities.imageWidth.step;
-              inputReso.disabled = false          
+               const settings = imageCapture.track.getSettings();  
+               inputReso.min = photoCapabilities.imageWidth.min;
+               inputReso.max = photoCapabilities.imageWidth.max;
+               inputReso.step = photoCapabilities.imageWidth.step;
+               inputReso.disabled = false                
             }).then(function() {
                 new Promise(function(resolve) {
                   videoElement.onloadedmetadata = resolve;
