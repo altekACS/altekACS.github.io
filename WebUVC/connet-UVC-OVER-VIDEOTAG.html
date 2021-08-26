@@ -142,7 +142,6 @@
         const filterSelect = document.querySelector('select#filter');
         const logElement = document.querySelector("log");
         const inputZoom = document.getElementById("InZoom")
-       // const inputFocus = document.getElementById("InFocus")
         const inputReso = document.getElementById("InReso")
         const inputBright = document.getElementById("InBright")
         const constraints = { audio: false, video: true };
@@ -244,25 +243,11 @@
               }        
           
               // Check whether zoom is supported or not.
-              if (!('brightness' in settings)) {
-                log('Brightness is not supported by ' + videoTracks.label);
-                return;
-              }
-
-              inputBright.min = capabilities.brightness.min;
-              inputBright.max = capabilities.brightness.max;
-              inputBright.step = capabilities.brightness.step;
-              inputBright.value = settings.brightness;
-              inputBright.disabled = false  
-              inputBright.oninput = function(event) {
-              videoTrack.applyConstraints({advanced: [ {brightness: event.target.value} ]});}
-              inputBright.disabled = false;
-
               if (!('zoom' in settings)) {
                 log('Zoom is not supported by ' + videoTracks.label);
                 return imageCapture.getPhotoCapabilities();
               }
-          
+
               // Map zoom to a slider element.
               inputZoom.min = capabilities.zoom.min;
               inputZoom.max = capabilities.zoom.max;
@@ -271,6 +256,21 @@
               inputZoom.oninput = function(event) {
               videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
               inputZoom.disabled = false    
+
+              if (!('brightness' in settings)) {
+                log('Brightness is not supported by ' + videoTracks.label);
+                return imageCapture.getPhotoCapabilities();
+              }
+
+              //Map brightness
+              inputBright.min = capabilities.brightness.min;
+              inputBright.max = capabilities.brightness.max;
+              inputBright.step = capabilities.brightness.step;
+              inputBright.value = settings.brightness;
+              inputBright.disabled = false  
+              inputBright.oninput = function(event) {
+              videoTrack.applyConstraints({advanced: [ {brightness: event.target.value} ]});}
+              inputBright.disabled = false;
              
             }).then(photoCapabilities => {
                const settings = imageCapture.track.getSettings();  
