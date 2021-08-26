@@ -219,82 +219,84 @@
           videoElement.srcObject = stream;
         }
        
-        function onGetUserMediaButtonClick() {
+         function onGetUserMediaButtonClick() {
 
-          navigator.mediaDevices.getUserMedia({video: { zoom: true }})
-          .then(mediaStream => {
-            document.querySelector('video').srcObject = mediaStream;
+        //   navigator.mediaDevices.getUserMedia({video: { zoom: true }})
+        //   .then(mediaStream => {
+        //     document.querySelector('video').srcObject = mediaStream;
 
-            const [track] = mediaStream.getVideoTracks();
-            const capabilities = track.getCapabilities();
-            const settings = track.getSettings();
+        //     const [track] = mediaStream.getVideoTracks();
+        //     const capabilities = track.getCapabilities();
+        //     const settings = track.getSettings();
 
-          //  const input = document.querySelector('input[type="range"]');
+        //   //  const input = document.querySelector('input[type="range"]');
 
-            // Check whether zoom is supported or not.
-            if (!('zoom' in settings)) {
-              return log('Zoom is not supported by ' + videoTracks.label);
+        //     // Check whether zoom is supported or not.
+        //     if (!('zoom' in settings)) {
+        //       return log('Zoom is not supported by ' + videoTracks.label);
+        //     }
+
+        //     // Map zoom to a slider element.
+        //     inputZoom.min = capabilities.zoom.min;
+        //     inputZoom.max = capabilities.zoom.max;
+        //     inputZoom.step = capabilities.zoom.step;
+        //     inputZoom.value = settings.zoom;
+        //     inputZoom.oninput = function(event) {
+        //       track.applyConstraints({advanced: [ {zoom: event.target.value} ]});
+        //     }
+        //     inputZoom.hidden = false;
+        //   })
+        //   .catch(error => ChromeSamples.log('Argh!', error.name || error));
+
+          
+          navigator.mediaDevices.getUserMedia({
+            video: { zoom: true }
+          }).then(function(mediaStream) {
+            
+            videoElement.srcObject = mediaStream;
+            const [audioTracks] = mediaStream.getAudioTracks();
+            const [videoTracks] = mediaStream.getVideoTracks();
+
+            const capabilities = videoTracks.getCapabilities();
+            const settings = videoTracks.getSettings();
+            
+            if (audioTracks) {
+                audioTrack = audioTracks[0];
             }
 
+            if (videoTracks) {
+                videoTrack = videoTracks[0];
+                imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0]);
+            }
+        
+        
+            // Check whether zoom is supported or not.
+            if (!('zoom' in settings)) {
+              log('Zoom is not supported by ' + videoTracks.label);
+              return;
+            }
+        
             // Map zoom to a slider element.
             inputZoom.min = capabilities.zoom.min;
             inputZoom.max = capabilities.zoom.max;
             inputZoom.step = capabilities.zoom.step;
             inputZoom.value = settings.zoom;
             inputZoom.oninput = function(event) {
-              track.applyConstraints({advanced: [ {zoom: event.target.value} ]});
-            }
-            inputZoom.hidden = false;
-          })
-          .catch(error => ChromeSamples.log('Argh!', error.name || error));
-
-          
-          // navigator.mediaDevices.getUserMedia({
-          //   video: { zoom: true }
-          // }).then(function(stream) {
-          //   const [audioTracks] = stream.getAudioTracks();
-          //   const [videoTracks] = stream.getVideoTracks();
-            
-          //   videoElement.srcObject = stream;
-          //   if (audioTracks) {
-          //       audioTrack = audioTracks[0];
-          //   }
-
-          //   if (videoTracks) {
-          //       videoTrack = videoTracks[0];
-          //       imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
-          //   }
+            videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
+              inputZoom.disabled = false    
+            }).then(photoCapabilities => {
+              const settings = imageCapture.track.getSettings();        
+              inputReso.min = photoCapabilities.imageWidth.min;
+              inputReso.max = photoCapabilities.imageWidth.max;
+              inputReso.step = photoCapabilities.imageWidth.step;
+              inputReso.disabled = false          
+            }).then(function() {
+                new Promise(function(resolve) {
+                  videoElement.onloadedmetadata = resolve;
+                });
+              }).then(function() {
         
-          //   const capabilities = videoTracks.getCapabilities();
-          //   const settings = videoTracks.getSettings();
-        
-          //   // Check whether zoom is supported or not.
-          //   if (!('zoom' in settings)) {
-          //     log('Zoom is not supported by ' + videoTracks.label);
-          //     return;
-          //   }
-        
-          //   // Map zoom to a slider element.
-          //   inputZoom.min = capabilities.zoom.min;
-          //   inputZoom.max = capabilities.zoom.max;
-          //   inputZoom.step = capabilities.zoom.step;
-          //   inputZoom.value = settings.zoom;
-          //   inputZoom.oninput = function(event) {
-          //   videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
-          //     inputZoom.disabled = false    
-          //   }).then(photoCapabilities => {
-          //     const settings = imageCapture.track.getSettings();        
-          //     inputReso.min = photoCapabilities.imageWidth.min;
-          //     inputReso.max = photoCapabilities.imageWidth.max;
-          //     inputReso.step = photoCapabilities.imageWidth.step;
-          //     inputReso.disabled = false          
-          //   }).then(function() {
-          //       new Promise(function(resolve) {
-          //         videoElement.onloadedmetadata = resolve;
-          //       });
-          //     }).then(function() {
-        
-          // }).catch(handleError);
+          }).catch(handleError);
         }
         
         function onReleaseMediaButtonClick(){
