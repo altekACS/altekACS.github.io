@@ -16,7 +16,7 @@
               <video autoplay playsinline controls></video>
               <!-- <div class="rangeBar"><input type="range" id = 'InFocus' enable>ZoomInOut</input></div> -->
               <div class="rangeBar"><input type="range" id = 'InZoom' enable>ZoomInOut</input></div>
-              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InReso' enable>Resolution</input></div>
+              <div class="rangeBar"><input type="range" id = 'InReso' enable>Resolution</input></div>
               
               <div id="filter_section">    
                 <label for="filter">Filter: </label>
@@ -142,7 +142,6 @@
         const logElement = document.querySelector("log");
         const inputZoom = document.getElementById("InZoom")
         const inputFocus = document.getElementById("InFocus")
-        //const input = document.querySelector('input[type="range"]');
         const inputReso = document.getElementById("InReso")
         const constraints = { audio: false, video: true };
         audioSelect.onchange = getStream;
@@ -220,34 +219,6 @@
         }
        
          function onGetUserMediaButtonClick() {
-
-        //   navigator.mediaDevices.getUserMedia({video: { zoom: true }})
-        //   .then(mediaStream => {
-        //     document.querySelector('video').srcObject = mediaStream;
-
-        //     const [track] = mediaStream.getVideoTracks();
-        //     const capabilities = track.getCapabilities();
-        //     const settings = track.getSettings();
-
-        //   //  const input = document.querySelector('input[type="range"]');
-
-        //     // Check whether zoom is supported or not.
-        //     if (!('zoom' in settings)) {
-        //       return log('Zoom is not supported by ' + videoTracks.label);
-        //     }
-
-        //     // Map zoom to a slider element.
-        //     inputZoom.min = capabilities.zoom.min;
-        //     inputZoom.max = capabilities.zoom.max;
-        //     inputZoom.step = capabilities.zoom.step;
-        //     inputZoom.value = settings.zoom;
-        //     inputZoom.oninput = function(event) {
-        //       track.applyConstraints({advanced: [ {zoom: event.target.value} ]});
-        //     }
-        //     inputZoom.hidden = false;
-        //   })
-        //   .catch(error => ChromeSamples.log('Argh!', error.name || error));
-
           
           navigator.mediaDevices.getUserMedia({
             video: { zoom: true }
@@ -265,10 +236,10 @@
             }
 
             if (videoTracks) {
-                videoTrack = videoTracks[0];
-                imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0]);
-            }
-        
+                videoTrack = mediaStream.getVideoTracks()[0];
+                imageCapture = new ImageCapture(videoTrack);
+                photoCapabilities = imageCapture.getPhotoCapabilities();
+            }        
         
             // Check whether zoom is supported or not.
             if (!('zoom' in settings)) {
@@ -284,8 +255,9 @@
             inputZoom.oninput = function(event) {
             videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
               inputZoom.disabled = false    
+              return imageCapture.getPhotoCapabilities()  
             }).then(photoCapabilities => {
-              const settings = imageCapture.track.getSettings();        
+              const settings = imageCapture.track.getSettings();  
               inputReso.min = photoCapabilities.imageWidth.min;
               inputReso.max = photoCapabilities.imageWidth.max;
               inputReso.step = photoCapabilities.imageWidth.step;
