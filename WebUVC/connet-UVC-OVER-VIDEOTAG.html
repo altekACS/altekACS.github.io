@@ -14,8 +14,9 @@
             </div>
             <div>
               <video autoplay playsinline controls></video>
-              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InZoom' disabled>ZoomInOut</input></div>
-              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InReso' disabled>Resolution</input></div>
+              <!-- <div class="rangeBar"><input type="range" id = 'InFocus' enable>ZoomInOut</input></div> -->
+              <div class="rangeBar"><input type="range" id = 'InZoom' enable>ZoomInOut</input></div>
+              <div class="rangeBar"><input type="range" min="640" max = "640" step = "1" id = 'InReso' enable>Resolution</input></div>
               
               <div id="filter_section">    
                 <label for="filter">Filter: </label>
@@ -140,6 +141,8 @@
         const filterSelect = document.querySelector('select#filter');
         const logElement = document.querySelector("log");
         const inputZoom = document.getElementById("InZoom")
+        const inputFocus = document.getElementById("InFocus")
+        //const input = document.querySelector('input[type="range"]');
         const inputReso = document.getElementById("InReso")
         const constraints = { audio: false, video: true };
         audioSelect.onchange = getStream;
@@ -196,11 +199,12 @@
           const videoSource = videoSelect.value;
           const constraints = {
               audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
-              video: {deviceId: videoSource ? {exact: videoSource} : undefined}
+              video: {deviceId: videoSource ? {exact: videoSource} : undefined},
+              video: { zoom: true }
           };
           
           // retrive audio and video source
-          return navigator.mediaDevices.getUserMedia(constraints).
+          return navigator.mediaDevices.getUserMedia({video: { zoom: true }}).
               then(gotStream).catch(handleError);
         }
         // Display the stream from the currently selected camera source, and then
@@ -216,55 +220,81 @@
         }
        
         function onGetUserMediaButtonClick() {
-          navigator.mediaDevices.getUserMedia({
-            video: true,
-            audio: false
-          }).then(function(stream) {
-            let audioTracks = stream.getAudioTracks();
-            let videoTracks = stream.getVideoTracks();
-            
-            videoElement.srcObject = stream;
-            if (audioTracks.length) {
-                audioTrack = audioTracks[0];
-            }
-            if (videoTracks.length) {
-                videoTrack = videoTracks[0];
-                imageCapture = new ImageCapture(videoTrack);
-            }
-        
-            const capabilities = videoTrack.getCapabilities();
-            const settings = videoTrack.getSettings();
-        
+
+          navigator.mediaDevices.getUserMedia({video: { zoom: true }})
+          .then(mediaStream => {
+            document.querySelector('video').srcObject = mediaStream;
+
+            const [track] = mediaStream.getVideoTracks();
+            const capabilities = track.getCapabilities();
+            const settings = track.getSettings();
+
+          //  const input = document.querySelector('input[type="range"]');
+
             // Check whether zoom is supported or not.
             if (!('zoom' in settings)) {
-              log('Zoom is not supported by ' + videoTrack.label);
-              return;
+              return log('Zoom is not supported by ' + videoTracks.label);
             }
-        
+
             // Map zoom to a slider element.
             inputZoom.min = capabilities.zoom.min;
             inputZoom.max = capabilities.zoom.max;
             inputZoom.step = capabilities.zoom.step;
             inputZoom.value = settings.zoom;
             inputZoom.oninput = function(event) {
-            videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
-            inputZoom.disabled = false
-        
-          }).then(photoCapabilities => {
-            const settings = imageCapture.track.getSettings();
-        
-            inputReso.min = photoCapabilities.imageWidth.min;
-            inputReso.max = photoCapabilities.imageWidth.max;
-            inputReso.step = photoCapabilities.imageWidth.step;
-            inputReso.disabled = false
+              track.applyConstraints({advanced: [ {zoom: event.target.value} ]});
+            }
+            inputZoom.hidden = false;
+          })
+          .catch(error => ChromeSamples.log('Argh!', error.name || error));
+
           
-        }).then(function() {
-            new Promise(function(resolve) {
-              videoElement.onloadedmetadata = resolve;
-            });
-          }).then(function() {
+          // navigator.mediaDevices.getUserMedia({
+          //   video: { zoom: true }
+          // }).then(function(stream) {
+          //   const [audioTracks] = stream.getAudioTracks();
+          //   const [videoTracks] = stream.getVideoTracks();
+            
+          //   videoElement.srcObject = stream;
+          //   if (audioTracks) {
+          //       audioTrack = audioTracks[0];
+          //   }
+
+          //   if (videoTracks) {
+          //       videoTrack = videoTracks[0];
+          //       imageCapture = new ImageCapture(stream.getVideoTracks()[0]);
+          //   }
         
-          }).catch(handleError);
+          //   const capabilities = videoTracks.getCapabilities();
+          //   const settings = videoTracks.getSettings();
+        
+          //   // Check whether zoom is supported or not.
+          //   if (!('zoom' in settings)) {
+          //     log('Zoom is not supported by ' + videoTracks.label);
+          //     return;
+          //   }
+        
+          //   // Map zoom to a slider element.
+          //   inputZoom.min = capabilities.zoom.min;
+          //   inputZoom.max = capabilities.zoom.max;
+          //   inputZoom.step = capabilities.zoom.step;
+          //   inputZoom.value = settings.zoom;
+          //   inputZoom.oninput = function(event) {
+          //   videoTrack.applyConstraints({advanced: [ {zoom: event.target.value} ]});}
+          //     inputZoom.disabled = false    
+          //   }).then(photoCapabilities => {
+          //     const settings = imageCapture.track.getSettings();        
+          //     inputReso.min = photoCapabilities.imageWidth.min;
+          //     inputReso.max = photoCapabilities.imageWidth.max;
+          //     inputReso.step = photoCapabilities.imageWidth.step;
+          //     inputReso.disabled = false          
+          //   }).then(function() {
+          //       new Promise(function(resolve) {
+          //         videoElement.onloadedmetadata = resolve;
+          //       });
+          //     }).then(function() {
+        
+          // }).catch(handleError);
         }
         
         function onReleaseMediaButtonClick(){
@@ -349,6 +379,18 @@
           // document.querySelector('#grabFrameButton').addEventListener('click', onGrabFrameButtonClick);
           // document.querySelector('#takePhotoButton').addEventListener('click', onTakePhotoButtonClick);
         </script>
+
+        
+        <script>
+          if (/Chrome\/(\d+\.\d+.\d+.\d+)/.test(navigator.userAgent)){
+            // Let's log a warning if the sample is not supposed to execute on this
+            // version of Chrome.
+            if (87 > parseInt(RegExp.$1)) {
+              ChromeSamples.setStatus('Warning! Keep in mind this sample has been tested with Chrome ' + 87 + '.');
+            }
+          }
+        </script>
+
     </body>
   
   </div>
