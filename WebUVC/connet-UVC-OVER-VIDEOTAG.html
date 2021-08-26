@@ -236,7 +236,7 @@
             const settings = videoTrack.getSettings();
         
             // Check whether zoom is supported or not.
-            if (!('zoom' in capabilities)) {
+            if (!('zoom' in settings)) {
               log('Zoom is not supported by ' + videoTrack.label);
               return;
             }
@@ -308,8 +308,9 @@
         
         // function onGrabFrameButtonClick() {
         //   imageCapture.grabFrame()
-        //   .then(imageBitmap => {
-        //     const canvas = document.querySelector('#grabFrameCanvas');
+        //   .then(imageBitmap => {\
+          
+          //     const canvas = document.querySelector('#grabFrameCanvas');
         //     drawCanvas(canvas, imageBitmap);
         //   })
         //   .catch(error => ChromeSamples.log(error));
