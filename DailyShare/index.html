@@ -75,9 +75,9 @@
                         report.articles.forEach(article => {
                             const row = document.createElement('tr');
                             row.innerHTML = `
-                                <td>${report['Date']}</td>
-                                <td>${report['Company']}</td>
-                                <td>${report['Final Score']}</td>
+                                <td>${article['Date']}</td>
+                                <td>${article['Company']}</td>
+                                <td>${article['Final Score']}</td>
                                 <td><a href="${article['Article URL']}" target="_blank">${article['Article URL']}</a></td>
                                 <td>${article['Sentiment Score']}</td>
                                 <td>${article['Positive Mentions']}</td>
