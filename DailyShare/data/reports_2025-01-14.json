@@ -1,43 +1,34 @@
 [
-	{
-		"date": "2025-01-14",
-		"articles": [
-			{
-				"Date": "2025-01-14",
-				"Company": "TSMC",
-				"Final Score": "",
-				"Article URL": "",
-				"Sentiment Score": "",
-				"Positive Mentions": "",
-				"Negative Mentions": ""
-			},
-			{
-				"Date": "",
-				"Company": "",
-				"Final Score": "0.0",
-				"Article URL": "https://tw.stock.yahoo.com/news/%E8%BC%9D%E9%81%94%E4%B9%9F%E8%B7%B3%E8%85%B3%EF%BC%81ai%E6%99%B6%E7%89%87%E7%AE%A1%E5%88%B6%E6%89%93%E5%88%B0%E8%AA%B0%EF%BC%9F-%E5%B0%88%E5%AE%B6%E6%9B%9D%E3%80%8C%E5%8F%B0%E5%BB%A0%E4%BC%BA%E6%9C%8D%E5%99%A8%E3%80%8D%E5%BB%A3%E9%81%94%E6%81%90%E6%9C%80%E5%8F%97%E5%82%B7-014143069.html",
-				"Sentiment Score": "0.0",
-				"Positive Mentions": "1",
-				"Negative Mentions": "1"
-			},
-			{
-				"Date": "",
-				"Company": "",
-				"Final Score": "0.0",
-				"Article URL": "https://tw.stock.yahoo.com/news/%E3%80%90yahoo%E6%97%A9%E7%9B%A4%E3%80%91%E5%8F%B0%E8%82%A1%E4%B8%80%E5%BA%A6%E5%BC%B7%E5%BD%88200%E9%BB%9E%E9%87%8D%E5%9B%9E%E5%8D%8A%E5%B9%B4%E7%B7%9A-%E5%88%86%E6%9E%90%E5%B8%AB%E7%8E%8B%E5%85%86%E7%AB%8B%E6%9B%9D%E5%BB%B6%E7%BA%8C%E5%8F%8D%E5%BD%882%E9%97%9C%E9%8D%B5-015445554.html",
-				"Sentiment Score": "0.0",
-				"Positive Mentions": "2",
-				"Negative Mentions": "2"
-			},
-			{
-				"Date": "",
-				"Company": "",
-				"Final Score": "0.0",
-				"Article URL": "https://tw.stock.yahoo.com/news/%E5%A4%A2%E5%B9%BB%E8%B7%B3%E6%A7%BD%E4%BC%81%E6%A5%AD%E5%87%BA%E7%88%90%EF%BC%81%E8%AD%B7%E5%9C%8B%E7%A5%9E%E5%B1%B1%E9%80%A311%E5%B9%B4%E9%9C%B8%E6%A6%9C-%E5%8F%B0%E5%A1%91%E9%9B%86%E5%9C%98%E3%80%81%E4%B8%AD%E9%8B%BC%E4%B9%9F%E5%85%A5%E5%88%97-002059591.html",
-				"Sentiment Score": "0.0",
-				"Positive Mentions": "2",
-				"Negative Mentions": "4"
-			}
-		]
-	}
+    {
+        "date": "2025-01-14",
+        "articles": [
+            {
+                "Date": "2025-01-14",
+                "Company": "台積電",
+                "Final Score": "",
+                "Article URL": "",
+                "Sentiment Score": "",
+                "Positive Mentions": "",
+                "Negative Mentions": ""
+            },
+            {
+                "Date": "",
+                "Company": "",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%A4%A2%E5%B9%BB%E8%B7%B3%E6%A7%BD%E4%BC%81%E6%A5%AD%E5%87%BA%E7%88%90%EF%BC%81%E8%AD%B7%E5%9C%8B%E7%A5%9E%E5%B1%B1%E9%80%A311%E5%B9%B4%E9%9C%B8%E6%A6%9C-%E5%8F%B0%E5%A1%91%E9%9B%86%E5%9C%98%E3%80%81%E4%B8%AD%E9%8B%BC%E4%B9%9F%E5%85%A5%E5%88%97-002059591.html",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "2"
+            },
+            {
+                "Date": "",
+                "Company": "",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E8%BC%9D%E9%81%94%E4%B9%9F%E8%B7%B3%E8%85%B3%EF%BC%81ai%E6%99%B6%E7%89%87%E7%AE%A1%E5%88%B6%E6%89%93%E5%88%B0%E8%AA%B0%EF%BC%9F-%E5%B0%88%E5%AE%B6%E6%9B%9D%E3%80%8C%E5%8F%B0%E5%BB%A0%E4%BC%BA%E6%9C%8D%E5%99%A8%E3%80%8D%E5%BB%A3%E9%81%94%E6%81%90%E6%9C%80%E5%8F%97%E5%82%B7-014143069.html",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "3"
+            }
+        ]
+    }
 ]
