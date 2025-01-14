@@ -49,35 +49,46 @@
 		</tbody>
 	</table>
     <script>
-		// 動態生成檔案名稱
-		const today = new Date(); // 取得今天的日期
-		const year = today.getFullYear();
-		const month = String(today.getMonth() + 1).padStart(2, '0'); // 月份補零
-		const day = String(today.getDate()).padStart(2, '0'); // 日期補零
-		const fileName = `reports_${year}-${month}-${day}.json`; // 動態生成檔案名稱
+        document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const fileName = `reports_${year}-${month}-${day}.json`;
 
-        // Load JSON data and populate the table
-		fetch(`./data/${fileName}`)
-			.then(response => response.json())
-			.then(data => {
-				const tbody = document.getElementById('report-body');
-				data.forEach(report => {
-					report.Articles.forEach(article => {
-						const row = document.createElement('tr');
-						row.innerHTML = `
-							<td>${report.Date}</td>
-							<td>${report.Company}</td>
-							<td>${report['Final Score']}</td>
-							<td><a href="${article['Article URL']}" target="_blank">${article['Article URL']}</a></td>
-							<td>${article['Sentiment Score']}</td>
-							<td>${article['Positive Mentions']}</td>
-							<td>${article['Negative Mentions']}</td>
-						`;
-						tbody.appendChild(row);
-					});
-				});
-			})
-			.catch(error => console.error('Error loading report data:', error));
+            fetch(`./data/${fileName}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (!Array.isArray(data)) {
+                        throw new Error('Data is not an array');
+                    }
+                    const tbody = document.getElementById('report-body');
+                    data.forEach(report => {
+                        if (!report.Articles || !Array.isArray(report.Articles)) {
+                            throw new Error('Report does not contain an Articles array');
+                        }
+                        report.Articles.forEach(article => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${report.Date}</td>
+                                <td>${report.Company}</td>
+                                <td>${report['Final Score']}</td>
+                                <td><a href="${article['Article URL']}" target="_blank">${article['Article URL']}</a></td>
+                                <td>${article['Sentiment Score']}</td>
+                                <td>${article['Positive Mentions']}</td>
+                                <td>${article['Negative Mentions']}</td>
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error loading report data:', error));
+        });
     </script>
 </body>
 </html>
