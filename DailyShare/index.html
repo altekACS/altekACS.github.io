@@ -57,7 +57,7 @@
 		const fileName = `reports_${year}-${month}-${day}.json`; // 動態生成檔案名稱
 
         // Load JSON data and populate the table
-		fetch('./data/${fileName}')
+		fetch(`./data/${fileName}`)
 			.then(response => response.json())
 			.then(data => {
 				const tbody = document.getElementById('report-body');
