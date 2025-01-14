@@ -72,7 +72,7 @@
                         if (!report.articles || !Array.isArray(report.articles)) {
                             throw new Error('Report does not contain an Articles array');
                         }
-                        report.Articles.forEach(article => {
+                        report.articles.forEach(article => {
                             const row = document.createElement('tr');
                             row.innerHTML = `
                                 <td>${report.Date}</td>
