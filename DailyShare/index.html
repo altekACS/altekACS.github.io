@@ -69,7 +69,7 @@
                     }
                     const tbody = document.getElementById('report-body');
                     data.forEach(report => {
-                        if (!report.Articles || !Array.isArray(report.Articles)) {
+                        if (!report.articles || !Array.isArray(report.articles)) {
                             throw new Error('Report does not contain an Articles array');
                         }
                         report.Articles.forEach(article => {
