@@ -1,0 +1,25 @@
+[
+    {
+        "date": "2025-01-15",
+        "articles": [
+            {
+                "Date": "2025-01-15",
+                "Company": "台積電",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E6%8A%BD%E4%B8%AD%E4%B8%80%E5%BC%B5%E7%8F%BE%E8%B3%BA17%E8%90%AC%EF%BC%81%E5%AF%8C%E5%A8%81%E9%9B%BB%E5%8A%9B%E6%8E%9B%E7%89%8C%E9%A6%96%E6%97%A5%E5%95%96%E8%9C%9C%E6%9C%88%E8%A1%8C%E6%83%85-%E8%82%A1%E5%83%B9%E5%BC%B7%E6%BC%B221-012547017.html",
+                "Sentiment Score": "-1",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-01-15",
+                "Company": "台積電",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%A5%9E%E5%B1%B1%E6%B3%95%E8%AA%AA%E6%9C%83%E5%89%8D%E5%A4%95%E5%8F%B0%E8%82%A1%E8%B7%8C%E8%BF%91%E7%99%BE%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BB%E4%B8%80%E5%BA%A6%E6%8C%AB15%E5%85%83%E8%87%B31075%E5%85%83-010842902.html",
+                "Sentiment Score": "-3",
+                "Positive Mentions": "1",
+                "Negative Mentions": "4"
+            }
+        ]
+    }
+]
