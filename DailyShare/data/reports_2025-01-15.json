@@ -1,6 +1,25 @@
 [
     {
         "date": "2025-01-15",
-        "articles": []
+        "articles": [
+            {
+                "Date": "2025-01-15",
+                "Company": "台積電",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E4%BB%8A%E6%9C%80%E5%BE%8C%E8%B2%B7%E9%80%B2%E6%97%A5-00929%E6%9C%88%E9%85%8D0-05%E5%85%83-4-7%E8%90%AC%E8%82%A1%E6%B0%91%E7%8B%A0%E6%A3%84-021000338.html",
+                "Sentiment Score": "0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-01-15",
+                "Company": "聯發科",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E4%BB%8A%E6%9C%80%E5%BE%8C%E8%B2%B7%E9%80%B2%E6%97%A5-00929%E6%9C%88%E9%85%8D0-05%E5%85%83-4-7%E8%90%AC%E8%82%A1%E6%B0%91%E7%8B%A0%E6%A3%84-021000338.html",
+                "Sentiment Score": "-1",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            }
+        ]
     }
 ]
