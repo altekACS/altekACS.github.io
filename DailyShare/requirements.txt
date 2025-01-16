@@ -1,0 +1,7 @@
+numpy
+selenium
+beautifulsoup4
+textblob
+transformers
+gitpython
+requests

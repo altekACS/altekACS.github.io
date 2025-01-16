@@ -1,0 +1,15 @@
+sources:
+  - url: 'https://tw.stock.yahoo.com/news/'
+  - url: 'https://tw.news.yahoo.com/finance/'
+
+companies:
+  - name: 台積電
+    keywords:
+      - 台積電
+      - TSMC
+      - (2330)
+  - name: 聯發科
+    keywords:
+      - 聯發科
+      - MediaTek
+      - (2454)
