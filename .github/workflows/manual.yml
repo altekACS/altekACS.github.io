@@ -14,4 +14,4 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install -r DailyShare/requirements.txt
-      - run: python NewsSentimentCrawler.py
+      - run: python DailyShare/NewsSentimentCrawler.py
