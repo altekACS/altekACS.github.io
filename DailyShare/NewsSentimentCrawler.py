@@ -260,5 +260,5 @@ class NewsSentimentCrawler:
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    crawler = NewsSentimentCrawler('NewsSentimentCrawler.yaml')
+    crawler = NewsSentimentCrawler('DailyShare\\NewsSentimentCrawler.yaml')
     crawler.run()
