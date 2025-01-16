@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from textblob import TextBlob
 from datetime import datetime
-from transformers import pipeline
+#from transformers import pipeline
 from sentiment_analysis import analyze_market_sentiment
 from git import Repo  # pip install gitpython
 import requests
@@ -19,16 +19,15 @@ import urllib.parse
 
 class NewsSentimentCrawler:
     def __init__(self, config_file):
-        self.sentiment_analyzer = pipeline("sentiment-analysis")
         self.HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"}
         self.config = self.load_config(config_file)
         self.urls = [source['url'] for source in self.config['sources']]
         self.companies = self.config['companies']
         self.stock_map = {company['name']: company['keywords'] for company in self.companies}
-        self.OUTPUT_DIR = os.path.join(os.path.expanduser("~"), "news_reports")
         if os.name == 'nt':  # Windows
-            self.REPO_PATH = os.path.expanduser("D:\\Work\\altekACS.github.io")
+            self.REPO_PATH = os.getcwd()
             self.DATA_DIR = os.path.join(self.REPO_PATH, "DailyShare\\data")
+            self.OUTPUT_DIR = os.path.join(self.REPO_PATH, "DailyShare\\data")
         else:
             self.REPO_PATH = os.path.expanduser("/Users/jerome/Project/altekACS.github.io")
             self.DATA_DIR = os.path.join(self.REPO_PATH, "DailyShare/data")
@@ -88,7 +87,7 @@ class NewsSentimentCrawler:
         options.add_argument("--disable-dev-shm-usage")
 
         if os.name == 'nt':  # Windows
-            service = Service(r"D:\Work\Git_TWSE\alTWSE\chromedriver.exe")  # Replace with your ChromeDriver path
+            service = Service(r"DailyShare\\chromedriver.exe")  # Replace with your ChromeDriver path
         else:  # macOS or Linux
             service = Service("/usr/local/bin/chromedriver")  # Replace with your ChromeDriver path
         driver = webdriver.Chrome(service=service, options=options)
