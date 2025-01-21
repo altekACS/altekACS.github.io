@@ -126,7 +126,7 @@ class NewsSentimentCrawler:
 
         try:
             blob = TextBlob(text)
-            sentiment_score = blob.sentiment.polarity  # -1: 負面, 0: 中性, 1: 正面
+            sentiment_score = blob.sentiment.polarity * 10  # -1: 負面, 0: 中性, 1: 正面
 
             return sentiment_score
         except Exception as e:
@@ -208,10 +208,6 @@ class NewsSentimentCrawler:
 
         try:
             news_data = {}
-            positive_mentions = 0
-            negative_mentions = 0
-            final_score = 0
-
             for url in self.urls:
                 news_links = self.fetch_news_selenium(url)
 
@@ -230,6 +226,9 @@ class NewsSentimentCrawler:
                         if sentiment_score is not None:
                             # Extract sentences containing the keyword
                             market_sentiment = 0
+                            positive_mentions = 0
+                            negative_mentions = 0
+                            final_score = 0
                             keyword_sentences = self.extract_sentences_containing_keyword(article_content, company['keywords'][0])
                             for sentence in keyword_sentences:
                                 market_sentiment += analyze_market_sentiment(sentence)
@@ -237,8 +236,8 @@ class NewsSentimentCrawler:
                             # Calculate the final score based on sentiment and market sentiment
                             positive_mentions += article_content.count("好") + article_content.count("佳") + article_content.count("增長")
                             negative_mentions += article_content.count("壞") + article_content.count("差") + article_content.count("下跌")
-                            final_score += sentiment_score * (positive_mentions - negative_mentions)
-
+                            final_score = sentiment_score + market_sentiment
+                            
                             if company['name'] not in news_data:
                                 news_data[company['name']] = []
 
