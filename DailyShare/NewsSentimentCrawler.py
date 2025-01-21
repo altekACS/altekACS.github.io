@@ -233,11 +233,14 @@ class NewsSentimentCrawler:
                             for sentence in keyword_sentences:
                                 market_sentiment += analyze_market_sentiment(sentence)
 
+                            # Calculate the average market sentiment score
+                            market_sentiment = market_sentiment / len(keyword_sentences) if len(keyword_sentences) > 0 else 0
+
                             # Calculate the final score based on sentiment and market sentiment
                             positive_mentions += article_content.count("好") + article_content.count("佳") + article_content.count("增長")
                             negative_mentions += article_content.count("壞") + article_content.count("差") + article_content.count("下跌")
                             final_score = sentiment_score + market_sentiment
-                            
+
                             if company['name'] not in news_data:
                                 news_data[company['name']] = []
 
