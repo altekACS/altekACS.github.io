@@ -13,7 +13,5 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: '3.x'
-      - run: Write-Host "Current time: $(Get-Date)"
-        shell: pwsh
       - run: pip install -r DailyShare/requirements.txt
       - run: python DailyShare/NewsSentimentCrawler.py
