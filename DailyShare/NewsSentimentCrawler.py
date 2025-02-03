@@ -246,10 +246,19 @@ class NewsSentimentCrawler:
                             negative_mentions += article_content.count("壞") + article_content.count("差") + article_content.count("下跌")
                             final_score = sentiment_score + market_sentiment
 
+                            # Query current stock price
+                            #https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker=2330.TW
+                            company_price = 0
+                            response = requests.get(f"https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker={company['code']}.TW")  # Replace with your stock service URL
+                            if response.status_code == 200:
+                                stock_data = response.json()
+                                company_price = stock_data['price']
+
                             if company['name'] not in news_data:
                                 news_data[company['name']] = []
 
                             news_data[company['name']].append({
+                                'Price': company_price,
                                 'Final Score': final_score,
                                 'Sentiment Score': market_sentiment,
                                 'Positive Mentions': positive_mentions,
@@ -258,7 +267,7 @@ class NewsSentimentCrawler:
                             })
 
             # Generate daily report for each company
-            self.generate_daily_report(news_data, date)
+            self.generate_daily_report(news_data, dates[0])
 
             # Push to GitHub
             self.push_to_github()

@@ -4,11 +4,13 @@ sources:
 
 companies:
   - name: 台積電
+    code: 2330
     keywords:
       - 台積電
       - TSMC
       - (2330)
   - name: 聯發科
+    code: 2454
     keywords:
       - 聯發科
       - MediaTek
