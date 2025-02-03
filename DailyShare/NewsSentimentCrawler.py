@@ -166,6 +166,7 @@ class NewsSentimentCrawler:
                     writer.writerow({
                         'Date': date,
                         'Company': company['name'],
+                        'Price': news.get('Price', ''),
                         'Final Score': news.get('Final Score', ''),
                         'Article URL': news.get('Article URL', ''),
                         'Sentiment Score': news.get('Sentiment Score', ''),
