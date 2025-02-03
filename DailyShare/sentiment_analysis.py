@@ -51,15 +51,7 @@ def analyze_market_sentiment(sentence):
 
         positive_score = sum(positive_words[word] for word in positive_words if word in sentence)
         negative_score = sum(negative_words[word] for word in negative_words if word in sentence)
-        sentiment = positive_score - negative_score
-
-        # sentiment = sentiment_analyzer(sentence)[0]
-
-        # if sentiment['label'] == 'POSITIVE':
-        #     return 1
-        # elif sentiment['label'] == 'NEGATIVE':
-        #     return -1
-        # else:
+        sentiment = positive_score + negative_score
         return sentiment
 
     except Exception as e:
