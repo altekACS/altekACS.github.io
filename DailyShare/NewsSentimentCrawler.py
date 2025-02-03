@@ -222,8 +222,8 @@ class NewsSentimentCrawler:
                     article_content, pub_date = self.extract_article_content(link)
 
                     # 篩選日期為今天的文章 格式為'2025-01-13T07:30:00.000Z'
-                    # check if the source date is in the list of dates
-                    if pub_date not in dates:
+                    # check if all the any of the dates not in the pub_date
+                    if all(date not in pub_date for date in dates):
                         continue
 
                     for company in self.companies:             
