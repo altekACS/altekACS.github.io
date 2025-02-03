@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from textblob import TextBlob
-from datetime import datetime
+from datetime import datetime, timedelta
 #from transformers import pipeline
 from sentiment_analysis import analyze_market_sentiment
 from git import Repo  # pip install gitpython
@@ -204,7 +204,11 @@ class NewsSentimentCrawler:
 
     def run(self):
         """Main function."""
-        date = datetime.now().strftime("%Y-%m-%d")
+
+        # Get today's date and yesterday's date
+        dates = []
+        dates.append(datetime.now().strftime("%Y-%m-%d"))
+        dates.append((datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d"))
 
         try:
             news_data = {}
@@ -217,7 +221,8 @@ class NewsSentimentCrawler:
                     article_content, pub_date = self.extract_article_content(link)
 
                     # 篩選日期為今天的文章 格式為'2025-01-13T07:30:00.000Z'
-                    if date not in pub_date:
+                    # check if the source date is in the list of dates
+                    if pub_date not in dates:
                         continue
 
                     for company in self.companies:             
