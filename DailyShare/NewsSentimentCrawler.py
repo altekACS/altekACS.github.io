@@ -17,6 +17,11 @@ import os
 import re
 import urllib.parse
 
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stdin.reconfigure(encoding='utf-8')
+
+
 class NewsSentimentCrawler:
     def __init__(self, config_file):
         self.HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"}
