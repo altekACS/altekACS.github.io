@@ -243,9 +243,9 @@ class NewsSentimentCrawler:
                             final_score = 0
                             keyword_sentences = self.extract_sentences_containing_keyword(article_content, company['keywords'][0])
                             for sentence in keyword_sentences:
-                                print(sentence)
+                                #print(sentence)
                                 market_sentiment += analyze_market_sentiment(sentence)
-                                print(market_sentiment)
+                                #print(market_sentiment)
 
                             # Calculate the average market sentiment score
                             market_sentiment = market_sentiment / len(keyword_sentences) if len(keyword_sentences) > 0 else 0
