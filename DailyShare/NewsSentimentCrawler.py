@@ -44,6 +44,7 @@ class NewsSentimentCrawler:
         try:
             print(url)
             response = requests.get(url, headers=self.HEADERS, timeout=10)
+            response.encoding = 'utf-8'  # 強制使用 UTF-8 編碼
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             print(f"Failed to fetch the article: {e}")
