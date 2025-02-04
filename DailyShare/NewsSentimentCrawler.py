@@ -237,15 +237,21 @@ class NewsSentimentCrawler:
                             final_score = 0
                             keyword_sentences = self.extract_sentences_containing_keyword(article_content, company['keywords'][0])
                             for sentence in keyword_sentences:
+                                print(sentence)
                                 market_sentiment += analyze_market_sentiment(sentence)
+                                print(market_sentiment)
 
                             # Calculate the average market sentiment score
                             market_sentiment = market_sentiment / len(keyword_sentences) if len(keyword_sentences) > 0 else 0
+                            
+                            # leave the float number to 2 decimal places
+                            market_sentiment = round(market_sentiment, 2)
 
                             # Calculate the final score based on sentiment and market sentiment
                             positive_mentions += article_content.count("好") + article_content.count("佳") + article_content.count("增長")
                             negative_mentions += article_content.count("壞") + article_content.count("差") + article_content.count("下跌")
                             final_score = sentiment_score + market_sentiment
+                            final_score = round(final_score, 2)
 
                             # Query current stock price
                             #https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker=2330.TW
