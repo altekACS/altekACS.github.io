@@ -157,7 +157,7 @@ class NewsSentimentCrawler:
         report_file = os.path.join(self.OUTPUT_DIR, f"report_{date}.csv")
 
         with open(report_file, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['Date', 'Company', 'Final Score', 'Article URL', 'Sentiment Score', 'Positive Mentions', 'Negative Mentions']
+            fieldnames = ['Date', 'Company', 'Price','Final Score', 'Article URL', 'Sentiment Score', 'Positive Mentions', 'Negative Mentions']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
 
