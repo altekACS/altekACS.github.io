@@ -61,7 +61,8 @@ class NewsSentimentCrawler:
         soup = BeautifulSoup(response.text, 'html.parser')
 
         try:
-            if "tw.stock.yahoo.com" in url:
+            content = None
+            if "tw.stock.yahoo.com" in url or "tw.news.yahoo.com" in url:
                 content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
                 content.get_text(strip=True) if content else ""
             elif "news.cnyes.com" in url:
@@ -71,7 +72,7 @@ class NewsSentimentCrawler:
             
             if content:
                 # Extract the publication date (assumed to be in 'time' element)
-                if "tw.stock.yahoo.com" in url:
+                if "tw.stock.yahoo.com" in url or "tw.news.yahoo.com" in url:
                     date_element = soup.find('time')
                     date = date_element['datetime'] if date_element else datetime.now().strftime("%Y-%m-%d")
                     return content.get_text(strip=True) if content else "", date
