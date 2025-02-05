@@ -63,14 +63,10 @@ class NewsSentimentCrawler:
         try:
             if "tw.stock.yahoo.com" in url:
                 content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
+                content.get_text(strip=True) if content else ""
             elif "news.cnyes.com" in url:
-                #content = soup.select_one("article div")  # 修正選擇器，提高相容性
-                #content = soup.select_one('div[data-rw="article"]')
-                #content = soup.select_one('div[itemprop="articleBody"]')
-                content = soup.select_one('div.article-wrapper') or soup.select_one('div._1UuP') or soup.select_one('div.clearfix') 
-            else:
-                content = None
-    
+                content_sections = soup.select('section[style*="margin-top"]')
+                content = "\n".join([section.get_text(strip=True) for section in content_sections])
             # Extract article content
             
             if content:
@@ -82,7 +78,7 @@ class NewsSentimentCrawler:
                 elif "news.cnyes.com" in url:
                     date_element = soup.select_one('time') or soup.select_one('div.meta-info')
                     date = date_element.get('datetime') if date_element and date_element.has_attr('datetime') else datetime.now().strftime("%Y-%m-%d")
-                    return (content.get_text(strip=True) if content else "", date)
+                    return content if content else "", date
                 else:
                     return "", ""
             else:
