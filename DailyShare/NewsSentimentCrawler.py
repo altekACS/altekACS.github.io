@@ -62,20 +62,29 @@ class NewsSentimentCrawler:
 
         try:
             if "tw.stock.yahoo.com" in url:
-                content = soup.find('div', class_='article-content')  # Yahoo News 文章內容
+                content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
             elif "news.cnyes.com" in url:
-                content = soup.select_one("article div")  # 修正選擇器，提高相容性
+                #content = soup.select_one("article div")  # 修正選擇器，提高相容性
                 #content = soup.select_one('div[data-rw="article"]')
+                #content = soup.select_one('div[itemprop="articleBody"]')
+                content = soup.select_one('div.article-wrapper') or soup.select_one('div._1UuP') or soup.select_one('div.clearfix') 
             else:
                 content = None
     
             # Extract article content
-            #content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
+            
             if content:
                 # Extract the publication date (assumed to be in 'time' element)
-                date_element = soup.find('time')
-                date = date_element['datetime'] if date_element else datetime.now().strftime("%Y-%m-%d")
-                return content.get_text(strip=True) if content else "", date
+                if "tw.stock.yahoo.com" in url:
+                    date_element = soup.find('time')
+                    date = date_element['datetime'] if date_element else datetime.now().strftime("%Y-%m-%d")
+                    return content.get_text(strip=True) if content else "", date
+                elif "news.cnyes.com" in url:
+                    date_element = soup.select_one('time') or soup.select_one('div.meta-info')
+                    date = date_element.get('datetime') if date_element and date_element.has_attr('datetime') else datetime.now().strftime("%Y-%m-%d")
+                    return (content.get_text(strip=True) if content else "", date)
+                else:
+                    return "", ""
             else:
                 print("Unable to find article content.")
                 return "", ""

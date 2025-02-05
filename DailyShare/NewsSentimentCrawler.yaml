@@ -1,7 +1,7 @@
 sources:
-   - url: 'https://tw.stock.yahoo.com/news/'
+  # - url: 'https://tw.stock.yahoo.com/news/'
   # - url: 'https://tw.news.yahoo.com/finance/'
-  #- url: 'https://news.cnyes.com/news/cat/tw_stock'
+  - url: 'https://news.cnyes.com/news/cat/tw_stock'
 
 companies:
   - name: 台積電
