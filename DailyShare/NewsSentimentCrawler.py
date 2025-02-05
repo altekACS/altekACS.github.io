@@ -61,8 +61,16 @@ class NewsSentimentCrawler:
         soup = BeautifulSoup(response.text, 'html.parser')
 
         try:
+            if "tw.stock.yahoo.com" in url:
+                content = soup.find('div', class_='article-content')  # Yahoo News 文章內容
+            elif "news.cnyes.com" in url:
+                content = soup.select_one("article div")  # 修正選擇器，提高相容性
+                #content = soup.select_one('div[data-rw="article"]')
+            else:
+                content = None
+    
             # Extract article content
-            content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
+            #content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
             if content:
                 # Extract the publication date (assumed to be in 'time' element)
                 date_element = soup.find('time')
@@ -108,19 +116,22 @@ class NewsSentimentCrawler:
             news_links = [item['href'] for item in news_items if item and 'href' in item.attrs]
 
             # Filter out non-news links
-            news_links = [link for link in news_links if self.is_news_url(link)]
+            filter_news_links = [link for link in news_links if self.is_news_url(link)]
+
+            # if the links not start with 'http', add the base url
+            filter_news_links = [urllib.parse.urljoin(url, link) for link in filter_news_links]
 
             # Remove duplicate links
-            news_links = list(set(news_links))
+            filter_news_links = list(set(filter_news_links))
 
         except Exception as e:
             print(f"Failed to fetch news using Selenium: {e}")
-            news_links = []
+            filter_news_links = []
 
         finally:
             driver.quit()
 
-        return news_links
+        return filter_news_links
 
     def analyze_sentiment(self, text, keywords=None):
         """對文章內容進行關鍵字情感分析"""
