@@ -17,6 +17,11 @@ import os
 import re
 import urllib.parse
 
+import sys
+sys.stdout.reconfigure(encoding='utf-8')
+sys.stdin.reconfigure(encoding='utf-8')
+
+
 class NewsSentimentCrawler:
     def __init__(self, config_file):
         self.HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"}
@@ -46,6 +51,7 @@ class NewsSentimentCrawler:
         try:
             print(url)
             response = requests.get(url, headers=self.HEADERS, timeout=10)
+            response.encoding = 'utf-8'  # 強制使用 UTF-8 編碼
             response.raise_for_status()
         except requests.exceptions.RequestException as e:
             print(f"Failed to fetch the article: {e}")
@@ -57,13 +63,27 @@ class NewsSentimentCrawler:
         soup = BeautifulSoup(response.text, 'html.parser')
 
         try:
+            content = None
+            if "tw.stock.yahoo.com" in url or "tw.news.yahoo.com" in url:
+                content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
+                content.get_text(strip=True) if content else ""
+            elif "news.cnyes.com" in url:
+                content_sections = soup.select('section[style*="margin-top"]')
+                content = "\n".join([section.get_text(strip=True) for section in content_sections])
             # Extract article content
-            content = soup.find('div', class_='caas-body')  # Adjust based on the website's article structure
+            
             if content:
                 # Extract the publication date (assumed to be in 'time' element)
-                date_element = soup.find('time')
-                date = date_element['datetime'] if date_element else datetime.now().strftime("%Y-%m-%d")
-                return content.get_text(strip=True) if content else "", date
+                if "tw.stock.yahoo.com" in url or "tw.news.yahoo.com" in url:
+                    date_element = soup.find('time')
+                    date = date_element['datetime'] if date_element else datetime.now().strftime("%Y-%m-%d")
+                    return content.get_text(strip=True) if content else "", date
+                elif "news.cnyes.com" in url:
+                    date_element = soup.select_one('time') or soup.select_one('div.meta-info')
+                    date = date_element.get('datetime') if date_element and date_element.has_attr('datetime') else datetime.now().strftime("%Y-%m-%d")
+                    return content if content else "", date
+                else:
+                    return "", ""
             else:
                 print("Unable to find article content.")
                 return "", ""
@@ -104,19 +124,22 @@ class NewsSentimentCrawler:
             news_links = [item['href'] for item in news_items if item and 'href' in item.attrs]
 
             # Filter out non-news links
-            news_links = [link for link in news_links if self.is_news_url(link)]
+            filter_news_links = [link for link in news_links if self.is_news_url(link)]
+
+            # if the links not start with 'http', add the base url
+            filter_news_links = [urllib.parse.urljoin(url, link) for link in filter_news_links]
 
             # Remove duplicate links
-            news_links = list(set(news_links))
+            filter_news_links = list(set(filter_news_links))
 
         except Exception as e:
             print(f"Failed to fetch news using Selenium: {e}")
-            news_links = []
+            filter_news_links = []
 
         finally:
             driver.quit()
 
-        return news_links
+        return filter_news_links
 
     def analyze_sentiment(self, text, keywords=None):
         """對文章內容進行關鍵字情感分析"""
@@ -159,7 +182,7 @@ class NewsSentimentCrawler:
         report_file = os.path.join(self.OUTPUT_DIR, f"report_{date}.csv")
 
         with open(report_file, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['Date', 'Company', 'Final Score', 'Article URL', 'Sentiment Score', 'Positive Mentions', 'Negative Mentions']
+            fieldnames = ['Date', 'Company', 'Price','Final Score', 'Article URL', 'Sentiment Score', 'Positive Mentions', 'Negative Mentions']
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
 
@@ -239,15 +262,21 @@ class NewsSentimentCrawler:
                             final_score = 0
                             keyword_sentences = self.extract_sentences_containing_keyword(article_content, company['keywords'][0])
                             for sentence in keyword_sentences:
+                                #print(sentence)
                                 market_sentiment += analyze_market_sentiment(sentence)
+                                #print(market_sentiment)
 
                             # Calculate the average market sentiment score
                             market_sentiment = market_sentiment / len(keyword_sentences) if len(keyword_sentences) > 0 else 0
+                            
+                            # leave the float number to 2 decimal places
+                            market_sentiment = round(market_sentiment, 2)
 
                             # Calculate the final score based on sentiment and market sentiment
                             positive_mentions += article_content.count("好") + article_content.count("佳") + article_content.count("增長")
                             negative_mentions += article_content.count("壞") + article_content.count("差") + article_content.count("下跌")
                             final_score = sentiment_score + market_sentiment
+                            final_score = round(final_score, 2)
 
                             # Query current stock price
                             #https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker=2330.TW
