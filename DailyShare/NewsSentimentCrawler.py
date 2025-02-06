@@ -31,6 +31,8 @@ class NewsSentimentCrawler:
         else:
             self.REPO_PATH = os.path.expanduser("/Users/jerome/Project/altekACS.github.io")
             self.DATA_DIR = os.path.join(self.REPO_PATH, "DailyShare/data")
+            self.OUTPUT_DIR = os.path.join(self.REPO_PATH, "DailyShare/data")
+
         if not os.path.exists(self.OUTPUT_DIR):
             os.makedirs(self.OUTPUT_DIR)
 
@@ -277,5 +279,14 @@ class NewsSentimentCrawler:
             print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    crawler = NewsSentimentCrawler('DailyShare\\NewsSentimentCrawler.yaml')
+    if os.name == 'nt':  # Windows
+        crawler = NewsSentimentCrawler('DailyShare\\NewsSentimentCrawler.yaml')
+    else:
+        # get current directory
+        def getcurrentdir():
+            return os.path.dirname(os.path.realpath(__file__))
+
+        yamlpath = getcurrentdir() + '/NewsSentimentCrawler.yaml'
+        crawler = NewsSentimentCrawler(yamlpath)
+        
     crawler.run()
