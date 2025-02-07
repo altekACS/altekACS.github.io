@@ -38,10 +38,10 @@
 				<th>Date</th>
 				<th>Company</th>
 				<th>Price</th>
-				<th>Final Score</th>
+				<!-- <th>Final Score</th> -->
 				<th>Sentiment Score</th>
-				<th>Positive Mentions</th>
-				<th>Negative Mentions</th>
+				<!-- <th>Positive Mentions</th>
+				<th>Negative Mentions</th> -->
                 <th>Article URL</th>
             </tr>
 		</thead>
@@ -79,10 +79,7 @@
                                 <td>${article['Date']}</td>
                                 <td>${article['Company']}</td>
                                 <td>${article['Price']}</td>
-                                <td>${article['Final Score']}</td>
                                 <td>${article['Sentiment Score']}</td>
-                                <td>${article['Positive Mentions']}</td>
-                                <td>${article['Negative Mentions']}</td>
                                 <td><a href="${article['Article URL']}" target="_blank">${article['Article URL']}</a></td>                                
                             `;
                             tbody.appendChild(row);
