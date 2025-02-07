@@ -16,6 +16,30 @@ companies:
       - 聯發科
       - MediaTek
       - (2454)
+  - name: 鴻海
+    code: 2317
+    keywords:
+      - 鴻海
+      - Foxconn
+      - (2317)
+  - name: 聯電
+    code: 2303
+    keywords:
+      - 聯電
+      - UMC
+      - (2303)
+  - name: 長榮
+    code: 2603
+    keywords:
+      - 長榮
+      - Evergreen
+      - (2603)
+  - name: 第一金
+    code: 2892
+    keywords:
+      - 第一金
+      - First Bank
+      - (2892)
   - name: 擎亞
     code: 8096
     keywords:
