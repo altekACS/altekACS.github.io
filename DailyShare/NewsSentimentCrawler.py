@@ -8,6 +8,7 @@ from textblob import TextBlob
 from datetime import datetime, timedelta
 #from transformers import pipeline
 from sentiment_analysis import analyze_market_sentiment
+from stock_price_service import get_stock_price
 from git import Repo  # pip install gitpython
 import requests
 import yaml
@@ -281,9 +282,10 @@ class NewsSentimentCrawler:
                             # Query current stock price
                             #https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker=2330.TW
                             company_price = 0
-                            response = requests.get(f"https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker={company['code']}.TW")  # Replace with your stock service URL
+                            #response = requests.get(f"https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker={company['code']}.TW")  # Replace with your stock service URL
+                            response = get_stock_price(f"{company['code']}.TW")
                             if response.status_code == 200:
-                                stock_data = response.json()
+                                stock_data = response.json
                                 company_price = stock_data['price']
 
                             if company['name'] not in news_data:
