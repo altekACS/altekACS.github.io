@@ -284,8 +284,8 @@ class NewsSentimentCrawler:
                             company_price = 0
                             #response = requests.get(f"https://stock-service-app-57e2a70ca0ad.herokuapp.com/stock?ticker={company['code']}.TW")  # Replace with your stock service URL
                             response = get_stock_price(f"{company['code']}.TW")
-                            if response.status_code == 200:
-                                stock_data = response.json
+                            if response['status_code'] == 200:
+                                stock_data = response['json']
                                 company_price = stock_data['price']
 
                             if company['name'] not in news_data:
