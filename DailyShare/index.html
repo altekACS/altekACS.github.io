@@ -86,18 +86,13 @@
                     }
                     const tbody = document.getElementById('score-body');
                     data.forEach(report => {
-                        if (!report.articles || !Array.isArray(report.articles)) {
-                            throw new Error('Report does not contain an Articles array');
-                        }
-                        report.articles.forEach(article => {
-                            const row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td>${article['Date']}</td>
-                                <td>${article['Company']}</td>
-                                <td>${article['Sentiment Score']}</td>                              
-                            `;
-                            tbody.appendChild(row);
-                        });
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${report['Date']}</td>
+                            <td>${report['Company']}</td>
+                            <td>${report['Sentiment Score']}</td>
+                        `;
+                        tbody.appendChild(row);
                     });
                 })
                 .catch(error => console.error('Error loading score data:', error));
