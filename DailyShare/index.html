@@ -31,7 +31,21 @@
     </style>
 </head>
 <body>
-    <h1>News Daily Sentiment Analysis Report</h1>
+    <h1>News Daily Sentiment Analysis Report</h1>  
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+				<th>Company</th>
+				<th>Sentiment Score</th>
+            </tr>
+        </thead>
+		<tbody id="score-body">
+			<!-- Data rows will be inserted here -->
+		</tbody>
+    </table>
+
+    <h1>News Daily Sentiment Analysis detail</h1>
 	<table>
 		<thead>
 			<tr>
@@ -56,7 +70,39 @@
             const month = String(today.getMonth() + 1).padStart(2, '0');
             const day = String(today.getDate()).padStart(2, '0');
             const fileName = `reports_${year}-${month}-${day}.json`;
+            const filnalScoreFileName = `finalScore_${year}-${month}-${day}.json`;
 
+            // Load the final score data
+            fetch(`./data/${filnalScoreFileName}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (!Array.isArray(data)) {
+                        throw new Error('Data is not an array');
+                    }
+                    const tbody = document.getElementById('score-body');
+                    data.forEach(report => {
+                        if (!report.articles || !Array.isArray(report.articles)) {
+                            throw new Error('Report does not contain an Articles array');
+                        }
+                        report.articles.forEach(article => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${article['Date']}</td>
+                                <td>${article['Company']}</td>
+                                <td>${article['Sentiment Score']}</td>                              
+                            `;
+                            tbody.appendChild(row);
+                        });
+                    });
+                })
+                .catch(error => console.error('Error loading score data:', error));
+
+            // Load the report data
             fetch(`./data/${fileName}`)
                 .then(response => {
                     if (!response.ok) {

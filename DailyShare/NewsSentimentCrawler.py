@@ -187,8 +187,14 @@ class NewsSentimentCrawler:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
 
-            for company in self.companies:               
+            Sentiment_score_per_company = {}
+            for company in self.companies:    
+                Sentiment_score_per_company[company['name']] = 0         
                 for news in news_data.get(company['name'], []):
+                    
+                    # calculate the total sentiment score per company
+                    Sentiment_score_per_company[company['name']] += news.get('entiment Score', 0)                        
+
                     writer.writerow({
                         'Date': date,
                         'Company': company['name'],
@@ -200,10 +206,19 @@ class NewsSentimentCrawler:
                         'Negative Mentions': news.get('Negative Mentions', '')
                     })
 
+        # generate the daily report in json format
         json_file = os.path.join(self.DATA_DIR, f"reports_{date}.json")
         self.csv_to_json(report_file, json_file)
-
         print(f"Daily report saved: {report_file}")
+
+        # Generate the final sentiment score report for each company as JSON format
+        final_sentiment_score = os.path.join(self.DATA_DIR, f"final_score_{date}.json")
+        final_score_data = [{"Date": date, "Company": company, "Sentiment Score": score} for company, score in Sentiment_score_per_company.items()]
+        
+        with open(final_sentiment_score, 'w', encoding='utf-8') as f:
+            json.dump(final_score_data, f, ensure_ascii=False, indent=4)
+        
+        print(f"Final sentiment score saved: {final_sentiment_score}")
 
     def fetch_news_links(self, url):
         # 發送 HTTP 請求
