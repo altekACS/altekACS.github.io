@@ -212,7 +212,7 @@ class NewsSentimentCrawler:
         print(f"Daily report saved: {report_file}")
 
         # Generate the final sentiment score report for each company as JSON format
-        final_sentiment_score = os.path.join(self.DATA_DIR, f"final_score_{date}.json")
+        final_sentiment_score = os.path.join(self.DATA_DIR, f"finalScore_{date}.json")
         final_score_data = [{"Date": date, "Company": company, "Sentiment Score": score} for company, score in Sentiment_score_per_company.items()]
         
         with open(final_sentiment_score, 'w', encoding='utf-8') as f:
