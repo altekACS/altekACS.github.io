@@ -193,7 +193,7 @@ class NewsSentimentCrawler:
                 for news in news_data.get(company['name'], []):
                     
                     # calculate the total sentiment score per company
-                    Sentiment_score_per_company[company['name']] += news.get('entiment Score', 0)                        
+                    Sentiment_score_per_company[company['name']] += news.get('Sentiment Score', 0)                        
 
                     writer.writerow({
                         'Date': date,
