@@ -3,6 +3,7 @@ name: Daily Report Generation (Windows)
 on:
   schedule:
     - cron: '50 0 * * *' # 每日 08:00 執行
+    - cron: '0 1 * * *' # 每日 09:00 執行
   workflow_dispatch: # 支援手動觸發工作流程
 
 jobs:
