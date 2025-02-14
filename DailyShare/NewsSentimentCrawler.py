@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
@@ -110,9 +111,11 @@ class NewsSentimentCrawler:
         options.add_argument("--disable-dev-shm-usage")
 
         if os.name == 'nt':  # Windows
-            service = Service(r"DailyShare\\chromedriver.exe")  # Replace with your ChromeDriver path
+            #service = Service(r"DailyShare\\chromedriver.exe")  # Replace with your ChromeDriver path
+            service = Service(ChromeDriverManager().install()) # Replace with your ChromeDriver path
         else:  # macOS or Linux
-            service = Service("/usr/local/bin/chromedriver")  # Replace with your ChromeDriver path
+            service = Service(ChromeDriverManager().install()) # Replace with your ChromeDriver path
+            #service = Service("/usr/local/bin/chromedriver")  # Replace with your ChromeDriver path
         driver = webdriver.Chrome(service=service, options=options)
 
         try:
