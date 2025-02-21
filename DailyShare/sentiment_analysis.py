@@ -58,16 +58,30 @@ negative_words = {
     "裁員潮": -5, "市場低迷": -4, "大幅度下跌": -5, "金融風暴": -5, "恐慌拋售": -5
 }
 
+weight_deep_word = {
+    "positive": 1.3,  
+    "negative": -1.3
+}
 
 def analyze_market_sentiment(sentence):
     """Analyze market sentiment (optimistic or panic) based on sentence sentiment."""
  #   sentiment_analyzer = pipeline("sentiment-analysis")
     try:
 
+        # calculate whole words sentiment score
         positive_score = sum(positive_words[word] for word in positive_words if word in sentence)
         negative_score = sum(negative_words[word] for word in negative_words if word in sentence)
         sentiment = positive_score + negative_score
-        return sentiment
+
+        # spit sentence into words by "，" and "。"
+        sentence_splits = sentence.split("，") + sentence.split("。")
+        positive_score_deep = sum(positive_words[word] for word in positive_words if word in sentence_splits)
+        negative_score_deep = sum(negative_words[word] for word in negative_words if word in sentence_splits)
+        sentiment_deep = positive_score_deep*weight_deep_word["positive"] + negative_score_deep*weight_deep_word["negative"]
+
+        setiment_final = sentiment + sentiment_deep
+
+        return setiment_final
 
     except Exception as e:
         print(f"An error occurred: {e}")
