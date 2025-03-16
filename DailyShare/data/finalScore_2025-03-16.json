@@ -1,0 +1,42 @@
+[
+    {
+        "Date": "2025-03-16",
+        "Company": "台積電",
+        "Sentiment Score": 66.47
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "聯發科",
+        "Sentiment Score": 36.8
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "鴻海",
+        "Sentiment Score": 70.4
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "聯電",
+        "Sentiment Score": -4.0
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "長榮",
+        "Sentiment Score": 7.0
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "第一金",
+        "Sentiment Score": 2.25
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "擎亞",
+        "Sentiment Score": 0.0
+    },
+    {
+        "Date": "2025-03-16",
+        "Company": "華晶科",
+        "Sentiment Score": 0.0
+    }
+]
