@@ -2,8 +2,8 @@ name: Daily Report Generation (Windows)
 
 on:
   schedule:
-    - cron: '0 17-23/1 * * *'   # 前一天台灣 01:00–07:00 對應的 UTC
-    - cron: '0 0-2/1 * * *'    # 當天台灣 08:00–23:00 對應的 UTC
+    - cron: '0 17-23/2 * * *'   # 前一天台灣 01:00–07:00 對應的 UTC
+    - cron: '0 0-2/2 * * *'    # 當天台灣 08:00–23:00 對應的 UTC
   workflow_dispatch: # 支援手動觸發工作流程
 
 jobs:
