@@ -2,22 +2,22 @@
     {
         "Date": "2025-06-10",
         "Company": "台積電",
-        "Sentiment Score": 173.25000000000003
+        "Sentiment Score": 169.85000000000002
     },
     {
         "Date": "2025-06-10",
         "Company": "聯發科",
-        "Sentiment Score": 35.0
+        "Sentiment Score": 22.0
     },
     {
         "Date": "2025-06-10",
         "Company": "鴻海",
-        "Sentiment Score": 34.0
+        "Sentiment Score": 8.0
     },
     {
         "Date": "2025-06-10",
         "Company": "聯電",
-        "Sentiment Score": 20.0
+        "Sentiment Score": 3.0
     },
     {
         "Date": "2025-06-10",
@@ -27,7 +27,7 @@
     {
         "Date": "2025-06-10",
         "Company": "第一金",
-        "Sentiment Score": 19.67
+        "Sentiment Score": 6.0
     },
     {
         "Date": "2025-06-10",
