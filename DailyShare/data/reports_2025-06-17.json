@@ -6,21 +6,41 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "2.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E6%97%A9%E7%9B%A4-%E7%BE%8E%E9%9B%B6%E5%94%AE%E6%95%B8%E6%93%9A%E7%96%B2%E5%BC%B1-%E4%B8%AD%E6%9D%B1%E8%A1%9D%E7%AA%81%E6%93%94%E6%86%82%E5%86%8D%E8%B5%B7-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%95%B8%E9%96%8B%E4%BD%8E-140908525.html",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "3",
-                "Negative Mentions": "14"
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%89%8D-%E5%B7%9D%E6%99%AE%E5%96%8A%E8%A9%B1%E4%BC%8A%E6%9C%97-%E7%BE%8E%E8%82%A1%E7%BF%BB%E8%87%89%E6%94%B6%E9%BB%91-%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E5%8F%88%E4%B8%8D%E5%A6%99%E4%BA%86-222400868.html",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "3"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E4%BE%BF%E7%95%B6%E7%85%A7%E6%8E%80%E7%86%B1%E8%AD%B0-%E6%97%A5%E8%AD%B0%E5%93%A1%E5%88%86%E4%BA%AB-%E5%AF%92%E9%85%B8%E5%AD%B8%E9%A4%90-%E6%8C%A8%E8%BD%9F%E5%B8%B6%E9%A2%A8%E5%90%91%E6%80%A5%E5%88%AA%E6%96%87-123200594.html",
-                "Sentiment Score": "0.0",
+                "Final Score": "4.0",
+                "Article URL": "https://tw.news.yahoo.com/%E4%B8%8D%E7%A2%BA%E5%AE%9A%E6%80%A7%E5%A2%9E%E5%8A%A0-%E7%BE%8E%E8%82%A1%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E5%85%A8%E9%9D%A2%E4%B8%8B%E6%8C%AB-%E5%8F%B0%E6%8C%87%E6%9C%9F%E7%9B%A4%E5%BE%8C%E5%B0%8F%E8%B7%8C93%E9%BB%9E-214236340.html?bcmt=1",
+                "Sentiment Score": "4.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "0"
+                "Negative Mentions": "2"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-1.33",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr17%E6%97%A5%E4%B8%8B%E8%B7%8C1-78%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%850-83-%E6%8A%98%E5%8F%B0%E8%82%A11263-51%E5%85%83-215116329.html",
+                "Sentiment Score": "-1.33",
+                "Positive Mentions": "0",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-12.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/fomc-%E6%81%90%E5%86%8D%E7%87%83%E5%B7%9D%E6%99%AE%E6%80%92%E7%81%AB-%E7%BE%8E%E5%85%83%E6%8C%87%E6%95%B8%E5%86%8D%E5%95%9F%E4%B8%8B%E8%B7%8C%E6%A8%A1%E5%BC%8F-223000353.html",
+                "Sentiment Score": "-12.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "3"
             },
             {
                 "Date": "2025-06-17",
@@ -36,68 +56,68 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "5.33",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BB%E6%96%A5%E8%B3%871-93%E5%84%84%E7%BE%8E%E5%85%83%E8%B3%BC%E8%B2%B7%E7%BE%8E%E5%9C%8B%E5%85%AC%E5%8F%B8%E5%82%B5-%E5%BC%B7%E5%8C%96%E5%9B%BA%E5%AE%9A%E6%94%B6%E7%9B%8A%E5%B8%83%E5%B1%80-125223952.html",
-                "Sentiment Score": "5.33",
+                "Final Score": "-6.0",
+                "Article URL": "https://tw.news.yahoo.com/%E5%B7%9D%E6%99%AE%E8%A6%81%E6%B1%82%E4%BC%8A%E6%9C%97%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E6%8C%AB%E8%BF%91300%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-223957913.html?bcmt=1",
+                "Sentiment Score": "-6.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "0"
+                "Negative Mentions": "8"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "1.75",
-                "Article URL": "https://tw.news.yahoo.com/%E7%9B%A4%E5%BE%8C%E7%B1%8C%E7%A2%BC-%E4%BC%8A%E6%9C%97%E6%B1%82%E5%81%9C%E7%81%AB-%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%8554%E5%84%84-%E8%B2%B7%E7%9B%A4%E5%9C%A8%E9%80%99%E5%B9%BE%E6%AA%94-174500395.html?bcmt=1",
-                "Sentiment Score": "1.75",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "2.6",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BB7%E6%9C%88%E6%B3%95%E8%AA%AA%E6%9C%89%E5%96%9C-%E5%A4%A7%E6%91%A9-%E4%B8%8A%E8%AA%BF%E8%B2%A1%E6%B8%AC-%E6%98%8E%E5%B9%B4%E6%BC%B2%E5%83%B9-143426352.html?bcmt=1",
-                "Sentiment Score": "2.6",
-                "Positive Mentions": "1",
-                "Negative Mentions": "1"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "-4.0",
-                "Article URL": "https://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%BC%8A%E6%9C%97-%E7%BE%8E%E5%9C%8B%E4%BA%92%E5%97%86-%E7%BE%8E%E8%82%A1%E7%9B%A4%E4%B8%AD3%E5%A4%A7%E6%8C%87%E6%A8%99%E5%B0%8F%E8%B7%8C-164000208.html",
-                "Sentiment Score": "-4.0",
-                "Positive Mentions": "1",
+                "Final Score": "-4.5",
+                "Article URL": "https://tw.news.yahoo.com/%E4%BB%A5%E4%BC%8A%E8%A1%9D%E7%AA%81%E6%83%A1%E5%8C%96%E8%A1%9D%E6%93%8A%E7%BE%8E%E8%82%A1-%E7%89%B9%E6%96%AF%E6%8B%89%E8%B7%8C%E8%BF%914-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-222239604.html",
+                "Sentiment Score": "-4.5",
+                "Positive Mentions": "0",
                 "Negative Mentions": "5"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "2.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E9%99%A4%E6%81%AF%E9%A6%96%E6%97%A5%E9%99%B7%E8%B2%BC%E6%81%AF%E7%AA%98%E5%A2%83-%E8%87%AA%E7%87%9F%E5%95%86%E5%80%92%E8%B2%A8%E9%9B%BB%E5%AD%90%E4%BA%94%E5%93%A5-%E9%80%99%E6%AA%94-%E7%A0%B42%E5%8D%83%E5%BC%B5-%E9%80%A313%E8%B2%B7%E5%96%8A%E5%8D%A1-144500399.html?bcmt=1",
-                "Sentiment Score": "2.0",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%89%8D-%E5%B7%9D%E6%99%AE%E5%96%8A%E8%A9%B1%E4%BC%8A%E6%9C%97-%E7%BE%8E%E8%82%A1%E7%BF%BB%E8%87%89%E6%94%B6%E9%BB%91-%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E5%8F%88%E4%B8%8D%E5%A6%99%E4%BA%86-222400868.html",
+                "Sentiment Score": "-4.0",
                 "Positive Mentions": "1",
+                "Negative Mentions": "3"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-2.5",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BD%95%E8%A6%8B-%E8%8F%AF%E7%88%BE%E8%A1%97%E8%B2%B7%E7%88%86-%E5%8F%B0%E5%BB%A02%E6%AA%94ai%E8%82%A1-%E7%AB%9F-%E5%87%BA%E6%B8%85%E8%BC%9D%E9%81%94%E5%8F%B0%E7%A9%8D%E9%9B%BB-210530918.html?bcmt=1",
+                "Sentiment Score": "-3.0",
+                "Positive Mentions": "2",
                 "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "2.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E9%99%A4%E6%81%AF%E9%A6%96%E6%97%A5%E9%99%B7%E8%B2%BC%E6%81%AF%E7%AA%98%E5%A2%83-%E8%87%AA%E7%87%9F%E5%95%86%E5%80%92%E8%B2%A8%E9%9B%BB%E5%AD%90%E4%BA%94%E5%93%A5-%E9%80%99%E6%AA%94-%E7%A0%B42%E5%8D%83%E5%BC%B5-%E9%80%A313%E8%B2%B7%E5%96%8A%E5%8D%A1-144500399.html",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E5%B7%9D%E6%99%AE%E5%91%BC%E7%B1%B2%E4%BC%8A%E6%9C%97-%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E7%9B%A1%E5%A2%A8-204639258.html",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "12"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E5%B7%9D%E6%99%AE%E5%91%BC%E7%B1%B2%E4%BC%8A%E6%9C%97-%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E7%9B%A1%E5%A2%A8-204639258.html?bcmt=1",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "12"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
                 "Final Score": "0.0",
-                "Article URL": "https://tw.news.yahoo.com/0050%E6%AD%A3%E5%BC%8F-%E5%88%86%E8%BA%AB-5%E8%90%AC%E5%85%83%E6%9C%89%E6%89%BE-%E5%B0%8F%E8%B3%87%E7%BF%BB%E8%BA%AB%E6%99%82%E4%BB%A3%E6%AD%A3%E5%BC%8F%E4%BE%86%E4%BA%86-160200727.html",
+                "Article URL": "https://tw.stock.yahoo.com/news/618%E5%B9%B4%E4%B8%AD%E6%85%B6%E8%B3%BC%E7%89%A9%E7%9B%9B%E5%85%B8%E6%9C%80%E5%BE%8C%E9%80%B2%E7%AB%99%EF%BC%81yahoo%E8%B3%BC%E7%89%A9%E5%85%AC%E5%B8%83618%E5%89%8D%E4%BA%94%E5%90%8D%E7%86%B1%E9%8A%B7%E6%A6%9C-102039163.html",
                 "Sentiment Score": "0.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
@@ -106,10 +126,110 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
+                "Final Score": "-6.0",
+                "Article URL": "https://tw.news.yahoo.com/%E5%B7%9D%E6%99%AE%E8%A6%81%E6%B1%82%E4%BC%8A%E6%9C%97%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E6%8C%AB%E8%BF%91300%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-223957913.html",
+                "Sentiment Score": "-6.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "8"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.5",
+                "Article URL": "https://tw.news.yahoo.com/%E4%BB%A5%E4%BC%8A%E8%A1%9D%E7%AA%81%E6%83%A1%E5%8C%96%E8%A1%9D%E6%93%8A%E7%BE%8E%E8%82%A1-%E7%89%B9%E6%96%AF%E6%8B%89%E8%B7%8C%E8%BF%914-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-222239604.html?bcmt=1",
+                "Sentiment Score": "-4.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "5"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-6.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%B7%9D%E6%99%AE%E8%A6%81%E6%B1%82%E4%BC%8A%E6%9C%97%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E6%8C%AB%E8%BF%91300%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-223957913.html",
+                "Sentiment Score": "-6.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "8"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.5",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E4%BB%A5%E4%BC%8A%E8%A1%9D%E7%AA%81%E6%83%A1%E5%8C%96%E8%A1%9D%E6%93%8A%E7%BE%8E%E8%82%A1-%E7%89%B9%E6%96%AF%E6%8B%89%E8%B7%8C%E8%BF%914-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E8%B7%8C0-83-222239604.html",
+                "Sentiment Score": "-4.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "5"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E8%8B%B1%E7%89%B9%E7%88%BE%E9%A0%90%E8%A8%88%E8%A3%81%E5%93%A120-2-1%E8%90%AC%E4%BA%BA%E4%B8%9F%E9%A3%AF%E7%A2%97-%E9%99%B3%E7%AB%8B%E6%AD%A6%E5%AF%A6%E7%8F%BE%E9%A6%96%E6%B3%A2-%E5%A4%A7%E7%98%A6%E8%BA%AB-043851822.html",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "2",
+                "Negative Mentions": "2"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "4.0",
+                "Article URL": "https://tw.news.yahoo.com/%E4%B8%8D%E7%A2%BA%E5%AE%9A%E6%80%A7%E5%A2%9E%E5%8A%A0-%E7%BE%8E%E8%82%A1%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E5%85%A8%E9%9D%A2%E4%B8%8B%E6%8C%AB-%E5%8F%B0%E6%8C%87%E6%9C%9F%E7%9B%A4%E5%BE%8C%E5%B0%8F%E8%B7%8C93%E9%BB%9E-214236340.html",
+                "Sentiment Score": "4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "2"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
                 "Final Score": "-4.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E5%BF%AB%E8%A8%8A-%E4%BC%8A%E6%9C%97-%E7%BE%8E%E5%9C%8B%E4%BA%92%E5%97%86-%E7%BE%8E%E8%82%A1%E7%9B%A4%E4%B8%AD3%E5%A4%A7%E6%8C%87%E6%A8%99%E5%B0%8F%E8%B7%8C-164000208.html",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E4%BB%A5%E4%BC%8A%E8%A1%9D%E7%AA%81%E6%8B%96%E7%B4%AF%E7%BE%8E%E8%82%A1-%E9%81%93%E7%93%8A%E8%B7%8C299%E9%BB%9E-%E7%89%B9%E6%96%AF%E6%8B%89%E9%87%8D%E6%8C%AB%E8%BF%914-215347355.html?bcmt=1",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "5"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%89%8D-%E5%B7%9D%E6%99%AE%E5%96%8A%E8%A9%B1%E4%BC%8A%E6%9C%97-%E7%BE%8E%E8%82%A1%E7%BF%BB%E8%87%89%E6%94%B6%E9%BB%91-%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E5%8F%88%E4%B8%8D%E5%A6%99%E4%BA%86-222400868.html?bcmt=1",
                 "Sentiment Score": "-4.0",
                 "Positive Mentions": "1",
+                "Negative Mentions": "3"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-1.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%9A%E9%9C%87-%E4%B8%BB%E5%8B%95%E5%BC%8Fetf%E4%BA%AE%E7%9C%BC-201000549.html",
+                "Sentiment Score": "-1.0",
+                "Positive Mentions": "5",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-1.33",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BBadr17%E6%97%A5%E4%B8%8B%E8%B7%8C1-78%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%850-83-%E6%8A%98%E5%8F%B0%E8%82%A11263-51%E5%85%83-215116329.html?bcmt=1",
+                "Sentiment Score": "-1.33",
+                "Positive Mentions": "0",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E4%BB%A5%E4%BC%8A%E8%A1%9D%E7%AA%81%E6%8B%96%E7%B4%AF%E7%BE%8E%E8%82%A1-%E9%81%93%E7%93%8A%E8%B7%8C299%E9%BB%9E-%E7%89%B9%E6%96%AF%E6%8B%89%E9%87%8D%E6%8C%AB%E8%BF%914-215347355.html",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
                 "Negative Mentions": "5"
             },
             {
@@ -126,81 +246,21 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "-4.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E4%B8%AD%E6%9D%B1%E5%B1%80%E5%8B%A2%E5%8D%87%E7%B4%9A-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E8%B7%8C%E9%80%BE%E7%99%BE%E9%BB%9E-%E6%B2%B9%E5%83%B9%E4%B8%8A%E6%BC%B2-135938943.html",
-                "Sentiment Score": "-4.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "15"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/0050%E6%AD%A3%E5%BC%8F-%E5%88%86%E8%BA%AB-5%E8%90%AC%E5%85%83%E6%9C%89%E6%89%BE-%E5%B0%8F%E8%B3%87%E7%BF%BB%E8%BA%AB%E6%99%82%E4%BB%A3%E6%AD%A3%E5%BC%8F%E4%BE%86%E4%BA%86-160200727.html",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "-4.0",
-                "Article URL": "https://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%BC%8A%E6%9C%97-%E7%BE%8E%E5%9C%8B%E4%BA%92%E5%97%86-%E7%BE%8E%E8%82%A1%E7%9B%A4%E4%B8%AD3%E5%A4%A7%E6%8C%87%E6%A8%99%E5%B0%8F%E8%B7%8C-164000208.html?bcmt=1",
-                "Sentiment Score": "-4.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "5"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.news.yahoo.com/0050%E6%AD%A3%E5%BC%8F-%E5%88%86%E8%BA%AB-5%E8%90%AC%E5%85%83%E6%9C%89%E6%89%BE-%E5%B0%8F%E8%B3%87%E7%BF%BB%E8%BA%AB%E6%99%82%E4%BB%A3%E6%AD%A3%E5%BC%8F%E4%BE%86%E4%BA%86-160200727.html?bcmt=1",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "1.75",
-                "Article URL": "https://tw.news.yahoo.com/%E7%9B%A4%E5%BE%8C%E7%B1%8C%E7%A2%BC-%E4%BC%8A%E6%9C%97%E6%B1%82%E5%81%9C%E7%81%AB-%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%8554%E5%84%84-%E8%B2%B7%E7%9B%A4%E5%9C%A8%E9%80%99%E5%B9%BE%E6%AA%94-174500395.html",
-                "Sentiment Score": "1.75",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "2.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E6%97%A9%E7%9B%A4-%E7%BE%8E%E9%9B%B6%E5%94%AE%E6%95%B8%E6%93%9A%E7%96%B2%E5%BC%B1-%E4%B8%AD%E6%9D%B1%E8%A1%9D%E7%AA%81%E6%93%94%E6%86%82%E5%86%8D%E8%B5%B7-%E4%B8%BB%E8%A6%81%E6%8C%87%E6%95%B8%E9%96%8B%E4%BD%8E-140908525.html?bcmt=1",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "3",
-                "Negative Mentions": "14"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E8%8B%B1%E7%89%B9%E7%88%BE%E9%A0%90%E8%A8%88%E8%A3%81%E5%93%A120-2-1%E8%90%AC%E4%BA%BA%E4%B8%9F%E9%A3%AF%E7%A2%97-%E9%99%B3%E7%AB%8B%E6%AD%A6%E5%AF%A6%E7%8F%BE%E9%A6%96%E6%B3%A2-%E5%A4%A7%E7%98%A6%E8%BA%AB-043851822.html",
-                "Sentiment Score": "0.0",
+                "Final Score": "-2.5",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BD%95%E8%A6%8B-%E8%8F%AF%E7%88%BE%E8%A1%97%E8%B2%B7%E7%88%86-%E5%8F%B0%E5%BB%A02%E6%AA%94ai%E8%82%A1-%E7%AB%9F-%E5%87%BA%E6%B8%85%E8%BC%9D%E9%81%94%E5%8F%B0%E7%A9%8D%E9%9B%BB-210530918.html",
+                "Sentiment Score": "-3.0",
                 "Positive Mentions": "2",
-                "Negative Mentions": "2"
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "2.6",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E7%A9%8D%E9%9B%BB7%E6%9C%88%E6%B3%95%E8%AA%AA%E6%9C%89%E5%96%9C-%E5%A4%A7%E6%91%A9-%E4%B8%8A%E8%AA%BF%E8%B2%A1%E6%B8%AC-%E6%98%8E%E5%B9%B4%E6%BC%B2%E5%83%B9-143426352.html",
-                "Sentiment Score": "2.6",
-                "Positive Mentions": "1",
-                "Negative Mentions": "1"
+                "Final Score": "8.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E6%8A%95%E4%BF%A1%E6%92%90%E7%9B%A4-%E5%8F%B0%E8%82%A1%E5%8A%9B%E5%AE%8822k-201000398.html",
+                "Sentiment Score": "8.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
@@ -210,6 +270,16 @@
                 "Article URL": "https://tw.stock.yahoo.com/news/618%E5%B9%B4%E4%B8%AD%E6%85%B6%E8%B3%BC%E7%89%A9%E7%9B%9B%E5%85%B8%E6%9C%80%E5%BE%8C%E9%80%B2%E7%AB%99%EF%BC%81yahoo%E8%B3%BC%E7%89%A9%E5%85%AC%E5%B8%83618%E5%89%8D%E4%BA%94%E5%90%8D%E7%86%B1%E9%8A%B7%E6%A6%9C-102039163.html",
                 "Sentiment Score": "0.0",
                 "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-1.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%9A%E9%9C%87-%E4%B8%BB%E5%8B%95%E5%BC%8Fetf%E4%BA%AE%E7%9C%BC-201000549.html",
+                "Sentiment Score": "-1.0",
+                "Positive Mentions": "5",
                 "Negative Mentions": "0"
             },
             {
@@ -217,20 +287,10 @@
                 "Company": "台積電",
                 "Price": "1045.0",
                 "Final Score": "-4.0",
-                "Article URL": "https://tw.news.yahoo.com/%E5%BF%AB%E8%A8%8A-%E4%BC%8A%E6%9C%97-%E7%BE%8E%E5%9C%8B%E4%BA%92%E5%97%86-%E7%BE%8E%E8%82%A1%E7%9B%A4%E4%B8%AD3%E5%A4%A7%E6%8C%87%E6%A8%99%E5%B0%8F%E8%B7%8C-164000208.html",
+                "Article URL": "https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%89%8D-%E5%B7%9D%E6%99%AE%E5%96%8A%E8%A9%B1%E4%BC%8A%E6%9C%97-%E7%BE%8E%E8%82%A1%E7%BF%BB%E8%87%89%E6%94%B6%E9%BB%91-%E5%8F%B0%E8%82%A1%E9%96%8B%E7%9B%A4%E5%8F%88%E4%B8%8D%E5%A6%99%E4%BA%86-222400868.html",
                 "Sentiment Score": "-4.0",
                 "Positive Mentions": "1",
-                "Negative Mentions": "5"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/618%E5%B9%B4%E4%B8%AD%E6%85%B6%E8%B3%BC%E7%89%A9%E7%9B%9B%E5%85%B8%E6%9C%80%E5%BE%8C%E9%80%B2%E7%AB%99%EF%BC%81yahoo%E8%B3%BC%E7%89%A9%E5%85%AC%E5%B8%83618%E5%89%8D%E4%BA%94%E5%90%8D%E7%86%B1%E9%8A%B7%E6%A6%9C-102039163.html",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
+                "Negative Mentions": "3"
             },
             {
                 "Date": "2025-06-17",
@@ -246,29 +306,19 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "0.75",
-                "Article URL": "https://news.cnyes.com/news/id/6026029",
-                "Sentiment Score": "0.75",
+                "Final Score": "7.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1h2%E6%93%81%E5%88%A9%E5%A4%9A-%E7%BA%8C%E6%BC%B2%E7%A9%BA%E9%96%93%E5%A4%A7-201000580.html",
+                "Sentiment Score": "7.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "2"
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
                 "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026132",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%90%86%E7%9B%A3%E4%BA%8B%E6%9C%83%E5%89%8D%E6%96%B0%E5%8F%B0%E5%B9%A3%E7%BA%8C%E5%BC%B7-%E7%9B%A4%E4%B8%AD%E7%AB%99%E4%B8%8A29-4%E5%85%83%E5%83%B9%E4%BD%8D-094629164.html",
                 "Sentiment Score": "0.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "2"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "台積電",
-                "Price": "1045.0",
-                "Final Score": "4.0",
-                "Article URL": "https://news.cnyes.com/news/id/6025331",
-                "Sentiment Score": "4.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
@@ -286,10 +336,50 @@
                 "Date": "2025-06-17",
                 "Company": "台積電",
                 "Price": "1045.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026399",
-                "Sentiment Score": "3.0",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026875",
+                "Sentiment Score": "2.0",
                 "Positive Mentions": "3",
+                "Negative Mentions": "14"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-3.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026832",
+                "Sentiment Score": "-3.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026152",
+                "Sentiment Score": "2.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "-4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6027151",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "12"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "台積電",
+                "Price": "1045.0",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026851",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "2",
                 "Negative Mentions": "1"
             },
             {
@@ -306,11 +396,11 @@
                 "Date": "2025-06-17",
                 "Company": "聯發科",
                 "Price": "1275.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026029",
-                "Sentiment Score": "0.0",
+                "Final Score": "1.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026760",
+                "Sentiment Score": "1.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "2"
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
@@ -327,10 +417,10 @@
                 "Company": "聯發科",
                 "Price": "1275.0",
                 "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026399",
+                "Article URL": "https://news.cnyes.com/news/id/6026152",
                 "Sentiment Score": "2.0",
-                "Positive Mentions": "3",
-                "Negative Mentions": "1"
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
@@ -356,21 +446,31 @@
                 "Date": "2025-06-17",
                 "Company": "鴻海",
                 "Price": "155.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026029",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "2"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "鴻海",
-                "Price": "155.0",
                 "Final Score": "10.0",
                 "Article URL": "https://news.cnyes.com/news/id/6026632",
                 "Sentiment Score": "10.0",
                 "Positive Mentions": "6",
                 "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "聯電",
+                "Price": "47.5",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E5%B7%9D%E6%99%AE%E5%91%BC%E7%B1%B2%E4%BC%8A%E6%9C%97-%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E7%9B%A1%E5%A2%A8-204639258.html",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "12"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "聯電",
+                "Price": "47.5",
+                "Final Score": "-4.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E5%B7%9D%E6%99%AE%E5%91%BC%E7%B1%B2%E4%BC%8A%E6%9C%97-%E7%84%A1%E6%A2%9D%E4%BB%B6%E6%8A%95%E9%99%8D-%E5%9B%9B%E5%A4%A7%E6%8C%87%E6%95%B8%E7%9B%A1%E5%A2%A8-204639258.html?bcmt=1",
+                "Sentiment Score": "-4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "12"
             },
             {
                 "Date": "2025-06-17",
@@ -386,6 +486,26 @@
                 "Date": "2025-06-17",
                 "Company": "聯電",
                 "Price": "47.5",
+                "Final Score": "-1.33",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E8%81%AF%E9%9B%BBadr17%E6%97%A5%E4%B8%8B%E8%B7%8C0-15%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%851-80-%E6%8A%98%E5%8F%B0%E8%82%A148-26%E5%85%83-215119670.html?bcmt=1",
+                "Sentiment Score": "-1.33",
+                "Positive Mentions": "0",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "聯電",
+                "Price": "47.5",
+                "Final Score": "-1.33",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E8%81%AF%E9%9B%BBadr17%E6%97%A5%E4%B8%8B%E8%B7%8C0-15%E7%BE%8E%E5%85%83%E8%B7%8C%E5%B9%851-80-%E6%8A%98%E5%8F%B0%E8%82%A148-26%E5%85%83-215119670.html",
+                "Sentiment Score": "-1.33",
+                "Positive Mentions": "0",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "聯電",
+                "Price": "47.5",
                 "Final Score": "0.0",
                 "Article URL": "https://tw.stock.yahoo.com/news/48%E8%90%AC%E5%A4%9A%E8%82%A1%E6%B0%91%E6%B3%A8%E6%84%8F%EF%BC%815%E6%AA%94etf%E6%8F%9B%E8%82%A1-00713%E4%B8%80%E6%AC%A1%E5%A2%9E%E5%88%AA15%E6%AA%94-093622270.html",
                 "Sentiment Score": "0.0",
@@ -394,53 +514,13 @@
             },
             {
                 "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "3.0",
-                "Article URL": "https://tw.news.yahoo.com/%E4%B8%8A%E9%80%B1%E5%A4%96%E8%B3%87%E7%88%86%E8%B2%B7473%E5%84%84-%E9%A9%9A%E4%BA%BA%E5%89%8D%E4%B8%89%E5%90%8D%E6%9B%9D%E5%85%89-%E7%AC%AC-%E7%AB%9F%E6%98%AF%E5%AE%83-194500227.html?bcmt=1",
-                "Sentiment Score": "3.0",
+                "Company": "聯電",
+                "Price": "47.5",
+                "Final Score": "-4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6027151",
+                "Sentiment Score": "-4.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "2.5",
-                "Article URL": "https://tw.news.yahoo.com/%E7%9B%A4%E5%BE%8C%E7%B1%8C%E7%A2%BC-%E4%BC%8A%E6%9C%97%E6%B1%82%E5%81%9C%E7%81%AB-%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%8554%E5%84%84-%E8%B2%B7%E7%9B%A4%E5%9C%A8%E9%80%99%E5%B9%BE%E6%AA%94-174500395.html?bcmt=1",
-                "Sentiment Score": "2.5",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "3.0",
-                "Article URL": "https://tw.news.yahoo.com/%E4%B8%8A%E9%80%B1%E5%A4%96%E8%B3%87%E7%88%86%E8%B2%B7473%E5%84%84-%E9%A9%9A%E4%BA%BA%E5%89%8D%E4%B8%89%E5%90%8D%E6%9B%9D%E5%85%89-%E7%AC%AC-%E7%AB%9F%E6%98%AF%E5%AE%83-194500227.html",
-                "Sentiment Score": "3.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "0.0",
-                "Article URL": "https://tw.stock.yahoo.com/news/%E6%9A%91%E5%81%87%E6%94%BE%E5%BF%83%E9%A3%9B%EF%BC%81%E9%95%B7%E6%A6%AE%E8%88%AA%E7%A9%BA%E4%BB%8A%E8%88%87%E6%A1%83%E7%A9%BA%E8%81%B7%E5%B7%A5%E9%81%94%E6%88%90%E5%85%B1%E8%AD%98%E7%BA%8C%E7%B0%BD%E5%9C%98%E5%8D%94-120820864.html",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "2.5",
-                "Article URL": "https://tw.news.yahoo.com/%E7%9B%A4%E5%BE%8C%E7%B1%8C%E7%A2%BC-%E4%BC%8A%E6%9C%97%E6%B1%82%E5%81%9C%E7%81%AB-%E5%A4%96%E8%B3%87%E8%B2%B7%E8%B6%8554%E5%84%84-%E8%B2%B7%E7%9B%A4%E5%9C%A8%E9%80%99%E5%B9%BE%E6%AA%94-174500395.html",
-                "Sentiment Score": "2.5",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
+                "Negative Mentions": "12"
             },
             {
                 "Date": "2025-06-17",
@@ -466,30 +546,30 @@
                 "Date": "2025-06-17",
                 "Company": "長榮",
                 "Price": "245.0",
-                "Final Score": "4.0",
-                "Article URL": "https://news.cnyes.com/news/id/6026029",
-                "Sentiment Score": "4.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "2"
-            },
-            {
-                "Date": "2025-06-17",
-                "Company": "長榮",
-                "Price": "245.0",
-                "Final Score": "2.33",
-                "Article URL": "https://news.cnyes.com/news/id/6026103",
-                "Sentiment Score": "2.33",
-                "Positive Mentions": "0",
+                "Final Score": "0.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E6%9A%91%E5%81%87%E6%94%BE%E5%BF%83%E9%A3%9B%EF%BC%81%E9%95%B7%E6%A6%AE%E8%88%AA%E7%A9%BA%E4%BB%8A%E8%88%87%E6%A1%83%E7%A9%BA%E8%81%B7%E5%B7%A5%E9%81%94%E6%88%90%E5%85%B1%E8%AD%98%E7%BA%8C%E7%B0%BD%E5%9C%98%E5%8D%94-120820864.html",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "1",
                 "Negative Mentions": "0"
             },
             {
                 "Date": "2025-06-17",
                 "Company": "長榮",
                 "Price": "245.0",
-                "Final Score": "-1.5",
-                "Article URL": "https://news.cnyes.com/news/id/6025695",
-                "Sentiment Score": "-1.5",
-                "Positive Mentions": "2",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026760",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "第一金",
+                "Price": "28.350000381469727",
+                "Final Score": "6.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%9A%E9%9C%87-%E4%B8%BB%E5%8B%95%E5%BC%8Fetf%E4%BA%AE%E7%9C%BC-201000549.html",
+                "Sentiment Score": "6.0",
+                "Positive Mentions": "5",
                 "Negative Mentions": "0"
             },
             {
@@ -499,6 +579,36 @@
                 "Final Score": "2.67",
                 "Article URL": "https://tw.stock.yahoo.com/news/48%E8%90%AC%E5%A4%9A%E8%82%A1%E6%B0%91%E6%B3%A8%E6%84%8F%EF%BC%815%E6%AA%94etf%E6%8F%9B%E8%82%A1-00713%E4%B8%80%E6%AC%A1%E5%A2%9E%E5%88%AA15%E6%AA%94-093622270.html",
                 "Sentiment Score": "2.67",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "第一金",
+                "Price": "28.350000381469727",
+                "Final Score": "6.0",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1%E5%A4%9A%E9%9C%87-%E4%B8%BB%E5%8B%95%E5%BC%8Fetf%E4%BA%AE%E7%9C%BC-201000549.html",
+                "Sentiment Score": "6.0",
+                "Positive Mentions": "5",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "第一金",
+                "Price": "28.350000381469727",
+                "Final Score": "8.5",
+                "Article URL": "https://tw.stock.yahoo.com/news/%E5%8F%B0%E8%82%A1h2%E6%93%81%E5%88%A9%E5%A4%9A-%E7%BA%8C%E6%BC%B2%E7%A9%BA%E9%96%93%E5%A4%A7-201000580.html",
+                "Sentiment Score": "8.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-06-17",
+                "Company": "第一金",
+                "Price": "28.350000381469727",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6026760",
+                "Sentiment Score": "0.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
