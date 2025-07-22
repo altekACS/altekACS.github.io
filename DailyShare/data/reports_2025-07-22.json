@@ -5,17 +5,27 @@
             {
                 "Date": "2025-07-22",
                 "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6071939",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "2",
-                "Negative Mentions": "1"
+                "Price": "1140.0",
+                "Final Score": "22.0",
+                "Article URL": "https://news.cnyes.com/news/id/6072473",
+                "Sentiment Score": "22.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-07-22",
                 "Company": "台積電",
-                "Price": "1145.0",
+                "Price": "1140.0",
+                "Final Score": "5.5",
+                "Article URL": "https://news.cnyes.com/news/id/6071774",
+                "Sentiment Score": "5.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-22",
+                "Company": "台積電",
+                "Price": "1140.0",
                 "Final Score": "-8.0",
                 "Article URL": "https://news.cnyes.com/news/id/6072076",
                 "Sentiment Score": "-8.0",
@@ -25,81 +35,61 @@
             {
                 "Date": "2025-07-22",
                 "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6071869",
-                "Sentiment Score": "0.0",
+                "Price": "1140.0",
+                "Final Score": "7.75",
+                "Article URL": "https://news.cnyes.com/news/id/6072265",
+                "Sentiment Score": "7.75",
+                "Positive Mentions": "2",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-07-22",
+                "Company": "台積電",
+                "Price": "1140.0",
+                "Final Score": "4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6072432",
+                "Sentiment Score": "4.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-22",
-                "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6071903",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-22",
-                "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "0.86",
-                "Article URL": "https://news.cnyes.com/news/id/6071847",
-                "Sentiment Score": "0.86",
-                "Positive Mentions": "3",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-22",
-                "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "15.67",
-                "Article URL": "https://news.cnyes.com/news/id/6071898",
-                "Sentiment Score": "15.67",
-                "Positive Mentions": "9",
-                "Negative Mentions": "4"
-            },
-            {
-                "Date": "2025-07-22",
-                "Company": "台積電",
-                "Price": "1145.0",
-                "Final Score": "5.5",
-                "Article URL": "https://news.cnyes.com/news/id/6071774",
-                "Sentiment Score": "5.5",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-22",
                 "Company": "聯發科",
-                "Price": "1440.0",
-                "Final Score": "18.0",
-                "Article URL": "https://news.cnyes.com/news/id/6071898",
-                "Sentiment Score": "18.0",
-                "Positive Mentions": "9",
-                "Negative Mentions": "4"
+                "Price": "1435.0",
+                "Final Score": "9.0",
+                "Article URL": "https://news.cnyes.com/news/id/6072265",
+                "Sentiment Score": "9.0",
+                "Positive Mentions": "2",
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-22",
                 "Company": "鴻海",
-                "Price": "165.0",
-                "Final Score": "18.0",
-                "Article URL": "https://news.cnyes.com/news/id/6071898",
-                "Sentiment Score": "18.0",
-                "Positive Mentions": "9",
-                "Negative Mentions": "4"
-            },
-            {
-                "Date": "2025-07-22",
-                "Company": "鴻海",
-                "Price": "165.0",
+                "Price": "163.5",
                 "Final Score": "1.0",
                 "Article URL": "https://news.cnyes.com/news/id/6071774",
                 "Sentiment Score": "1.0",
                 "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-22",
+                "Company": "鴻海",
+                "Price": "163.5",
+                "Final Score": "9.0",
+                "Article URL": "https://news.cnyes.com/news/id/6072265",
+                "Sentiment Score": "9.0",
+                "Positive Mentions": "2",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-07-22",
+                "Company": "聯電",
+                "Price": "43.349998474121094",
+                "Final Score": "2.29",
+                "Article URL": "https://news.cnyes.com/news/id/6072471",
+                "Sentiment Score": "2.29",
+                "Positive Mentions": "2",
                 "Negative Mentions": "0"
             }
         ]
