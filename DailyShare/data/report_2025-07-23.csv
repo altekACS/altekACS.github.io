@@ -1,0 +1,4 @@
+Date,Company,Price,Final Score,Article URL,Sentiment Score,Positive Mentions,Negative Mentions
+2025-07-23,台積電,1140.0,3.4,https://news.cnyes.com/news/id/6073115,3.4,1,0
+2025-07-23,台積電,1145.0,-2.5,https://news.cnyes.com/news/id/6073351,-2.5,0,1
+2025-07-23,鴻海,165.5,1.0,https://news.cnyes.com/news/id/6073115,1.0,1,0
