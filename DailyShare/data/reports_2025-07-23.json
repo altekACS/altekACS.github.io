@@ -26,6 +26,16 @@
                 "Date": "2025-07-23",
                 "Company": "聯發科",
                 "Price": "1430.0",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6074682",
+                "Sentiment Score": "2.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-23",
+                "Company": "聯發科",
+                "Price": "1430.0",
                 "Final Score": "20.0",
                 "Article URL": "https://news.cnyes.com/news/id/6074368",
                 "Sentiment Score": "20.0",
@@ -40,16 +50,6 @@
                 "Article URL": "https://news.cnyes.com/news/id/6074422",
                 "Sentiment Score": "41.0",
                 "Positive Mentions": "8",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-23",
-                "Company": "聯發科",
-                "Price": "1430.0",
-                "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6074682",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
             {
