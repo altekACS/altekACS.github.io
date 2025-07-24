@@ -1,11 +1,5 @@
 Date,Company,Price,Final Score,Article URL,Sentiment Score,Positive Mentions,Negative Mentions
-2025-07-24,台積電,1145.0,3.0,https://news.cnyes.com/news/id/6075108,3.0,2,0
-2025-07-24,台積電,1145.0,-3.0,https://news.cnyes.com/news/id/6074754,-3.0,1,0
-2025-07-24,台積電,1145.0,2.0,https://news.cnyes.com/news/id/6075206,2.0,2,0
-2025-07-24,台積電,1145.0,4.0,https://news.cnyes.com/news/id/6074991,4.0,0,0
-2025-07-24,聯發科,1430.0,0.0,https://news.cnyes.com/news/id/6075108,0.0,2,0
-2025-07-24,聯發科,1430.0,4.0,https://news.cnyes.com/news/id/6074991,4.0,0,0
-2025-07-24,鴻海,172.0,5.5,https://news.cnyes.com/news/id/6074754,5.5,1,0
-2025-07-24,鴻海,172.0,1.0,https://news.cnyes.com/news/id/6074991,1.0,0,0
-2025-07-24,聯電,43.599998474121094,4.0,https://news.cnyes.com/news/id/6074991,4.0,0,0
-2025-07-24,第一金,29.600000381469727,0.0,https://news.cnyes.com/news/id/6074395,0.0,0,0
+2025-07-24,台積電,1145.0,22.0,https://news.cnyes.com/news/id/6075845,22.0,8,0
+2025-07-24,聯發科,1430.0,25.0,https://news.cnyes.com/news/id/6075845,25.0,8,0
+2025-07-24,鴻海,174.0,31.0,https://news.cnyes.com/news/id/6075845,31.0,8,0
+2025-07-24,鴻海,174.0,-2.0,https://news.cnyes.com/news/id/6075915,4.0,0,0
