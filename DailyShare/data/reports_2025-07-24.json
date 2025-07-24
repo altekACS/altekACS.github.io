@@ -14,6 +14,16 @@
             },
             {
                 "Date": "2025-07-24",
+                "Company": "台積電",
+                "Price": "1145.0",
+                "Final Score": "2.5",
+                "Article URL": "https://news.cnyes.com/news/id/6076167",
+                "Sentiment Score": "2.5",
+                "Positive Mentions": "3",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-24",
                 "Company": "聯發科",
                 "Price": "1430.0",
                 "Final Score": "25.0",
@@ -36,10 +46,20 @@
                 "Date": "2025-07-24",
                 "Company": "鴻海",
                 "Price": "174.0",
-                "Final Score": "-2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6075915",
+                "Final Score": "4.25",
+                "Article URL": "https://news.cnyes.com/news/id/6076167",
+                "Sentiment Score": "4.25",
+                "Positive Mentions": "3",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-24",
+                "Company": "長榮",
+                "Price": "201.5",
+                "Final Score": "4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6076167",
                 "Sentiment Score": "4.0",
-                "Positive Mentions": "0",
+                "Positive Mentions": "3",
                 "Negative Mentions": "0"
             }
         ]
