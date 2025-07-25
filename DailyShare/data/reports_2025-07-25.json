@@ -5,80 +5,50 @@
             {
                 "Date": "2025-07-25",
                 "Company": "台積電",
-                "Price": "1150.0",
-                "Final Score": "10.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076421",
-                "Sentiment Score": "10.0",
+                "Price": "1145.0",
+                "Final Score": "20.0",
+                "Article URL": "https://news.cnyes.com/news/id/6077151",
+                "Sentiment Score": "20.0",
                 "Positive Mentions": "4",
-                "Negative Mentions": "3"
-            },
-            {
-                "Date": "2025-07-25",
-                "Company": "台積電",
-                "Price": "1150.0",
-                "Final Score": "4.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076483",
-                "Sentiment Score": "4.0",
-                "Positive Mentions": "5",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-25",
-                "Company": "台積電",
-                "Price": "1150.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076409",
-                "Sentiment Score": "3.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-07-25",
-                "Company": "台積電",
-                "Price": "1150.0",
-                "Final Score": "1.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076540",
-                "Sentiment Score": "1.0",
-                "Positive Mentions": "5",
-                "Negative Mentions": "0"
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-25",
                 "Company": "聯發科",
-                "Price": "1420.0",
+                "Price": "1430.0",
                 "Final Score": "4.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076483",
+                "Article URL": "https://news.cnyes.com/news/id/6077151",
                 "Sentiment Score": "4.0",
-                "Positive Mentions": "5",
-                "Negative Mentions": "0"
+                "Positive Mentions": "4",
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-25",
                 "Company": "聯發科",
-                "Price": "1420.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076409",
-                "Sentiment Score": "3.0",
+                "Price": "1430.0",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6077355",
+                "Sentiment Score": "2.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
             {
                 "Date": "2025-07-25",
                 "Company": "鴻海",
-                "Price": "175.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6076409",
-                "Sentiment Score": "3.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
+                "Price": "174.5",
+                "Final Score": "4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6077151",
+                "Sentiment Score": "4.0",
+                "Positive Mentions": "4",
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-25",
-                "Company": "第一金",
-                "Price": "29.649999618530273",
-                "Final Score": "10.67",
-                "Article URL": "https://news.cnyes.com/news/id/6076548",
-                "Sentiment Score": "10.67",
+                "Company": "長榮",
+                "Price": "202.0",
+                "Final Score": "-1.5",
+                "Article URL": "https://news.cnyes.com/news/id/6077279",
+                "Sentiment Score": "-1.5",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
             }
