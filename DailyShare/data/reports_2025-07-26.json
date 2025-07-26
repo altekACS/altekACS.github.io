@@ -6,10 +6,10 @@
                 "Date": "2025-07-26",
                 "Company": "台積電",
                 "Price": "1145.0",
-                "Final Score": "7.25",
-                "Article URL": "https://news.cnyes.com/news/id/6077283",
-                "Sentiment Score": "7.25",
-                "Positive Mentions": "0",
+                "Final Score": "3.0",
+                "Article URL": "https://news.cnyes.com/news/id/6077114",
+                "Sentiment Score": "3.0",
+                "Positive Mentions": "2",
                 "Negative Mentions": "0"
             },
             {
@@ -26,10 +26,10 @@
                 "Date": "2025-07-26",
                 "Company": "台積電",
                 "Price": "1145.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6077114",
-                "Sentiment Score": "3.0",
-                "Positive Mentions": "2",
+                "Final Score": "7.25",
+                "Article URL": "https://news.cnyes.com/news/id/6077283",
+                "Sentiment Score": "7.25",
+                "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
             {
