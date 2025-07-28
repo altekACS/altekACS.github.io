@@ -2,17 +2,17 @@
     {
         "Date": "2025-07-28",
         "Company": "台積電",
-        "Sentiment Score": 41.11
+        "Sentiment Score": 36.0
     },
     {
         "Date": "2025-07-28",
         "Company": "聯發科",
-        "Sentiment Score": 31.0
+        "Sentiment Score": 30.0
     },
     {
         "Date": "2025-07-28",
         "Company": "鴻海",
-        "Sentiment Score": 39.14
+        "Sentiment Score": 33.0
     },
     {
         "Date": "2025-07-28",
@@ -37,6 +37,6 @@
     {
         "Date": "2025-07-28",
         "Company": "華晶科",
-        "Sentiment Score": 11.0
+        "Sentiment Score": 0.0
     }
 ]
