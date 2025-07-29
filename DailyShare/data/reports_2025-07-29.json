@@ -16,6 +16,16 @@
                 "Date": "2025-07-29",
                 "Company": "鴻海",
                 "Price": "171.5",
+                "Final Score": "-1.0",
+                "Article URL": "https://news.cnyes.com/news/id/6081606",
+                "Sentiment Score": "-1.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-29",
+                "Company": "鴻海",
+                "Price": "171.5",
                 "Final Score": "-5.0",
                 "Article URL": "https://news.cnyes.com/news/id/6081170",
                 "Sentiment Score": "-5.0",
