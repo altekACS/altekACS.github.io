@@ -1,6 +1,117 @@
 [
     {
         "date": "2025-07-30",
-        "articles": []
+        "articles": [
+            {
+                "Date": "2025-07-30",
+                "Company": "台積電",
+                "Price": "1155.0",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083384",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "台積電",
+                "Price": "1155.0",
+                "Final Score": "29.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083178",
+                "Sentiment Score": "29.0",
+                "Positive Mentions": "6",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "台積電",
+                "Price": "1155.0",
+                "Final Score": "1.5",
+                "Article URL": "https://news.cnyes.com/news/id/6083634",
+                "Sentiment Score": "1.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "聯發科",
+                "Price": "1380.0",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083384",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "聯發科",
+                "Price": "1380.0",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083407",
+                "Sentiment Score": "2.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "聯發科",
+                "Price": "1380.0",
+                "Final Score": "17.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083178",
+                "Sentiment Score": "17.0",
+                "Positive Mentions": "6",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "聯發科",
+                "Price": "1380.0",
+                "Final Score": "-3.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083634",
+                "Sentiment Score": "-3.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "鴻海",
+                "Price": "171.5",
+                "Final Score": "6.25",
+                "Article URL": "https://news.cnyes.com/news/id/6083293",
+                "Sentiment Score": "6.25",
+                "Positive Mentions": "1",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "鴻海",
+                "Price": "171.5",
+                "Final Score": "15.5",
+                "Article URL": "https://news.cnyes.com/news/id/6083178",
+                "Sentiment Score": "15.5",
+                "Positive Mentions": "6",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "鴻海",
+                "Price": "171.5",
+                "Final Score": "-1.5",
+                "Article URL": "https://news.cnyes.com/news/id/6083634",
+                "Sentiment Score": "-1.5",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-07-30",
+                "Company": "聯電",
+                "Price": "42.54999923706055",
+                "Final Score": "-3.0",
+                "Article URL": "https://news.cnyes.com/news/id/6083634",
+                "Sentiment Score": "-3.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            }
+        ]
     }
 ]
