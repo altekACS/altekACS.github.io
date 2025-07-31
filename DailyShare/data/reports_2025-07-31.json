@@ -36,20 +36,20 @@
                 "Date": "2025-07-31",
                 "Company": "鴻海",
                 "Price": "178.0",
-                "Final Score": "37.5",
-                "Article URL": "https://news.cnyes.com/news/id/6085130",
-                "Sentiment Score": "37.5",
-                "Positive Mentions": "7",
+                "Final Score": "5.5",
+                "Article URL": "https://news.cnyes.com/news/id/6085634",
+                "Sentiment Score": "5.5",
+                "Positive Mentions": "3",
                 "Negative Mentions": "1"
             },
             {
                 "Date": "2025-07-31",
                 "Company": "鴻海",
                 "Price": "178.0",
-                "Final Score": "5.5",
-                "Article URL": "https://news.cnyes.com/news/id/6085634",
-                "Sentiment Score": "5.5",
-                "Positive Mentions": "3",
+                "Final Score": "37.5",
+                "Article URL": "https://news.cnyes.com/news/id/6085130",
+                "Sentiment Score": "37.5",
+                "Positive Mentions": "7",
                 "Negative Mentions": "1"
             }
         ]
