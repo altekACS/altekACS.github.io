@@ -16,21 +16,21 @@
                 "Date": "2025-08-06",
                 "Company": "台積電",
                 "Price": "1125.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6094124",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "4",
-                "Negative Mentions": "1"
-            },
-            {
-                "Date": "2025-08-06",
-                "Company": "台積電",
-                "Price": "1125.0",
                 "Final Score": "-2.33",
                 "Article URL": "https://news.cnyes.com/news/id/6094342",
                 "Sentiment Score": "-2.33",
                 "Positive Mentions": "6",
                 "Negative Mentions": "8"
+            },
+            {
+                "Date": "2025-08-06",
+                "Company": "台積電",
+                "Price": "1125.0",
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6094124",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "4",
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-08-06",
@@ -67,20 +67,20 @@
                 "Company": "鴻海",
                 "Price": "186.0",
                 "Final Score": "6.0",
-                "Article URL": "https://news.cnyes.com/news/id/6094124",
+                "Article URL": "https://news.cnyes.com/news/id/6094342",
                 "Sentiment Score": "6.0",
-                "Positive Mentions": "4",
-                "Negative Mentions": "1"
+                "Positive Mentions": "6",
+                "Negative Mentions": "8"
             },
             {
                 "Date": "2025-08-06",
                 "Company": "鴻海",
                 "Price": "186.0",
                 "Final Score": "6.0",
-                "Article URL": "https://news.cnyes.com/news/id/6094342",
+                "Article URL": "https://news.cnyes.com/news/id/6094124",
                 "Sentiment Score": "6.0",
-                "Positive Mentions": "6",
-                "Negative Mentions": "8"
+                "Positive Mentions": "4",
+                "Negative Mentions": "1"
             }
         ]
     }
