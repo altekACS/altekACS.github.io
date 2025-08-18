@@ -5,27 +5,27 @@
             {
                 "Date": "2025-08-18",
                 "Company": "台積電",
-                "Price": "1175.0",
-                "Final Score": "4.89",
-                "Article URL": "https://news.cnyes.com/news/id/6114318",
-                "Sentiment Score": "4.89",
-                "Positive Mentions": "16",
-                "Negative Mentions": "3"
-            },
-            {
-                "Date": "2025-08-18",
-                "Company": "台積電",
-                "Price": "1170.0",
-                "Final Score": "1.0",
-                "Article URL": "https://news.cnyes.com/news/id/6113929",
-                "Sentiment Score": "1.0",
+                "Price": "1180.0",
+                "Final Score": "9.0",
+                "Article URL": "https://news.cnyes.com/news/id/6114834",
+                "Sentiment Score": "9.0",
                 "Positive Mentions": "1",
                 "Negative Mentions": "0"
             },
             {
                 "Date": "2025-08-18",
                 "Company": "台積電",
-                "Price": "1170.0",
+                "Price": "1180.0",
+                "Final Score": "-11.0",
+                "Article URL": "https://news.cnyes.com/news/id/6114412",
+                "Sentiment Score": "-11.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "3"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "台積電",
+                "Price": "1180.0",
                 "Final Score": "3.5",
                 "Article URL": "https://news.cnyes.com/news/id/6114355",
                 "Sentiment Score": "3.5",
@@ -35,7 +35,7 @@
             {
                 "Date": "2025-08-18",
                 "Company": "台積電",
-                "Price": "1170.0",
+                "Price": "1175.0",
                 "Final Score": "2.0",
                 "Article URL": "https://news.cnyes.com/news/id/6114279",
                 "Sentiment Score": "2.0",
@@ -45,7 +45,37 @@
             {
                 "Date": "2025-08-18",
                 "Company": "台積電",
-                "Price": "1170.0",
+                "Price": "1175.0",
+                "Final Score": "7.0",
+                "Article URL": "https://news.cnyes.com/news/id/6105546",
+                "Sentiment Score": "7.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "台積電",
+                "Price": "1175.0",
+                "Final Score": "-1.0",
+                "Article URL": "https://news.cnyes.com/news/id/6114956",
+                "Sentiment Score": "-1.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "台積電",
+                "Price": "1175.0",
+                "Final Score": "12.33",
+                "Article URL": "https://news.cnyes.com/news/id/6114964",
+                "Sentiment Score": "12.33",
+                "Positive Mentions": "5",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "聯發科",
+                "Price": "1405.0",
                 "Final Score": "-11.0",
                 "Article URL": "https://news.cnyes.com/news/id/6114412",
                 "Sentiment Score": "-11.0",
@@ -55,7 +85,27 @@
             {
                 "Date": "2025-08-18",
                 "Company": "聯發科",
-                "Price": "1390.0",
+                "Price": "1405.0",
+                "Final Score": "5.0",
+                "Article URL": "https://news.cnyes.com/news/id/6105546",
+                "Sentiment Score": "5.0",
+                "Positive Mentions": "1",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "聯發科",
+                "Price": "1405.0",
+                "Final Score": "23.0",
+                "Article URL": "https://news.cnyes.com/news/id/6114964",
+                "Sentiment Score": "23.0",
+                "Positive Mentions": "5",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-08-18",
+                "Company": "鴻海",
+                "Price": "207.0",
                 "Final Score": "-11.0",
                 "Article URL": "https://news.cnyes.com/news/id/6114412",
                 "Sentiment Score": "-11.0",
@@ -65,17 +115,7 @@
             {
                 "Date": "2025-08-18",
                 "Company": "鴻海",
-                "Price": "208.0",
-                "Final Score": "6.67",
-                "Article URL": "https://news.cnyes.com/news/id/6114318",
-                "Sentiment Score": "6.67",
-                "Positive Mentions": "16",
-                "Negative Mentions": "3"
-            },
-            {
-                "Date": "2025-08-18",
-                "Company": "鴻海",
-                "Price": "208.0",
+                "Price": "207.0",
                 "Final Score": "5.5",
                 "Article URL": "https://news.cnyes.com/news/id/6114279",
                 "Sentiment Score": "5.5",
@@ -84,43 +124,13 @@
             },
             {
                 "Date": "2025-08-18",
-                "Company": "鴻海",
-                "Price": "208.0",
-                "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6114348",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-08-18",
-                "Company": "鴻海",
-                "Price": "208.0",
-                "Final Score": "-11.0",
-                "Article URL": "https://news.cnyes.com/news/id/6114412",
-                "Sentiment Score": "-11.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "3"
-            },
-            {
-                "Date": "2025-08-18",
                 "Company": "長榮",
-                "Price": "198.0",
-                "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6114352",
-                "Sentiment Score": "2.0",
+                "Price": "197.5",
+                "Final Score": "13.67",
+                "Article URL": "https://news.cnyes.com/news/id/6114925",
+                "Sentiment Score": "13.67",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-08-18",
-                "Company": "華晶科",
-                "Price": "48.95000076293945",
-                "Final Score": "11.0",
-                "Article URL": "https://news.cnyes.com/news/id/6114318",
-                "Sentiment Score": "11.0",
-                "Positive Mentions": "16",
-                "Negative Mentions": "3"
             }
         ]
     }
