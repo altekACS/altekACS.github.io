@@ -6,21 +6,21 @@
                 "Date": "2025-08-20",
                 "Company": "台積電",
                 "Price": "1135.0",
-                "Final Score": "-3.25",
-                "Article URL": "https://news.cnyes.com/news/id/6119315",
-                "Sentiment Score": "-3.25",
-                "Positive Mentions": "8",
-                "Negative Mentions": "6"
-            },
-            {
-                "Date": "2025-08-20",
-                "Company": "台積電",
-                "Price": "1135.0",
                 "Final Score": "-14.0",
                 "Article URL": "https://news.cnyes.com/news/id/6119314",
                 "Sentiment Score": "-14.0",
                 "Positive Mentions": "4",
                 "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-20",
+                "Company": "台積電",
+                "Price": "1135.0",
+                "Final Score": "-3.25",
+                "Article URL": "https://news.cnyes.com/news/id/6119315",
+                "Sentiment Score": "-3.25",
+                "Positive Mentions": "8",
+                "Negative Mentions": "6"
             },
             {
                 "Date": "2025-08-20",
