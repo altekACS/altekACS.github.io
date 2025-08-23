@@ -6,6 +6,26 @@
                 "Date": "2025-08-23",
                 "Company": "台積電",
                 "Price": "1135.0",
+                "Final Score": "8.5",
+                "Article URL": "https://news.cnyes.com/news/id/6123043",
+                "Sentiment Score": "8.5",
+                "Positive Mentions": "2",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-23",
+                "Company": "台積電",
+                "Price": "1135.0",
+                "Final Score": "-1.0",
+                "Article URL": "https://news.cnyes.com/news/id/6122982",
+                "Sentiment Score": "-1.0",
+                "Positive Mentions": "2",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-23",
+                "Company": "台積電",
+                "Price": "1135.0",
                 "Final Score": "-1.0",
                 "Article URL": "https://news.cnyes.com/news/id/6122584",
                 "Sentiment Score": "-1.0",
@@ -17,20 +37,10 @@
                 "Company": "鴻海",
                 "Price": "202.5",
                 "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6122736",
+                "Article URL": "https://news.cnyes.com/news/id/5930180",
                 "Sentiment Score": "0.0",
                 "Positive Mentions": "0",
-                "Negative Mentions": "1"
-            },
-            {
-                "Date": "2025-08-23",
-                "Company": "聯電",
-                "Price": "40.599998474121094",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6122736",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "1"
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-08-23",
@@ -51,16 +61,6 @@
                 "Sentiment Score": "-5.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-08-23",
-                "Company": "華晶科",
-                "Price": "47.5",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6122736",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "1"
             }
         ]
     }
