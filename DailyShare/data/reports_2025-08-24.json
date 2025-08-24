@@ -6,6 +6,16 @@
                 "Date": "2025-08-24",
                 "Company": "台積電",
                 "Price": "1135.0",
+                "Final Score": "6.67",
+                "Article URL": "https://news.cnyes.com/news/id/6123894",
+                "Sentiment Score": "6.67",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-08-24",
+                "Company": "台積電",
+                "Price": "1135.0",
                 "Final Score": "7.5",
                 "Article URL": "https://news.cnyes.com/news/id/6122397",
                 "Sentiment Score": "7.5",
