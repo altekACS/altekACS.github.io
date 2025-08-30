@@ -6,9 +6,9 @@
                 "Date": "2025-08-30",
                 "Company": "台積電",
                 "Price": "1160.0",
-                "Final Score": "4.0",
-                "Article URL": "https://news.cnyes.com/news/id/6133174",
-                "Sentiment Score": "4.0",
+                "Final Score": "8.0",
+                "Article URL": "https://news.cnyes.com/news/id/6133466",
+                "Sentiment Score": "8.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "0"
             },
@@ -21,6 +21,16 @@
                 "Sentiment Score": "19.0",
                 "Positive Mentions": "6",
                 "Negative Mentions": "2"
+            },
+            {
+                "Date": "2025-08-30",
+                "Company": "台積電",
+                "Price": "1160.0",
+                "Final Score": "4.0",
+                "Article URL": "https://news.cnyes.com/news/id/6133174",
+                "Sentiment Score": "4.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-08-30",
@@ -44,8 +54,8 @@
             },
             {
                 "Date": "2025-08-30",
-                "Company": "台積電",
-                "Price": "1160.0",
+                "Company": "聯發科",
+                "Price": "1370.0",
                 "Final Score": "8.0",
                 "Article URL": "https://news.cnyes.com/news/id/6133466",
                 "Sentiment Score": "8.0",
@@ -61,16 +71,6 @@
                 "Sentiment Score": "2.0",
                 "Positive Mentions": "7",
                 "Negative Mentions": "4"
-            },
-            {
-                "Date": "2025-08-30",
-                "Company": "聯發科",
-                "Price": "1370.0",
-                "Final Score": "8.0",
-                "Article URL": "https://news.cnyes.com/news/id/6133466",
-                "Sentiment Score": "8.0",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-08-30",
