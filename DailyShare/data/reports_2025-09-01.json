@@ -6,16 +6,6 @@
                 "Date": "2025-09-01",
                 "Company": "台積電",
                 "Price": "1165.0",
-                "Final Score": "-1.0",
-                "Article URL": "https://news.cnyes.com/news/id/6136001",
-                "Sentiment Score": "-1.0",
-                "Positive Mentions": "9",
-                "Negative Mentions": "7"
-            },
-            {
-                "Date": "2025-09-01",
-                "Company": "台積電",
-                "Price": "1165.0",
                 "Final Score": "2.5",
                 "Article URL": "https://news.cnyes.com/news/id/6136301",
                 "Sentiment Score": "2.5",
@@ -34,18 +24,18 @@
             },
             {
                 "Date": "2025-09-01",
-                "Company": "聯發科",
-                "Price": "1360.0",
-                "Final Score": "14.0",
+                "Company": "台積電",
+                "Price": "1165.0",
+                "Final Score": "-1.0",
                 "Article URL": "https://news.cnyes.com/news/id/6136001",
-                "Sentiment Score": "14.0",
+                "Sentiment Score": "-1.0",
                 "Positive Mentions": "9",
                 "Negative Mentions": "7"
             },
             {
                 "Date": "2025-09-01",
-                "Company": "鴻海",
-                "Price": "198.5",
+                "Company": "聯發科",
+                "Price": "1360.0",
                 "Final Score": "14.0",
                 "Article URL": "https://news.cnyes.com/news/id/6136001",
                 "Sentiment Score": "14.0",
@@ -71,6 +61,16 @@
                 "Sentiment Score": "11.0",
                 "Positive Mentions": "4",
                 "Negative Mentions": "2"
+            },
+            {
+                "Date": "2025-09-01",
+                "Company": "鴻海",
+                "Price": "198.5",
+                "Final Score": "14.0",
+                "Article URL": "https://news.cnyes.com/news/id/6136001",
+                "Sentiment Score": "14.0",
+                "Positive Mentions": "9",
+                "Negative Mentions": "7"
             }
         ]
     }
