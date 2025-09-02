@@ -16,21 +16,21 @@
                 "Date": "2025-09-02",
                 "Company": "台積電",
                 "Price": "1160.0",
-                "Final Score": "0.6",
-                "Article URL": "https://news.cnyes.com/news/id/6137820",
-                "Sentiment Score": "0.6",
-                "Positive Mentions": "0",
-                "Negative Mentions": "0"
-            },
-            {
-                "Date": "2025-09-02",
-                "Company": "台積電",
-                "Price": "1160.0",
                 "Final Score": "0.0",
                 "Article URL": "https://news.cnyes.com/news/id/6137740",
                 "Sentiment Score": "0.0",
                 "Positive Mentions": "0",
                 "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-09-02",
+                "Company": "台積電",
+                "Price": "1160.0",
+                "Final Score": "0.6",
+                "Article URL": "https://news.cnyes.com/news/id/6137820",
+                "Sentiment Score": "0.6",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-09-02",
@@ -56,21 +56,21 @@
                 "Date": "2025-09-02",
                 "Company": "第一金",
                 "Price": "28.75",
-                "Final Score": "2.0",
-                "Article URL": "https://news.cnyes.com/news/id/6137951",
-                "Sentiment Score": "2.0",
-                "Positive Mentions": "2",
-                "Negative Mentions": "1"
-            },
-            {
-                "Date": "2025-09-02",
-                "Company": "第一金",
-                "Price": "28.75",
                 "Final Score": "1.0",
                 "Article URL": "https://news.cnyes.com/news/id/6137735",
                 "Sentiment Score": "1.0",
                 "Positive Mentions": "1",
                 "Negative Mentions": "0"
+            },
+            {
+                "Date": "2025-09-02",
+                "Company": "第一金",
+                "Price": "28.75",
+                "Final Score": "2.0",
+                "Article URL": "https://news.cnyes.com/news/id/6137951",
+                "Sentiment Score": "2.0",
+                "Positive Mentions": "2",
+                "Negative Mentions": "1"
             }
         ]
     }
