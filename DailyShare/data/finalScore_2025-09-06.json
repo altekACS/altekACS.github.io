@@ -7,12 +7,12 @@
     {
         "Date": "2025-09-06",
         "Company": "聯發科",
-        "Sentiment Score": 28.0
+        "Sentiment Score": 23.0
     },
     {
         "Date": "2025-09-06",
         "Company": "鴻海",
-        "Sentiment Score": 29.5
+        "Sentiment Score": 31.7
     },
     {
         "Date": "2025-09-06",
@@ -37,6 +37,6 @@
     {
         "Date": "2025-09-06",
         "Company": "華晶科",
-        "Sentiment Score": 22.0
+        "Sentiment Score": 0.0
     }
 ]
