@@ -2,7 +2,7 @@
     {
         "Date": "2025-09-07",
         "Company": "台積電",
-        "Sentiment Score": 0.0
+        "Sentiment Score": 2.5
     },
     {
         "Date": "2025-09-07",
@@ -12,7 +12,7 @@
     {
         "Date": "2025-09-07",
         "Company": "鴻海",
-        "Sentiment Score": 8.7
+        "Sentiment Score": 9.2
     },
     {
         "Date": "2025-09-07",
@@ -27,7 +27,7 @@
     {
         "Date": "2025-09-07",
         "Company": "第一金",
-        "Sentiment Score": 12.75
+        "Sentiment Score": 0.0
     },
     {
         "Date": "2025-09-07",
