@@ -1,14 +1,11 @@
 Date,Company,Price,Final Score,Article URL,Sentiment Score,Positive Mentions,Negative Mentions
+2025-09-08,台積電,1190.0,21.0,https://news.cnyes.com/news/id/6144537,21.0,6,0
 2025-09-08,台積電,1190.0,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
-2025-09-08,台積電,1190.0,2.0,https://news.cnyes.com/news/id/6137738,2.0,1,0
-2025-09-08,台積電,1190.0,1.11,https://news.cnyes.com/news/id/6144072,1.11,3,1
-2025-09-08,台積電,1190.0,8.67,https://news.cnyes.com/news/id/6144033,8.67,14,0
-2025-09-08,台積電,1190.0,-4.5,https://news.cnyes.com/news/id/6143641,-4.5,0,2
-2025-09-08,聯發科,1455.0,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
-2025-09-08,聯發科,1455.0,4.0,https://news.cnyes.com/news/id/6144072,4.0,3,1
-2025-09-08,聯發科,1455.0,0.0,https://news.cnyes.com/news/id/6143641,0.0,0,2
-2025-09-08,鴻海,206.5,4.67,https://news.cnyes.com/news/id/6143872,4.67,1,0
-2025-09-08,鴻海,206.5,6.33,https://news.cnyes.com/news/id/6143997,6.33,1,2
-2025-09-08,鴻海,206.5,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
-2025-09-08,鴻海,206.5,0.0,https://news.cnyes.com/news/id/6143641,0.0,0,2
-2025-09-08,華晶科,60.79999923706055,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
+2025-09-08,台積電,1190.0,11.5,https://news.cnyes.com/news/id/6144353,6.5,0,0
+2025-09-08,聯發科,1440.0,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
+2025-09-08,聯發科,1440.0,12.0,https://news.cnyes.com/news/id/6144353,7.0,0,0
+2025-09-08,鴻海,203.0,6.33,https://news.cnyes.com/news/id/6143997,6.33,1,2
+2025-09-08,鴻海,203.0,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
+2025-09-08,鴻海,203.0,12.0,https://news.cnyes.com/news/id/6144353,7.0,0,0
+2025-09-08,聯電,41.400001525878906,12.0,https://news.cnyes.com/news/id/6144353,7.0,0,0
+2025-09-08,華晶科,61.599998474121094,-3.0,https://news.cnyes.com/news/id/6144124,-3.0,0,2
