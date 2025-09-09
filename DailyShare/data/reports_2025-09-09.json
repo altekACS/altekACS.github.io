@@ -6,6 +6,16 @@
                 "Date": "2025-09-09",
                 "Company": "台積電",
                 "Price": "1200.0",
+                "Final Score": "55.0",
+                "Article URL": "https://news.cnyes.com/news/id/6147825",
+                "Sentiment Score": "55.0",
+                "Positive Mentions": "9",
+                "Negative Mentions": "1"
+            },
+            {
+                "Date": "2025-09-09",
+                "Company": "台積電",
+                "Price": "1200.0",
                 "Final Score": "2.0",
                 "Article URL": "https://news.cnyes.com/news/id/6147700",
                 "Sentiment Score": "2.0",
@@ -14,8 +24,8 @@
             },
             {
                 "Date": "2025-09-09",
-                "Company": "台積電",
-                "Price": "1200.0",
+                "Company": "聯發科",
+                "Price": "1510.0",
                 "Final Score": "55.0",
                 "Article URL": "https://news.cnyes.com/news/id/6147825",
                 "Sentiment Score": "55.0",
@@ -30,16 +40,6 @@
                 "Article URL": "https://news.cnyes.com/news/id/6147700",
                 "Sentiment Score": "4.5",
                 "Positive Mentions": "3",
-                "Negative Mentions": "1"
-            },
-            {
-                "Date": "2025-09-09",
-                "Company": "聯發科",
-                "Price": "1510.0",
-                "Final Score": "55.0",
-                "Article URL": "https://news.cnyes.com/news/id/6147825",
-                "Sentiment Score": "55.0",
-                "Positive Mentions": "9",
                 "Negative Mentions": "1"
             },
             {
