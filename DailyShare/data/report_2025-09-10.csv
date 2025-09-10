@@ -1,7 +1,12 @@
 Date,Company,Price,Final Score,Article URL,Sentiment Score,Positive Mentions,Negative Mentions
-2025-09-10,台積電,1200.0,0.0,https://news.cnyes.com/news/id/6148145,0.0,1,0
-2025-09-10,台積電,1200.0,10.0,https://news.cnyes.com/news/id/6148094,6.0,0,0
-2025-09-10,聯發科,1510.0,5.5,https://news.cnyes.com/news/id/6148094,1.5,0,0
-2025-09-10,鴻海,207.5,1.0,https://news.cnyes.com/news/id/6147995,1.0,0,0
-2025-09-10,鴻海,207.5,16.5,https://news.cnyes.com/news/id/6148094,12.5,0,0
-2025-09-10,長榮,184.5,4.0,https://news.cnyes.com/news/id/6148094,0.0,0,0
+2025-09-10,台積電,1220.0,0.0,https://news.cnyes.com/news/id/6148145,0.0,1,0
+2025-09-10,台積電,1220.0,5.0,https://news.cnyes.com/news/id/6148257,5.0,3,4
+2025-09-10,台積電,1220.0,10.0,https://news.cnyes.com/news/id/6148094,6.0,0,0
+2025-09-10,台積電,1225.0,4.0,https://news.cnyes.com/news/id/6148424,4.0,8,2
+2025-09-10,聯發科,1495.0,-2.0,https://news.cnyes.com/news/id/6148257,-2.0,3,4
+2025-09-10,聯發科,1495.0,5.5,https://news.cnyes.com/news/id/6148094,1.5,0,0
+2025-09-10,聯發科,1495.0,8.0,https://news.cnyes.com/news/id/6148424,8.0,8,2
+2025-09-10,鴻海,209.5,4.5,https://news.cnyes.com/news/id/6148257,4.5,3,4
+2025-09-10,鴻海,209.5,16.5,https://news.cnyes.com/news/id/6148094,12.5,0,0
+2025-09-10,鴻海,210.0,1.0,https://news.cnyes.com/news/id/6147995,1.0,0,0
+2025-09-10,長榮,186.5,4.0,https://news.cnyes.com/news/id/6148094,0.0,0,0
