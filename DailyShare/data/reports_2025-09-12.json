@@ -6,11 +6,11 @@
                 "Date": "2025-09-12",
                 "Company": "台積電",
                 "Price": "1260.0",
-                "Final Score": "3.0",
-                "Article URL": "https://news.cnyes.com/news/id/6153146",
-                "Sentiment Score": "3.0",
-                "Positive Mentions": "1",
-                "Negative Mentions": "0"
+                "Final Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6153051",
+                "Sentiment Score": "0.0",
+                "Positive Mentions": "4",
+                "Negative Mentions": "1"
             },
             {
                 "Date": "2025-09-12",
@@ -36,21 +36,21 @@
                 "Date": "2025-09-12",
                 "Company": "台積電",
                 "Price": "1260.0",
-                "Final Score": "9.0",
-                "Article URL": "https://news.cnyes.com/news/id/6153147",
-                "Sentiment Score": "9.0",
-                "Positive Mentions": "0",
+                "Final Score": "3.0",
+                "Article URL": "https://news.cnyes.com/news/id/6153146",
+                "Sentiment Score": "3.0",
+                "Positive Mentions": "1",
                 "Negative Mentions": "0"
             },
             {
                 "Date": "2025-09-12",
                 "Company": "台積電",
                 "Price": "1260.0",
-                "Final Score": "0.0",
-                "Article URL": "https://news.cnyes.com/news/id/6153051",
-                "Sentiment Score": "0.0",
-                "Positive Mentions": "4",
-                "Negative Mentions": "1"
+                "Final Score": "9.0",
+                "Article URL": "https://news.cnyes.com/news/id/6153147",
+                "Sentiment Score": "9.0",
+                "Positive Mentions": "0",
+                "Negative Mentions": "0"
             },
             {
                 "Date": "2025-09-12",
