@@ -1,8 +1,9 @@
 Date,Company,Price,Final Score,Article URL,Sentiment Score,Positive Mentions,Negative Mentions
-2025-09-26,台積電,1320.0,-2.67,https://news.cnyes.com/news/id/6168531,-2.67,1,2
-2025-09-26,台積電,1320.0,2.14,https://news.cnyes.com/news/id/6168795,2.14,8,1
-2025-09-26,鴻海,230.0,0.0,https://news.cnyes.com/news/id/6168795,0.0,8,1
-2025-09-26,鴻海,230.0,6.5,https://news.cnyes.com/news/id/6168431,6.5,0,0
-2025-09-26,聯電,44.29999923706055,10.0,https://news.cnyes.com/news/id/6168431,10.0,0,0
-2025-09-26,長榮,180.0,0.67,https://news.cnyes.com/news/id/6168418,0.67,3,0
-2025-09-26,長榮,180.0,1.5,https://news.cnyes.com/news/id/6168531,1.5,1,2
+2025-09-26,台積電,1305.0,2.14,https://news.cnyes.com/news/id/6168795,2.14,8,1
+2025-09-26,台積電,1305.0,-2.67,https://news.cnyes.com/news/id/6168531,-2.67,1,2
+2025-09-26,台積電,1300.0,-4.0,https://news.cnyes.com/news/id/6168962,-4.0,1,3
+2025-09-26,聯發科,1325.0,-4.5,https://news.cnyes.com/news/id/6168962,-4.5,1,3
+2025-09-26,鴻海,221.0,0.0,https://news.cnyes.com/news/id/6168795,0.0,8,1
+2025-09-26,鴻海,221.0,0.0,https://news.cnyes.com/news/id/6168962,0.0,1,3
+2025-09-26,長榮,179.5,1.5,https://news.cnyes.com/news/id/6168531,1.5,1,2
+2025-09-26,長榮,179.5,0.67,https://news.cnyes.com/news/id/6168418,0.67,3,0
