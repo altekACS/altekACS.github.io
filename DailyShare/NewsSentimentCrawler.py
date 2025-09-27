@@ -66,12 +66,27 @@ class NewsSentimentCrawler:
             date = datetime.now().strftime("%Y-%m-%d")
 
             if "tw.stock.yahoo.com" in url or "tw.news.yahoo.com" in url:
-                content_div = soup.find('div', class_='caas-body')
+                selectors = [
+                    'div.caas-body',
+                    'article',
+                    'div[itemprop="articleBody"]',
+                    'div.story-body__inner',
+                ]
+                content_div = None
+                for selector in selectors:
+                    content_div = soup.select_one(selector)
+                    if content_div:
+                        print(f"Found content with selector: {selector}")
+                        break
+                
                 if content_div:
                     content = content_div.get_text(strip=True)
                     date_element = soup.find('time')
                     if date_element:
                         date = date_element['datetime']
+                else:
+                    print("Could not find article content for Yahoo News.")
+
             elif "news.cnyes.com" in url:
                 content_sections = soup.select('section[style*="margin-top"]')
                 content = "\n".join([section.get_text(strip=True) for section in content_sections])
