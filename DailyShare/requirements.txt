@@ -1,9 +1,8 @@
-numpy
 selenium
 webdriver-manager
 beautifulsoup4
-textblob
-transformers
+pyyaml
 gitpython
 requests
-yfinance
+transformers
+torch

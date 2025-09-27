@@ -1,0 +1,42 @@
+[
+    {
+        "date": "2025-09-28",
+        "articles": [
+            {
+                "Date": "2025-09-28",
+                "Company": "台積電",
+                "Price": "N/A",
+                "Sentiment Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6170196"
+            },
+            {
+                "Date": "2025-09-28",
+                "Company": "聯發科",
+                "Price": "N/A",
+                "Sentiment Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6169811"
+            },
+            {
+                "Date": "2025-09-28",
+                "Company": "鴻海",
+                "Price": "N/A",
+                "Sentiment Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6170398"
+            },
+            {
+                "Date": "2025-09-28",
+                "Company": "長榮",
+                "Price": "N/A",
+                "Sentiment Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6170390"
+            },
+            {
+                "Date": "2025-09-28",
+                "Company": "第一金",
+                "Price": "N/A",
+                "Sentiment Score": "0.0",
+                "Article URL": "https://news.cnyes.com/news/id/6170169"
+            }
+        ]
+    }
+]
