@@ -5,8 +5,8 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
-from transformers import pipeline
 from git import Repo
+from sentiment_analysis import analyze_market_sentiment
 import requests
 import yaml
 import json
@@ -15,7 +15,6 @@ import os
 import re
 import urllib.parse
 import sys
-import torch
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stdin.reconfigure(encoding='utf-8')
@@ -28,9 +27,6 @@ class NewsSentimentCrawler:
         self.urls = [source['url'] for source in self.config['sources']]
         self.companies = self.config['companies']
         self.stock_map = {company['name']: company['keywords'] for company in self.companies}
-        
-        # Initialize FinBERT sentiment analysis pipeline
-        self.sentiment_pipeline = pipeline("sentiment-analysis", model="ProsusAI/finbert")
 
         # More robust path handling for cross-platform compatibility
         self.REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -138,34 +134,16 @@ class NewsSentimentCrawler:
 
     def analyze_sentiment(self, text, keywords=None):
         """
-        Analyzes the sentiment of a given text using FinBERT.
-        Returns a sentiment score between -1 (very negative) and 1 (very positive).
+        Analyzes the sentiment of a given text using Chinese sentiment analysis.
+        Returns a sentiment score based on Chinese positive/negative word dictionaries.
         """
         if not any(keyword in text for keyword in keywords):
             return None
 
         try:
-            # Split text into chunks to handle long articles
-            max_length = 512
-            chunks = [text[i:i+max_length] for i in range(0, len(text), max_length)]
-            
-            sentiment_scores = []
-            for chunk in chunks:
-                results = self.sentiment_pipeline(chunk)
-                for result in results:
-                    score = result['score']
-                    if result['label'] == 'negative':
-                        score = -score
-                    elif result['label'] == 'neutral':
-                        score = 0
-                    sentiment_scores.append(score)
-
-            if not sentiment_scores:
-                return 0
-
-            # Average the sentiment scores of all chunks
-            avg_sentiment = sum(sentiment_scores) / len(sentiment_scores)
-            return round(avg_sentiment, 4)
+            # Use Chinese sentiment analysis from sentiment_analysis.py
+            sentiment_score = analyze_market_sentiment(text)
+            return round(sentiment_score, 4)
 
         except Exception as e:
             print(f"An error occurred during sentiment analysis: {e}")
