@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 from transformers import pipeline
 from git import Repo
+import yfinance as yf
 import requests
 import yaml
 import json
@@ -16,6 +17,7 @@ import re
 import urllib.parse
 import sys
 import torch
+import argparse
 
 sys.stdout.reconfigure(encoding='utf-8')
 sys.stdin.reconfigure(encoding='utf-8')
@@ -76,7 +78,6 @@ class NewsSentimentCrawler:
                 for selector in selectors:
                     content_div = soup.select_one(selector)
                     if content_div:
-                        print(f"Found content with selector: {selector}")
                         break
                 
                 if content_div:
@@ -84,8 +85,6 @@ class NewsSentimentCrawler:
                     date_element = soup.find('time')
                     if date_element:
                         date = date_element['datetime']
-                else:
-                    print("Could not find article content for Yahoo News.")
 
             elif "news.cnyes.com" in url:
                 content_sections = soup.select('section[style*="margin-top"]')
@@ -97,7 +96,6 @@ class NewsSentimentCrawler:
             if content:
                 return content, date
             else:
-                print("Unable to find article content.")
                 return "", ""
         except Exception as e:
             print(f"Failed to extract article content: {e}")
@@ -145,7 +143,6 @@ class NewsSentimentCrawler:
             return None
 
         try:
-            # Split text into chunks to handle long articles
             max_length = 512
             chunks = [text[i:i+max_length] for i in range(0, len(text), max_length)]
             
@@ -163,7 +160,6 @@ class NewsSentimentCrawler:
             if not sentiment_scores:
                 return 0
 
-            # Average the sentiment scores of all chunks
             avg_sentiment = sum(sentiment_scores) / len(sentiment_scores)
             return round(avg_sentiment, 4)
 
@@ -218,15 +214,43 @@ class NewsSentimentCrawler:
         print(f"Daily report saved: {report_file}")
 
     def get_stock_price(self, ticker):
-        # This is a placeholder. In a real scenario, you would have a robust service for this.
-        print(f"Fetching stock price for {ticker}... (placeholder)")
+        try:
+            stock = yf.Ticker(ticker)
+            hist = stock.history(period="1d")
+            if not hist.empty:
+                return hist['Close'][0]
+        except Exception as e:
+            print(f"Could not fetch stock price for {ticker}: {e}")
         return "N/A"
 
-    def run(self):
-        """Main function to run the crawler."""
-        today_str = datetime.now().strftime("%Y-%m-%d")
-        yesterday_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
-        relevant_dates = {today_str, yesterday_str}
+    def collect_historical_data(self, start_date, end_date):
+        """Collects historical news and stock data for a given date range."""
+        # Fetch and save historical stock data
+        for company in self.companies:
+            ticker = f"{company['code']}.TW"
+            print(f"Fetching historical stock data for {ticker}...")
+            stock_data = yf.download(ticker, start=start_date, end=end_date)
+            if not stock_data.empty:
+                file_path = os.path.join(self.DATA_DIR, f"{company['code']}_historical_stock.csv")
+                stock_data.to_csv(file_path)
+                print(f"Saved historical stock data to {file_path}")
+
+        # Run news crawler for the historical period
+        delta = end_date - start_date
+        for i in range(delta.days + 1):
+            date = start_date + timedelta(days=i)
+            date_str = date.strftime("%Y-%m-%d")
+            print(f"Running crawler for {date_str}...")
+            self.run(date_str)
+
+    def run(self, target_date=None):
+        """Main function to run the crawler for a specific date or today."""
+        if target_date:
+            relevant_dates = {target_date}
+        else:
+            today_str = datetime.now().strftime("%Y-%m-%d")
+            yesterday_str = (datetime.now() - timedelta(days=1)).strftime("%Y-%m-%d")
+            relevant_dates = {today_str, yesterday_str}
 
         news_data = {}
         for url in self.urls:
@@ -257,16 +281,31 @@ class NewsSentimentCrawler:
                         })
 
         if news_data:
-            self.generate_daily_report(news_data, today_str)
-            self.push_to_github()
+            report_date = target_date if target_date else datetime.now().strftime("%Y-%m-%d")
+            self.generate_daily_report(news_data, report_date)
+            if not target_date: # Only push to github if running for today
+                self.push_to_github()
         else:
             print("No new news articles found to process.")
 
 if __name__ == "__main__":
-    # The script expects the config file to be in the same directory.
+    parser = argparse.ArgumentParser(description="News Sentiment Crawler")
+    parser.add_argument("--collect-historical", action="store_true", help="Collect historical data.")
+    parser.add_argument("--start-date", help="Start date for historical data collection (YYYY-MM-DD).")
+    parser.add_argument("--end-date", help="End date for historical data collection (YYYY-MM-DD).")
+    args = parser.parse_args()
+
     config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'NewsSentimentCrawler.yaml')
     if not os.path.exists(config_path):
         print(f"Error: Configuration file not found at {config_path}")
     else:
         crawler = NewsSentimentCrawler(config_path)
-        crawler.run()
+        if args.collect_historical:
+            if args.start_date and args.end_date:
+                start = datetime.strptime(args.start_date, "%Y-%m-%d")
+                end = datetime.strptime(args.end_date, "%Y-%m-%d")
+                crawler.collect_historical_data(start, end)
+            else:
+                print("Please provide --start-date and --end-date for historical data collection.")
+        else:
+            crawler.run()
