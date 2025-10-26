@@ -149,13 +149,23 @@ class NewsSentimentCrawler:
             sentiment_scores = []
             for chunk in chunks:
                 results = self.sentiment_pipeline(chunk)
+                # pipeline may return a dict or a list of dicts
+                if isinstance(results, dict):
+                    results = [results]
                 for result in results:
-                    score = result['score']
-                    if result['label'] == 'negative':
-                        score = -score
-                    elif result['label'] == 'neutral':
-                        score = 0
-                    sentiment_scores.append(score)
+                    label = str(result.get('label', '')).lower()
+                    score = float(result.get('score', 0.0))
+                    # normalize various label formats (e.g. 'negative', 'neutral', 'positive', 'LABEL_0', etc.)
+                    if 'neg' in label or label in ('negative', 'label_0', 'label0'):
+                        signed = -score
+                    elif 'neu' in label or 'neutral' in label or label in ('label_1', 'label1'):
+                        signed = 0.0
+                    elif 'pos' in label or 'positive' in label or label in ('label_2', 'label2'):
+                        signed = score
+                    else:
+                        # unknown label -> treat as neutral
+                        signed = 0.0
+                    sentiment_scores.append(signed)
 
             if not sentiment_scores:
                 return 0
