@@ -6,3 +6,4 @@ gitpython
 requests
 transformers
 torch
+yfinance
